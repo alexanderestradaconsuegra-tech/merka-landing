@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Merka POS — El sistema que tu negocio merece</title>
-<meta name="description" content="Sistema de gestión comercial para minimarkets, negocios y tiendas. Terminal de ventas, inventario, cierres de caja y más. Desde $20/mes.">
+<meta name="description" content="Sistema de gestión comercial para minimarkets, negocios y tiendas. Terminal de ventas, inventario, cierres de caja y más. Desde $9.5/mes.">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -15,6 +15,7 @@
   --blue2:#38bdf8;
   --lime:#84cc16;
   --lime2:#a3e635;
+  --lime3:#65a30d;
   --sur:#0f2033;
   --sur2:#162840;
   --text:#f0f6ff;
@@ -27,7 +28,6 @@
 html{font-size:16px;scroll-behavior:smooth;}
 body{background:var(--night);color:var(--text);font-family:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 
-/* ── GRAIN ── */
 body::after{
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
@@ -39,29 +39,33 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:16px 40px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(6,13,26,0.8);backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(14,165,233,0.1);
+  background:rgba(6,13,26,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(132,204,22,0.12);
   transition:all 0.3s;
 }
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo-icon{
-  width:36px;height:36px;background:var(--blue);border-radius:10px;
+  width:36px;height:36px;
+  background:linear-gradient(135deg,var(--lime3),var(--lime));
+  border-radius:10px;
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--head);font-size:16px;font-weight:900;color:#fff;
-  box-shadow:0 0 20px rgba(14,165,233,0.4);
+  font-family:var(--mono);font-size:14px;font-weight:900;color:#000;
+  box-shadow:0 0 20px rgba(132,204,22,0.4);
+  letter-spacing:-1px;
 }
-.nav-logo-text{font-family:var(--head);font-size:18px;font-weight:800;letter-spacing:-0.5px;}
-.nav-logo-text span{color:var(--blue);}
+.nav-logo-text{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:-0.5px;color:var(--text);}
+.nav-logo-text span{color:var(--lime);font-weight:900;}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
 .nav-links a:hover{color:var(--text);}
 .nav-cta{
-  background:var(--blue);color:#fff;border:none;
-  padding:10px 22px;border-radius:10px;font-size:14px;font-weight:700;
+  background:linear-gradient(135deg,var(--lime3),var(--lime));
+  color:#000;border:none;
+  padding:10px 22px;border-radius:10px;font-size:14px;font-weight:800;
   cursor:pointer;font-family:var(--body);text-decoration:none;
-  transition:all 0.2s;box-shadow:0 4px 16px rgba(14,165,233,0.35);
+  transition:all 0.2s;box-shadow:0 4px 16px rgba(132,204,22,0.35);
 }
-.nav-cta:hover{background:var(--blue2);transform:translateY(-1px);}
+.nav-cta:hover{opacity:0.9;transform:translateY(-1px);}
 
 /* ── HERO ── */
 .hero{
@@ -72,52 +76,58 @@ nav{
   overflow:hidden;
   text-align:center;
 }
-/* Animated grid background */
 .hero::before{
   content:'';position:absolute;inset:0;
   background-image:
-    linear-gradient(rgba(14,165,233,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14,165,233,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(132,204,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132,204,22,0.04) 1px, transparent 1px);
   background-size:60px 60px;
   animation:gridMove 20s linear infinite;
 }
 @keyframes gridMove{from{transform:translateY(0)}to{transform:translateY(60px)}}
-/* Radial glow */
 .hero::after{
   content:'';position:absolute;
-  width:800px;height:800px;
-  background:radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+  width:900px;height:900px;
+  background:radial-gradient(circle, rgba(132,204,22,0.07) 0%, rgba(14,165,233,0.05) 40%, transparent 70%);
   top:50%;left:50%;transform:translate(-50%,-50%);
   pointer-events:none;
 }
+
 .hero-tag{
   display:inline-flex;align-items:center;gap:8px;
   padding:6px 16px;border-radius:20px;
-  background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);
-  font-size:13px;font-weight:600;color:var(--blue);
+  background:rgba(132,204,22,0.1);border:1px solid rgba(132,204,22,0.3);
+  font-size:13px;font-weight:700;color:var(--lime);
   margin-bottom:28px;position:relative;z-index:1;
   animation:fadeUp 0.6s ease both;
+  font-family:var(--mono);letter-spacing:0.05em;text-transform:uppercase;
 }
 .hero-tag-dot{width:7px;height:7px;background:var(--lime);border-radius:50%;animation:blink 2s ease infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
 .hero-h1{
   font-family:var(--head);
-  font-size:clamp(48px,7vw,88px);
+  font-size:clamp(48px,7vw,92px);
   font-weight:800;
-  line-height:1.0;
-  letter-spacing:-3px;
+  line-height:0.95;
+  letter-spacing:-4px;
   position:relative;z-index:1;
   animation:fadeUp 0.6s 0.1s ease both;
-  max-width:900px;
+  max-width:960px;
 }
-.hero-h1 .accent{
-  background:linear-gradient(135deg, var(--blue), var(--lime));
+.hero-h1 .accent-green{
+  background:linear-gradient(135deg, var(--lime2), var(--lime));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-h1 .accent-blue{
+  background:linear-gradient(135deg, var(--blue), var(--blue2));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
 }
 .hero-sub{
   font-size:clamp(16px,2vw,20px);color:var(--muted);
-  max-width:560px;line-height:1.7;margin:24px auto 0;
+  max-width:580px;line-height:1.7;margin:24px auto 0;
   position:relative;z-index:1;
   animation:fadeUp 0.6s 0.2s ease both;
   font-weight:300;
@@ -133,99 +143,192 @@ nav{
   display:inline-flex;align-items:center;gap:8px;
 }
 .btn-hero-primary{
-  background:var(--blue);color:#fff;border:none;
-  box-shadow:0 8px 32px rgba(14,165,233,0.4);
+  background:linear-gradient(135deg,var(--lime3),var(--lime2));
+  color:#000;border:none;
+  box-shadow:0 8px 32px rgba(132,204,22,0.4);
 }
-.btn-hero-primary:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(14,165,233,0.5);}
+.btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(132,204,22,0.55);}
 .btn-hero-ghost{
   background:transparent;color:var(--text);
   border:1.5px solid rgba(255,255,255,0.15);
 }
 .btn-hero-ghost:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.25);}
 .hero-trust{
-  display:flex;align-items:center;gap:20px;margin-top:48px;
+  display:flex;align-items:center;gap:24px;margin-top:48px;
   position:relative;z-index:1;
   animation:fadeUp 0.6s 0.4s ease both;
   flex-wrap:wrap;justify-content:center;
 }
 .hero-trust-item{
   display:flex;align-items:center;gap:7px;
-  font-size:13px;color:var(--muted);font-weight:500;
+  font-size:13px;color:var(--muted);font-weight:500;font-family:var(--mono);
 }
-.hero-trust-item svg{color:var(--lime);flex-shrink:0;}
+.hero-trust-item .dot{width:6px;height:6px;background:var(--lime);border-radius:50%;flex-shrink:0;}
 
-/* App preview */
+/* ── PC ILLUSTRATION ── */
 .hero-preview{
-  margin-top:72px;position:relative;z-index:1;
-  animation:fadeUp 0.8s 0.5s ease both;
-  width:100%;max-width:900px;
+  margin-top:80px;position:relative;z-index:1;
+  animation:fadeUp 0.9s 0.5s ease both;
+  width:100%;max-width:980px;
 }
-.preview-frame{
-  background:var(--navy);border:1px solid rgba(14,165,233,0.2);
-  border-radius:16px;overflow:hidden;
-  box-shadow:0 40px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(14,165,233,0.1);
+.pc-wrap{
+  position:relative;display:flex;flex-direction:column;align-items:center;
+}
+/* Monitor body */
+.pc-monitor{
+  background:linear-gradient(160deg,#1a2a3a,#0e1e30);
+  border:3px solid rgba(132,204,22,0.25);
+  border-radius:16px 16px 6px 6px;
+  padding:14px;
+  box-shadow:
+    0 0 0 1px rgba(132,204,22,0.1),
+    0 40px 120px rgba(0,0,0,0.7),
+    0 0 80px rgba(132,204,22,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  width:100%;
   position:relative;
 }
-.preview-bar{
-  background:var(--sur);padding:10px 16px;
+.pc-bezel-top{
+  height:8px;display:flex;justify-content:center;align-items:center;margin-bottom:10px;
+}
+.pc-cam{width:8px;height:8px;border-radius:50%;background:#0a1520;border:1.5px solid rgba(132,204,22,0.3);}
+.pc-screen{
+  background:var(--night);border-radius:6px;overflow:hidden;
+  border:1px solid rgba(14,165,233,0.15);
+}
+/* Monitor stand */
+.pc-neck{
+  width:4px;height:48px;
+  background:linear-gradient(to bottom,#1a2a3a,#0d1a28);
+  margin:0 auto;
+  border-left:1px solid rgba(255,255,255,0.04);
+  border-right:1px solid rgba(255,255,255,0.04);
+}
+.pc-base{
+  width:200px;height:18px;
+  background:linear-gradient(to bottom,#1a2a3a,#0d1a28);
+  border-radius:4px 4px 8px 8px;
+  border:1px solid rgba(132,204,22,0.15);
+  box-shadow:0 8px 32px rgba(0,0,0,0.5),0 0 40px rgba(132,204,22,0.08);
+}
+/* Glow under monitor */
+.pc-glow{
+  position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);
+  width:60%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(132,204,22,0.5),transparent);
+  filter:blur(4px);
+}
+
+/* Screen content */
+.screen-bar{
+  background:linear-gradient(90deg,var(--sur),#0d1e30);
+  padding:8px 14px;
   display:flex;align-items:center;gap:8px;
-  border-bottom:1px solid rgba(14,165,233,0.1);
+  border-bottom:1px solid rgba(132,204,22,0.08);
 }
-.preview-dot{width:10px;height:10px;border-radius:50%;}
-.preview-url{
-  background:var(--sur2);border-radius:6px;padding:5px 14px;
-  font-family:var(--mono);font-size:11px;color:var(--muted);
-  flex:1;max-width:300px;margin:0 auto;text-align:center;
+.screen-dots{display:flex;gap:5px;}
+.s-dot{width:9px;height:9px;border-radius:50%;}
+.screen-url{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);
+  border-radius:5px;padding:4px 14px;
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  flex:1;max-width:280px;margin:0 auto;text-align:center;
 }
-.preview-screen{
-  padding:0;display:flex;height:320px;
-  font-family:var(--mono);font-size:11px;
+.screen-url span{color:var(--lime);font-weight:700;}
+.screen-body{
+  display:flex;height:300px;font-family:var(--mono);font-size:10px;
 }
-.preview-sidebar{
-  width:140px;background:var(--sur);border-right:1px solid rgba(14,165,233,0.1);
-  padding:12px 10px;display:flex;flex-direction:column;gap:4px;flex-shrink:0;
+.s-sidebar{
+  width:130px;background:var(--sur);border-right:1px solid rgba(132,204,22,0.08);
+  padding:10px 8px;display:flex;flex-direction:column;gap:3px;flex-shrink:0;
 }
-.preview-nav-item{
-  padding:7px 10px;border-radius:7px;font-size:10px;
-  color:var(--muted);display:flex;align-items:center;gap:7px;
+.s-brand{
+  font-family:var(--mono);font-size:10px;font-weight:700;color:var(--lime);
+  padding:6px 8px 10px;letter-spacing:0.05em;border-bottom:1px solid rgba(132,204,22,0.08);margin-bottom:6px;
 }
-.preview-nav-item.active{background:rgba(14,165,233,0.12);color:var(--blue);border:1px solid rgba(14,165,233,0.2);}
-.preview-main{flex:1;padding:0;display:flex;overflow:hidden;}
-.preview-products{flex:1;background:var(--night);padding:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;align-content:start;overflow:hidden;}
-.preview-product{background:var(--sur);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px;cursor:pointer;}
-.preview-product:nth-child(1){border-color:rgba(14,165,233,0.3);}
-.preview-prod-name{font-size:9px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:4px;}
-.preview-prod-price{font-size:11px;font-weight:700;color:var(--blue);}
-.preview-prod-stock{font-size:8px;color:var(--muted);}
-.preview-cart{width:160px;background:var(--sur);border-left:1px solid rgba(14,165,233,0.1);padding:10px;display:flex;flex-direction:column;}
-.preview-cart-title{font-size:10px;font-weight:700;margin-bottom:8px;color:var(--text);}
-.preview-cart-item{background:var(--sur2);border-radius:6px;padding:6px;margin-bottom:5px;font-size:9px;}
-.preview-cart-item-name{color:var(--text);font-weight:600;}
-.preview-cart-item-price{color:var(--blue);margin-top:2px;}
-.preview-total{margin-top:auto;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2);border-radius:8px;padding:8px;text-align:center;}
-.preview-total-val{font-size:14px;font-weight:700;color:var(--blue);}
-.preview-cobrar{background:var(--blue);color:#fff;border:none;border-radius:7px;padding:7px;font-size:10px;font-weight:700;width:100%;margin-top:6px;cursor:pointer;}
+.s-nav{
+  padding:6px 8px;border-radius:6px;font-size:9.5px;
+  color:var(--muted);display:flex;align-items:center;gap:6px;
+  cursor:pointer;transition:all 0.15s;
+}
+.s-nav.active{background:rgba(132,204,22,0.1);color:var(--lime);border:1px solid rgba(132,204,22,0.2);}
+.s-nav.ai-nav{color:#a78bfa;}
+.s-nav.ai-nav.active{background:rgba(167,139,250,0.1);color:#a78bfa;border-color:rgba(167,139,250,0.25);}
+.s-main{flex:1;background:var(--night);display:flex;flex-direction:column;overflow:hidden;}
+.s-header{
+  padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.s-title{font-size:10px;font-weight:700;color:var(--text);}
+.s-badge{
+  background:rgba(132,204,22,0.1);border:1px solid rgba(132,204,22,0.25);
+  color:var(--lime);font-size:8px;padding:2px 7px;border-radius:10px;font-weight:700;
+}
+.s-content{flex:1;padding:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;align-content:start;overflow:hidden;}
+.s-product{
+  background:var(--sur);border:1px solid rgba(255,255,255,0.05);
+  border-radius:7px;padding:8px;
+}
+.s-prod-name{font-size:8.5px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.3;}
+.s-prod-price{font-size:10px;font-weight:700;color:var(--blue);}
+.s-prod-stock{font-size:7.5px;color:var(--muted);margin-top:1px;}
+.s-cart{
+  width:155px;background:var(--sur);border-left:1px solid rgba(132,204,22,0.08);
+  padding:8px;display:flex;flex-direction:column;flex-shrink:0;
+}
+.s-cart-title{font-size:9.5px;font-weight:700;margin-bottom:7px;color:var(--text);}
+.s-cart-item{
+  background:var(--sur2);border-radius:5px;padding:5px;margin-bottom:4px;
+}
+.s-item-name{font-size:8.5px;color:var(--text);font-weight:600;}
+.s-item-price{font-size:8px;color:var(--blue);margin-top:1px;}
+.s-total{
+  margin-top:auto;background:rgba(132,204,22,0.08);
+  border:1px solid rgba(132,204,22,0.2);border-radius:7px;padding:7px;text-align:center;
+}
+.s-total-val{font-size:14px;font-weight:700;color:var(--lime);}
+.s-cobrar{
+  background:linear-gradient(135deg,var(--lime3),var(--lime));
+  color:#000;border:none;border-radius:6px;padding:6px;
+  font-size:9px;font-weight:800;width:100%;margin-top:5px;cursor:pointer;
+  font-family:var(--mono);
+}
+
+/* AI overlay badge */
+.ai-badge-float{
+  position:absolute;top:-18px;right:-18px;
+  background:linear-gradient(135deg,#7c3aed,#a78bfa);
+  border:1px solid rgba(167,139,250,0.4);
+  border-radius:12px;padding:8px 14px;
+  font-size:11px;font-weight:700;color:#fff;
+  box-shadow:0 8px 32px rgba(124,58,237,0.4);
+  white-space:nowrap;
+  animation:floatBadge 3s ease-in-out infinite;
+}
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.ai-badge-float .ai-dot{
+  display:inline-block;width:6px;height:6px;background:#a78bfa;
+  border-radius:50%;margin-right:5px;animation:blink 1.5s ease infinite;
+}
 
 /* ── STATS BAR ── */
 .stats-bar{
-  padding:60px 40px;
+  padding:0 40px;
   display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;background:rgba(14,165,233,0.08);
-  border-top:1px solid rgba(14,165,233,0.1);
-  border-bottom:1px solid rgba(14,165,233,0.1);
+  gap:1px;background:rgba(132,204,22,0.06);
+  border-top:1px solid rgba(132,204,22,0.1);
+  border-bottom:1px solid rgba(132,204,22,0.1);
 }
 .stat-item{
-  padding:40px 32px;background:var(--night);
+  padding:48px 32px;background:var(--night);
   text-align:center;
 }
 .stat-num{
-  font-family:var(--head);font-size:48px;font-weight:800;
+  font-family:var(--mono);font-size:44px;font-weight:700;
   letter-spacing:-2px;line-height:1;
-  background:linear-gradient(135deg,var(--blue),var(--lime));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:var(--lime);
 }
-.stat-label{font-size:14px;color:var(--muted);margin-top:8px;font-weight:500;}
+.stat-label{font-size:13px;color:var(--muted);margin-top:8px;font-weight:500;}
 
 /* ── SECTIONS ── */
 section{padding:100px 40px;max-width:1100px;margin:0 auto;}
@@ -235,14 +338,16 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
   display:inline-flex;align-items:center;gap:8px;
   padding:5px 14px;border-radius:20px;
   background:rgba(132,204,22,0.1);border:1px solid rgba(132,204,22,0.25);
-  font-size:12px;font-weight:700;color:var(--lime);
-  margin-bottom:20px;text-transform:uppercase;letter-spacing:0.08em;
+  font-size:11px;font-weight:700;color:var(--lime);
+  margin-bottom:20px;text-transform:uppercase;letter-spacing:0.1em;
+  font-family:var(--mono);
 }
 .section-h2{
   font-family:var(--head);font-size:clamp(32px,4vw,52px);font-weight:800;
-  letter-spacing:-2px;line-height:1.1;margin-bottom:16px;
+  letter-spacing:-2px;line-height:1.05;margin-bottom:16px;
 }
-.section-h2 em{font-style:normal;color:var(--blue);}
+.section-h2 em{font-style:normal;color:var(--lime);}
+.section-h2 em.blue{color:var(--blue);}
 .section-sub{font-size:17px;color:var(--muted);line-height:1.7;max-width:560px;font-weight:300;}
 
 .features-grid{
@@ -256,22 +361,22 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
 }
 .feature-card::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 0%, rgba(14,165,233,0.08) 0%, transparent 60%);
+  background:radial-gradient(circle at 50% 0%, rgba(132,204,22,0.07) 0%, transparent 60%);
   opacity:0;transition:opacity 0.3s;
 }
-.feature-card:hover{border-color:rgba(14,165,233,0.25);transform:translateY(-4px);}
+.feature-card:hover{border-color:rgba(132,204,22,0.25);transform:translateY(-4px);}
 .feature-card:hover::before{opacity:1;}
 .feature-icon{
   width:48px;height:48px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;
   font-size:22px;margin-bottom:18px;
 }
-.feature-icon.blue{background:rgba(14,165,233,0.12);}
-.feature-icon.lime{background:rgba(132,204,22,0.12);}
-.feature-icon.orange{background:rgba(251,146,60,0.12);}
-.feature-icon.purple{background:rgba(168,85,247,0.12);}
-.feature-icon.red{background:rgba(248,113,113,0.12);}
-.feature-icon.teal{background:rgba(20,184,166,0.12);}
+.fi-blue{background:rgba(14,165,233,0.12);}
+.fi-lime{background:rgba(132,204,22,0.12);}
+.fi-orange{background:rgba(251,146,60,0.12);}
+.fi-purple{background:rgba(168,85,247,0.12);}
+.fi-red{background:rgba(248,113,113,0.12);}
+.fi-teal{background:rgba(20,184,166,0.12);}
 .feature-h{font-family:var(--head);font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-0.3px;}
 .feature-p{font-size:14px;color:var(--muted);line-height:1.7;}
 
@@ -279,19 +384,18 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
 .steps{display:flex;flex-direction:column;gap:0;margin-top:60px;position:relative;}
 .steps::before{
   content:'';position:absolute;left:27px;top:56px;bottom:56px;
-  width:2px;background:linear-gradient(to bottom, var(--blue), var(--lime));
-  opacity:0.3;
+  width:2px;background:linear-gradient(to bottom, var(--lime), var(--blue));
+  opacity:0.25;
 }
 .step{display:flex;gap:32px;align-items:flex-start;padding:32px 0;}
 .step-num{
   width:56px;height:56px;border-radius:50%;flex-shrink:0;
   background:linear-gradient(135deg, var(--navy), var(--sur2));
-  border:2px solid rgba(14,165,233,0.3);
+  border:2px solid rgba(132,204,22,0.3);
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:16px;font-weight:700;color:var(--blue);
+  font-family:var(--mono);font-size:14px;font-weight:700;color:var(--lime);
   position:relative;z-index:1;
 }
-.step-content{}
 .step-h{font-family:var(--head);font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px;}
 .step-p{font-size:15px;color:var(--muted);line-height:1.7;}
 
@@ -305,36 +409,60 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
   border-radius:20px;padding:40px;position:relative;overflow:hidden;
 }
 .pricing-card.featured{
-  border-color:var(--blue);
-  background:linear-gradient(135deg, var(--sur), rgba(14,165,233,0.05));
-  box-shadow:0 0 60px rgba(14,165,233,0.12);
+  border-color:rgba(132,204,22,0.4);
+  background:linear-gradient(135deg, var(--sur), rgba(132,204,22,0.04));
+  box-shadow:0 0 60px rgba(132,204,22,0.1);
+}
+.pricing-card.ai-plan{
+  border-color:rgba(167,139,250,0.4);
+  background:linear-gradient(135deg, #0f0a1e, #130d24);
+  box-shadow:0 0 60px rgba(124,58,237,0.15);
 }
 .pricing-badge{
   position:absolute;top:20px;right:20px;
-  background:var(--blue);color:#fff;
   font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;
 }
-.pricing-name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px;}
+.pricing-badge.green{background:rgba(132,204,22,0.15);border:1px solid rgba(132,204,22,0.35);color:var(--lime);}
+.pricing-badge.purple{background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;}
+.pricing-name{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:12px;font-family:var(--mono);}
 .pricing-price{
   font-family:var(--head);font-size:56px;font-weight:800;
   letter-spacing:-3px;line-height:1;margin-bottom:6px;
 }
 .pricing-price sup{font-size:24px;letter-spacing:0;vertical-align:super;}
-.pricing-price .period{font-size:18px;font-weight:400;color:var(--muted);letter-spacing:0;}
+.pricing-price .period{font-size:16px;font-weight:400;color:var(--muted);letter-spacing:0;}
 .pricing-desc{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.6;}
-.pricing-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
-.pricing-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);}
-.pricing-features li::before{content:'✓';color:var(--lime);font-weight:700;font-size:13px;flex-shrink:0;}
-.pricing-features li.no{color:var(--muted);}
-.pricing-features li.no::before{content:'·';color:var(--dim);}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:32px;}
+.pricing-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.5;}
+.pricing-features li::before{content:'✓';font-weight:700;font-size:12px;flex-shrink:0;margin-top:2px;}
+.pricing-card.featured .pricing-features li::before{color:var(--lime);}
+.pricing-card.ai-plan .pricing-features li::before{color:#a78bfa;}
+.pricing-features li.dim{color:var(--muted);}
+.pricing-features li.dim::before{content:'·';color:var(--dim);}
 .pricing-btn{
   display:block;text-align:center;padding:14px;border-radius:12px;
   font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;font-family:var(--body);
+  cursor:pointer;border:none;width:100%;
 }
-.pricing-btn.primary{background:var(--blue);color:#fff;box-shadow:0 4px 20px rgba(14,165,233,0.3);}
-.pricing-btn.primary:hover{background:var(--blue2);transform:translateY(-1px);}
-.pricing-btn.ghost{background:transparent;color:var(--text);border:1.5px solid rgba(255,255,255,0.15);}
-.pricing-btn.ghost:hover{background:rgba(255,255,255,0.06);}
+.pricing-btn.green{background:linear-gradient(135deg,var(--lime3),var(--lime2));color:#000;box-shadow:0 4px 20px rgba(132,204,22,0.3);}
+.pricing-btn.green:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(132,204,22,0.45);}
+.pricing-btn.purple-btn{background:linear-gradient(135deg,#6d28d9,#7c3aed);color:#fff;box-shadow:0 4px 20px rgba(124,58,237,0.35);}
+.pricing-btn.purple-btn:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(124,58,237,0.5);}
+.pricing-divider{
+  border:none;border-top:1px solid rgba(255,255,255,0.07);margin:20px 0;
+}
+.ai-section-label{
+  font-size:11px;font-weight:700;color:#a78bfa;text-transform:uppercase;
+  letter-spacing:0.1em;font-family:var(--mono);margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.ai-section-label::before{content:'✦';font-size:10px;}
+
+/* Plan toggle */
+.plan-toggle-wrap{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin-top:40px;margin-bottom:32px;
+}
 
 /* ── TESTIMONIALS ── */
 .testimonials-grid{
@@ -345,11 +473,11 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
   border-radius:16px;padding:28px;
 }
 .testimonial-text{font-size:15px;line-height:1.7;color:var(--text);margin-bottom:20px;font-style:italic;}
-.testimonial-text::before{content:'"';font-size:40px;color:var(--blue);line-height:0;vertical-align:-16px;margin-right:4px;}
+.testimonial-text::before{content:'"';font-size:40px;color:var(--lime);line-height:0;vertical-align:-16px;margin-right:4px;}
 .testimonial-author{display:flex;align-items:center;gap:12px;}
 .testimonial-avatar{
   width:40px;height:40px;border-radius:50%;
-  background:linear-gradient(135deg, var(--blue), var(--lime));
+  background:linear-gradient(135deg, var(--lime3), var(--blue));
   display:flex;align-items:center;justify-content:center;
   font-family:var(--head);font-size:16px;font-weight:700;color:#fff;flex-shrink:0;
 }
@@ -366,9 +494,9 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
   font-family:var(--head);letter-spacing:-0.3px;
   transition:color 0.2s;
 }
-.faq-q:hover{color:var(--blue);}
+.faq-q:hover{color:var(--lime);}
 .faq-icon{font-size:20px;color:var(--muted);transition:transform 0.3s;flex-shrink:0;}
-.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--blue);}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--lime);}
 .faq-a{
   max-height:0;overflow:hidden;
   font-size:15px;color:var(--muted);line-height:1.8;
@@ -380,17 +508,24 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto;}
 /* ── CTA BANNER ── */
 .cta-banner{
   margin:0 40px 100px;
-  background:linear-gradient(135deg, rgba(14,165,233,0.15), rgba(132,204,22,0.08));
-  border:1px solid rgba(14,165,233,0.2);border-radius:24px;
-  padding:72px 60px;text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(135deg, rgba(132,204,22,0.12), rgba(14,165,233,0.06));
+  border:1px solid rgba(132,204,22,0.22);border-radius:24px;
+  padding:80px 60px;text-align:center;position:relative;overflow:hidden;
 }
 .cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(132,204,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132,204,22,0.04) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+.cta-banner::after{
   content:'';position:absolute;
   width:600px;height:600px;
-  background:radial-gradient(circle, rgba(14,165,233,0.1) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(132,204,22,0.09) 0%, transparent 70%);
   top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
 }
-.cta-h{font-family:var(--head);font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-2px;margin-bottom:16px;position:relative;z-index:1;}
+.cta-h{font-family:var(--head);font-size:clamp(32px,4vw,56px);font-weight:800;letter-spacing:-2px;margin-bottom:16px;position:relative;z-index:1;}
 .cta-sub{font-size:18px;color:var(--muted);margin-bottom:36px;position:relative;z-index:1;font-weight:300;}
 .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
 
@@ -400,16 +535,66 @@ footer{
   display:flex;justify-content:space-between;align-items:center;
   flex-wrap:wrap;gap:20px;
 }
-.footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .footer-copy{font-size:13px;color:var(--muted);}
 .footer-links{display:flex;gap:24px;}
 .footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--text);}
-.footer-tag{
-  font-family:var(--mono);font-size:11px;color:var(--muted);
-  display:flex;align-items:center;gap:6px;
-}
+.footer-tag{font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;}
 .footer-tag span{color:var(--lime);}
+
+/* ── MODALS ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(6,13,26,0.92);backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity 0.25s;
+  padding:20px;
+}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{
+  background:var(--sur);border:1px solid rgba(132,204,22,0.2);
+  border-radius:20px;width:100%;max-width:640px;
+  max-height:80vh;display:flex;flex-direction:column;
+  box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 0 1px rgba(132,204,22,0.08);
+  transform:translateY(20px);transition:transform 0.3s cubic-bezier(.16,1,.3,1);
+}
+.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-header{
+  padding:24px 28px 20px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-shrink:0;
+}
+.modal-title{font-family:var(--head);font-size:22px;font-weight:700;letter-spacing:-0.5px;}
+.modal-title span{color:var(--lime);}
+.modal-close{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(255,255,255,0.06);border:none;color:var(--muted);
+  font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;flex-shrink:0;
+}
+.modal-close:hover{background:rgba(255,255,255,0.1);color:var(--text);}
+.modal-body{
+  padding:24px 28px;overflow-y:auto;font-size:14px;line-height:1.8;color:var(--muted);
+}
+.modal-body h3{
+  font-family:var(--head);font-size:15px;font-weight:700;
+  color:var(--text);margin:24px 0 8px;letter-spacing:-0.2px;
+}
+.modal-body h3:first-child{margin-top:0;}
+.modal-body p{margin-bottom:12px;}
+.modal-body ul{margin:8px 0 12px 20px;display:flex;flex-direction:column;gap:4px;}
+.modal-body a{color:var(--lime);text-decoration:none;}
+.modal-body .chip{
+  display:inline-block;background:rgba(132,204,22,0.1);
+  border:1px solid rgba(132,204,22,0.2);color:var(--lime);
+  border-radius:6px;padding:2px 8px;font-size:12px;font-family:var(--mono);
+  margin:0 2px;
+}
+.modal-footer{
+  padding:16px 28px 20px;border-top:1px solid rgba(255,255,255,0.07);
+  display:flex;justify-content:flex-end;flex-shrink:0;
+}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{
@@ -421,19 +606,110 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  nav{padding:14px 20px;}
+  /* NAV */
+  nav{padding:12px 16px;}
   .nav-links{display:none;}
-  .hero{padding:100px 20px 60px;}
-  .hero-h1{letter-spacing:-2px;}
+  .nav-logo-text{font-size:15px;}
+  .nav-cta{padding:8px 16px;font-size:13px;}
+
+  /* HERO */
+  .hero{padding:88px 16px 48px;min-height:auto;}
+  .hero-tag{font-size:11px;padding:5px 12px;}
+  .hero-h1{font-size:clamp(36px,10vw,56px);letter-spacing:-2px;line-height:1.0;}
+  .hero-sub{font-size:15px;margin-top:16px;}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px;margin-top:28px;padding:0 8px;}
+  .btn-hero{justify-content:center;padding:14px 24px;font-size:15px;}
+  .hero-trust{gap:12px;margin-top:28px;}
+  .hero-trust-item{font-size:11px;}
+
+  /* PC — ocultar versión desktop, mostrar versión simplificada */
+  .hero-preview{margin-top:40px;}
+  .pc-wrap{transform:none;}
+  .pc-neck{height:28px;}
+  .pc-base{width:120px;height:14px;}
+  .pc-monitor{padding:8px;border-radius:12px;}
+  .pc-bezel-top{height:4px;margin-bottom:6px;}
+  .screen-bar{padding:6px 10px;}
+  .screen-url{font-size:9px;padding:3px 10px;max-width:200px;}
+  .screen-body{height:180px;}
+  .s-sidebar{width:90px;padding:8px 6px;}
+  .s-brand{font-size:8.5px;padding:4px 6px 8px;}
+  .s-nav{font-size:8.5px;padding:5px 6px;}
+  .s-header{padding:5px 8px;}
+  .s-title{font-size:9px;}
+  .s-badge{font-size:7px;padding:1px 5px;}
+  .s-content{grid-template-columns:repeat(2,1fr);gap:4px;padding:6px;}
+  .s-product{padding:6px;}
+  .s-prod-name{font-size:7.5px;}
+  .s-prod-price{font-size:9px;}
+  .s-prod-stock{font-size:6.5px;}
+  .s-cart{width:110px;padding:6px;}
+  .s-cart-title{font-size:8.5px;margin-bottom:5px;}
+  .s-cart-item{padding:4px;}
+  .s-item-name{font-size:7.5px;}
+  .s-item-price{font-size:7px;}
+  .s-total-val{font-size:12px;}
+  .s-cobrar{font-size:8px;padding:5px;}
+  .ai-badge-float{font-size:9px;top:-10px;right:-6px;padding:5px 9px;border-radius:8px;}
+
+  /* STATS */
   .stats-bar{grid-template-columns:1fr 1fr;}
-  section{padding:60px 20px;}
-  .features-grid{grid-template-columns:1fr;}
-  .pricing-grid{grid-template-columns:1fr;}
-  .testimonials-grid{grid-template-columns:1fr;}
-  .cta-banner{margin:0 20px 60px;padding:48px 24px;}
-  footer{padding:32px 20px;flex-direction:column;text-align:center;}
-  .preview-screen{height:240px;}
-  .preview-products{grid-template-columns:repeat(2,1fr);}
+  .stat-item{padding:28px 16px;}
+  .stat-num{font-size:32px;letter-spacing:-1px;}
+  .stat-label{font-size:12px;}
+
+  /* SECTIONS */
+  section{padding:52px 16px;}
+  .section-h2{font-size:clamp(26px,7vw,36px);letter-spacing:-1px;}
+  .section-sub{font-size:15px;}
+
+  /* FEATURES */
+  .features-grid{grid-template-columns:1fr;gap:12px;margin-top:36px;}
+  .feature-card{padding:22px 20px;}
+  .feature-icon{width:40px;height:40px;font-size:18px;margin-bottom:14px;}
+  .feature-h{font-size:16px;}
+  .feature-p{font-size:13px;}
+
+  /* STEPS */
+  .steps{margin-top:36px;}
+  .steps::before{left:22px;}
+  .step{gap:20px;padding:24px 0;}
+  .step-num{width:46px;height:46px;font-size:12px;}
+  .step-h{font-size:17px;}
+  .step-p{font-size:14px;}
+
+  /* PRICING */
+  .pricing-grid{grid-template-columns:1fr;gap:16px;margin-top:36px;}
+  .pricing-card{padding:28px 22px;}
+  .pricing-price{font-size:44px;letter-spacing:-2px;}
+  .pricing-features{gap:9px;}
+  .pricing-features li{font-size:13px;}
+  .plan-toggle-wrap{flex-wrap:wrap;gap:10px;margin-top:24px;margin-bottom:20px;}
+
+  /* TESTIMONIALS */
+  .testimonials-grid{grid-template-columns:1fr;gap:12px;margin-top:36px;}
+  .testimonial{padding:22px;}
+  .testimonial-text{font-size:14px;}
+
+  /* FAQ */
+  .faq{margin-top:36px;}
+  .faq-q{font-size:15px;padding:18px 0;}
+  .faq-a{font-size:14px;}
+
+  /* CTA */
+  .cta-banner{margin:0 12px 60px;padding:40px 20px;}
+  .cta-h{font-size:clamp(26px,7vw,36px);letter-spacing:-1px;}
+  .cta-sub{font-size:15px;margin-bottom:24px;}
+  .cta-actions{flex-direction:column;align-items:stretch;gap:10px;padding:0 8px;}
+
+  /* FOOTER */
+  footer{padding:28px 16px;flex-direction:column;text-align:center;gap:14px;}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:16px;}
+  .footer-tag{justify-content:center;}
+
+  /* MODAL */
+  .modal-box{width:calc(100% - 32px);max-height:85vh;padding:28px 20px;}
+  .modal-body{font-size:13px;}
 }
 </style>
 </head>
@@ -450,111 +726,124 @@ footer{
     <li><a href="#pricing">Precios</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#pricing" class="nav-cta">Empezar ahora →</a>
+  <a href="https://www.app.merkapos.pro" target="_blank" class="nav-cta">Prueba gratis →</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-tag">
     <div class="hero-tag-dot"></div>
-    Sistema POS para minimarkets y negocios
+    POS para minimarkets · retail · distribuidoras
   </div>
   <h1 class="hero-h1">
-    El sistema que<br>
-    tu negocio<br>
-    <span class="accent">merece.</span>
+    Vende más.<br>
+    Pierde <span class="accent-blue">menos.</span><br>
+    Controla <span class="accent-green">todo.</span>
   </h1>
   <p class="hero-sub">
     Terminal de ventas, inventario, cierres de caja, proveedores y reportes. Todo en una sola pantalla. Sin complicaciones.
   </p>
   <div class="hero-actions">
-    <a href="#pricing" class="btn-hero btn-hero-primary">Prueba 14 días gratis →</a>
+    <a href="https://www.app.merkapos.pro" target="_blank" class="btn-hero btn-hero-primary">⚡ Prueba gratis 7 días →</a>
     <a href="#features" class="btn-hero btn-hero-ghost">Ver funciones</a>
   </div>
   <div class="hero-trust">
-    <div class="hero-trust-item">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.92l-4 3.9.94 5.5L10 13.77l-4.94 2.55.94-5.5L2 6.92l5.61-.08L10 1z"/></svg>
-      Sin contrato
-    </div>
-    <div class="hero-trust-item">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.92l-4 3.9.94 5.5L10 13.77l-4.94 2.55.94-5.5L2 6.92l5.61-.08L10 1z"/></svg>
-      Funciona offline
-    </div>
-    <div class="hero-trust-item">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.92l-4 3.9.94 5.5L10 13.77l-4.94 2.55.94-5.5L2 6.92l5.61-.08L10 1z"/></svg>
-      Desde cualquier celular o PC
-    </div>
+    <div class="hero-trust-item"><div class="dot"></div>Sin contrato</div>
+    <div class="hero-trust-item"><div class="dot"></div>Funciona offline</div>
+    <div class="hero-trust-item"><div class="dot"></div>Desde cualquier celular o PC</div>
+    <div class="hero-trust-item"><div class="dot"></div>Sin tarjeta de crédito</div>
   </div>
 
-  <!-- App Preview -->
+  <!-- PC Illustration -->
   <div class="hero-preview">
-    <div class="preview-frame">
-      <div class="preview-bar">
-        <div class="preview-dot" style="background:#ff5f57"></div>
-        <div class="preview-dot" style="background:#febc2e"></div>
-        <div class="preview-dot" style="background:#28c840"></div>
-        <div class="preview-url">app.merka.cl — Terminal de Ventas</div>
-      </div>
-      <div class="preview-screen">
-        <div class="preview-sidebar">
-          <div class="preview-nav-item active">⬡ Terminal</div>
-          <div class="preview-nav-item">◈ Dashboard</div>
-          <div class="preview-nav-item">▦ Inventario</div>
-          <div class="preview-nav-item">◷ Clientes</div>
-          <div class="preview-nav-item">⬫ Caja</div>
-          <div class="preview-nav-item">◈ Reportes</div>
-        </div>
-        <div class="preview-main">
-          <div class="preview-products">
-            <div class="preview-product">
-              <div class="preview-prod-name">Queso Mantecoso</div>
-              <div class="preview-prod-price">$7.990/kg</div>
-              <div class="preview-prod-stock">⚖ Peso · 5.0kg</div>
+    <div class="pc-wrap">
+      <div class="pc-monitor" style="position:relative;">
+        <div class="ai-badge-float"><span class="ai-dot"></span>✦ Agente IA activo</div>
+        <div class="pc-bezel-top"><div class="pc-cam"></div></div>
+        <div class="pc-screen">
+          <div class="screen-bar">
+            <div class="screen-dots">
+              <div class="s-dot" style="background:#ff5f57"></div>
+              <div class="s-dot" style="background:#febc2e"></div>
+              <div class="s-dot" style="background:#28c840"></div>
             </div>
-            <div class="preview-product">
-              <div class="preview-prod-name">Leche Entera 1L</div>
-              <div class="preview-prod-price">$1.200</div>
-              <div class="preview-prod-stock">48 unidades</div>
+            <div class="screen-url"><span>app</span>.merkapos.pro — Terminal de Ventas</div>
+          </div>
+          <div class="screen-body">
+            <div class="s-sidebar">
+              <div class="s-brand">MERKA<span style="color:#a3e635">POS</span></div>
+              <div class="s-nav active">⚡ Terminal</div>
+              <div class="s-nav">◈ Dashboard</div>
+              <div class="s-nav">▦ Inventario</div>
+              <div class="s-nav">◷ Créditos</div>
+              <div class="s-nav">⬫ Caja</div>
+              <div class="s-nav">◈ Reportes</div>
+              <div style="margin-top:auto;border-top:1px solid rgba(167,139,250,0.15);padding-top:6px;">
+                <div class="s-nav ai-nav active">✦ Agente IA</div>
+              </div>
             </div>
-            <div class="preview-product">
-              <div class="preview-prod-name">Coca-Cola 1.5L</div>
-              <div class="preview-prod-price">$1.490</div>
-              <div class="preview-prod-stock">24 unidades</div>
-            </div>
-            <div class="preview-product">
-              <div class="preview-prod-name">Arroz Grado 1</div>
-              <div class="preview-prod-price">$1.490</div>
-              <div class="preview-prod-stock">60 kg</div>
-            </div>
-            <div class="preview-product">
-              <div class="preview-prod-name">Pan de Molde</div>
-              <div class="preview-prod-price">$1.650</div>
-              <div class="preview-prod-stock">22 unidades</div>
-            </div>
-            <div class="preview-product">
-              <div class="preview-prod-name">Aceite Vegetal</div>
-              <div class="preview-prod-price">$2.490</div>
-              <div class="preview-prod-stock" style="color:#f87171">⚠ 3 unid.</div>
+            <div class="s-main">
+              <div class="s-header">
+                <div class="s-title">Terminal de Ventas</div>
+                <div class="s-badge">● En línea</div>
+              </div>
+              <div style="display:flex;flex:1;overflow:hidden;">
+                <div class="s-content">
+                  <div class="s-product">
+                    <div class="s-prod-name">Queso Mantecoso</div>
+                    <div class="s-prod-price">$7.990/kg</div>
+                    <div class="s-prod-stock">⚖ 5.0kg</div>
+                  </div>
+                  <div class="s-product">
+                    <div class="s-prod-name">Leche Entera 1L</div>
+                    <div class="s-prod-price">$1.200</div>
+                    <div class="s-prod-stock">48 unid.</div>
+                  </div>
+                  <div class="s-product">
+                    <div class="s-prod-name">Coca-Cola 1.5L</div>
+                    <div class="s-prod-price">$1.490</div>
+                    <div class="s-prod-stock">24 unid.</div>
+                  </div>
+                  <div class="s-product">
+                    <div class="s-prod-name">Arroz Grado 1</div>
+                    <div class="s-prod-price">$1.490</div>
+                    <div class="s-prod-stock">60 kg</div>
+                  </div>
+                  <div class="s-product">
+                    <div class="s-prod-name">Pan de Molde</div>
+                    <div class="s-prod-price">$1.650</div>
+                    <div class="s-prod-stock">22 unid.</div>
+                  </div>
+                  <div class="s-product" style="border-color:rgba(248,113,113,0.3);">
+                    <div class="s-prod-name">Aceite Vegetal</div>
+                    <div class="s-prod-price">$2.490</div>
+                    <div class="s-prod-stock" style="color:#f87171;">⚠ 3 unid.</div>
+                  </div>
+                </div>
+                <div class="s-cart">
+                  <div class="s-cart-title">Carrito · 2 items</div>
+                  <div class="s-cart-item">
+                    <div class="s-item-name">Queso Mantecoso</div>
+                    <div class="s-item-price">350g · $2.797</div>
+                  </div>
+                  <div class="s-cart-item">
+                    <div class="s-item-name">Coca-Cola 1.5L</div>
+                    <div class="s-item-price">2× $2.980</div>
+                  </div>
+                  <div class="s-total">
+                    <div style="font-size:8px;color:#7a9bb5;margin-bottom:2px;font-family:var(--mono)">TOTAL</div>
+                    <div class="s-total-val">$5.777</div>
+                    <button class="s-cobrar">Cobrar venta</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="preview-cart">
-            <div class="preview-cart-title">Carrito · 2 items</div>
-            <div class="preview-cart-item">
-              <div class="preview-cart-item-name">Queso Mantecoso</div>
-              <div class="preview-cart-item-price">350g · $2.797</div>
-            </div>
-            <div class="preview-cart-item">
-              <div class="preview-cart-item-name">Coca-Cola 1.5L</div>
-              <div class="preview-cart-item-price">2× $2.980</div>
-            </div>
-            <div class="preview-total">
-              <div style="font-size:9px;color:#7a9bb5;margin-bottom:3px">TOTAL</div>
-              <div class="preview-total-val">$5.777</div>
-              <button class="preview-cobrar">Cobrar venta</button>
-            </div>
-          </div>
         </div>
       </div>
+      <div class="pc-neck"></div>
+      <div class="pc-base"></div>
+      <div class="pc-glow"></div>
     </div>
   </div>
 </section>
@@ -587,47 +876,47 @@ footer{
 
   <div class="features-grid">
     <div class="feature-card reveal">
-      <div class="feature-icon blue">⚡</div>
+      <div class="feature-icon fi-blue">⚡</div>
       <h3 class="feature-h">Terminal de ventas</h3>
       <p class="feature-p">Vende en segundos. Busca productos, selecciona cantidades y cobra con un click. Efectivo, transferencia, tarjeta o pago mixto.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon lime">⚖</div>
+      <div class="feature-icon fi-lime">⚖</div>
       <h3 class="feature-h">Venta por peso</h3>
       <p class="feature-p">Ideal para quesos, carnes y productos a granel. Compatible con balanzas electrónicas — pistola el código y el peso se calcula solo.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon orange">📦</div>
+      <div class="feature-icon fi-orange">📦</div>
       <h3 class="feature-h">Inventario inteligente</h3>
       <p class="feature-p">Control de stock en tiempo real. Alertas de reposición, precios por volumen, categorías y recepción de mercadería con factura.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon purple">📊</div>
+      <div class="feature-icon fi-purple">📊</div>
       <h3 class="feature-h">Reportes y ganancias</h3>
       <p class="feature-p">Ve tus ganancias netas reales: ventas menos costos menos gastos. Gráficos por día, semana, mes o año. Exporta a Excel.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon teal">💰</div>
-      <h3 class="feature-h">Cuentas por cobrar</h3>
-      <p class="feature-p">Gestiona los fiados de tus clientes. Límites de crédito, historial de pagos y alertas de vencimiento.</p>
+      <div class="feature-icon fi-teal">💳</div>
+      <h3 class="feature-h">Gestiona el crédito de tus clientes</h3>
+      <p class="feature-p">Controla las líneas de crédito de cada cliente. Límites personalizados, historial de pagos y alertas de vencimiento automatizadas.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon red">🔒</div>
+      <div class="feature-icon fi-red">🔒</div>
       <h3 class="feature-h">Permisos por usuario</h3>
       <p class="feature-p">Tú decides qué puede hacer cada cajero. Bloquea acceso a costos, reportes o inventario. Auditoría completa de cada acción.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon blue">📱</div>
-      <h3 class="feature-h">Funciona como app</h3>
-      <p class="feature-p">Instálalo en tu celular o tablet sin App Store. Se ve y se siente como una app nativa. Funciona offline.</p>
+      <div class="feature-icon fi-blue">🖥</div>
+      <h3 class="feature-h">Panel de control inteligente</h3>
+      <p class="feature-p">Dashboard ejecutivo con métricas clave en tiempo real. KPIs de ventas, stock crítico, clientes con crédito activo y alertas del negocio.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon lime">💬</div>
+      <div class="feature-icon fi-lime">💬</div>
       <h3 class="feature-h">Cierre de caja</h3>
       <p class="feature-p">Cierre por turnos, fondo inicial, conteo de billetes y diferencias. Envía el resumen por WhatsApp al dueño automáticamente.</p>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon orange">🏭</div>
+      <div class="feature-icon fi-orange">🏭</div>
       <h3 class="feature-h">Proveedores y compras</h3>
       <p class="feature-p">Registra facturas de proveedores, cuentas por pagar y actualiza el inventario al recibir mercadería.</p>
     </div>
@@ -635,7 +924,7 @@ footer{
 </section>
 
 <!-- HOW IT WORKS -->
-<section style="background:transparent">
+<section>
   <div class="section-tag">⚙ Cómo funciona</div>
   <h2 class="section-h2">Listo para vender<br>en <em>5 minutos</em>.</h2>
   <div class="steps">
@@ -643,7 +932,7 @@ footer{
       <div class="step-num">01</div>
       <div class="step-content">
         <h3 class="step-h">Elige tu plan y regístrate</h3>
-        <p class="step-p">Selecciona el plan que se adapta a tu negocio. Empezás con 14 días gratis, sin tarjeta de crédito.</p>
+        <p class="step-p">Selecciona el plan que se adapta a tu negocio. Empiezas con 7 días gratis, sin tarjeta de crédito.</p>
       </div>
     </div>
     <div class="step reveal">
@@ -657,7 +946,7 @@ footer{
       <div class="step-num">03</div>
       <div class="step-content">
         <h3 class="step-h">Abre desde cualquier dispositivo</h3>
-        <p class="step-p">Entra desde tu celular, tablet o PC. No necesitas instalar nada — solo abres la URL. O instálalo como app en la pantalla de inicio.</p>
+        <p class="step-p">Entra desde tu celular, tablet o PC. No necesitas instalar nada — solo abres la URL en app.merkapos.pro.</p>
       </div>
     </div>
     <div class="step reveal">
@@ -674,47 +963,66 @@ footer{
 <section id="pricing">
   <div class="section-tag">💳 Precios</div>
   <h2 class="section-h2">Simple. Sin sorpresas.<br><em>Sin contrato.</em></h2>
-  <p class="section-sub">Paga mes a mes. Cancela cuando quieras. Sin cargos ocultos.</p>
+  <p class="section-sub">Paga mes a mes. Cancela cuando quieras. 7 días gratis sin tarjeta.</p>
 
-  <!-- Plan toggle -->
-  <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:40px;margin-bottom:32px;">
-    <span id="label-anual" style="font-size:14px;font-weight:700;color:var(--text)">Anual</span>
+  <div class="plan-toggle-wrap">
+    <span id="label-anual" style="font-size:14px;font-weight:700;color:var(--text);font-family:var(--mono)">Anual</span>
     <div onclick="togglePlan()" style="width:52px;height:28px;border-radius:14px;background:var(--sur2);border:1.5px solid var(--dim);cursor:pointer;position:relative;transition:all 0.2s;" id="plan-toggle">
-      <div id="toggle-dot" style="width:22px;height:22px;background:var(--acc);border-radius:50%;position:absolute;top:2px;left:2px;transition:all 0.2s;"></div>
+      <div id="toggle-dot" style="width:22px;height:22px;background:var(--lime);border-radius:50%;position:absolute;top:2px;left:2px;transition:all 0.2s;"></div>
     </div>
-    <span id="label-mensual" style="font-size:14px;font-weight:500;color:var(--muted)">Mensual</span>
-    <span style="background:rgba(101,163,13,0.15);color:var(--lime);border:1px solid rgba(101,163,13,0.3);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;">Ahorra 21%</span>
+    <span id="label-mensual" style="font-size:14px;font-weight:500;color:var(--muted);font-family:var(--mono)">Mensual</span>
+    <span style="background:rgba(132,204,22,0.12);color:var(--lime);border:1px solid rgba(132,204,22,0.3);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;font-family:var(--mono);">Ahorra 21%</span>
   </div>
 
-  <div style="max-width:540px;margin:0 auto;">
-    <div class="pricing-card featured reveal" style="text-align:center;">
-      <div class="pricing-badge">Todo incluido</div>
-      <div class="pricing-name" style="text-align:center;">Merka POS Completo</div>
-      <div style="margin:16px 0;">
-        <div id="price-anual" class="pricing-price" style="justify-content:center;"><sup>US$</sup>9.5<span class="period">/mes · facturado anual</span></div>
-        <div id="price-mensual" class="pricing-price" style="justify-content:center;display:none"><sup>US$</sup>12<span class="period">/mes</span></div>
-      </div>
-      <p class="pricing-desc" style="text-align:center;">Acceso completo a todas las funciones. Sin límites. Sin sorpresas.</p>
-      <ul class="pricing-features" style="max-width:320px;margin:0 auto 28px;">
+  <div class="pricing-grid">
+    <!-- Plan Base -->
+    <div class="pricing-card featured reveal">
+      <span class="pricing-badge green">Todo incluido</span>
+      <div class="pricing-name">Merka POS Base</div>
+      <div id="price-anual-base" class="pricing-price"><sup>US$</sup>9.5<span class="period">/mes · anual</span></div>
+      <div id="price-mensual-base" class="pricing-price" style="display:none"><sup>US$</sup>12<span class="period">/mes</span></div>
+      <p class="pricing-desc">Gestión completa de tu negocio. Sin límites de productos, usuarios ni ventas.</p>
+      <ul class="pricing-features">
         <li>Terminal de ventas con lector de barras</li>
         <li>Inventario y recepción de mercadería</li>
         <li>Usuarios ilimitados con permisos</li>
         <li>Cierre de caja por turnos</li>
         <li>Reportes y ganancias netas</li>
         <li>Gestión de proveedores y facturas</li>
-        <li>Venta a crédito (fiado)</li>
+        <li>Gestión de crédito de clientes</li>
+        <li>Panel de control inteligente</li>
         <li>Envío de boletas por WhatsApp</li>
-        <li>App instalable en celular (PWA)</li>
         <li>Sincronización multi-dispositivo</li>
-        <li>14 días de prueba gratuita</li>
+        <li>7 días de prueba gratuita</li>
       </ul>
-      <button onclick="iniciarPago()" id="btn-pagar" class="pricing-btn primary" style="max-width:320px;margin:0 auto;display:block;font-size:16px;padding:16px;">
-        Comenzar prueba gratis →
-      </button>
-      <div id="mp-container" style="margin-top:12px;max-width:320px;margin-left:auto;margin-right:auto;"></div>
+      <a href="https://www.app.merkapos.pro" target="_blank" class="pricing-btn green">Comenzar prueba gratis →</a>
+    </div>
+
+    <!-- Plan Pro IA -->
+    <div class="pricing-card ai-plan reveal">
+      <span class="pricing-badge purple">✦ Con IA</span>
+      <div class="pricing-name" style="color:#a78bfa;">Merka POS + Agente IA</div>
+      <div id="price-anual-pro" class="pricing-price" style="color:#a78bfa;"><sup style="color:#a78bfa;">US$</sup>25<span class="period">/mes · anual</span></div>
+      <div id="price-mensual-pro" class="pricing-price" style="display:none;color:#a78bfa;"><sup style="color:#a78bfa;">US$</sup>30<span class="period">/mes</span></div>
+      <p class="pricing-desc">Todo el plan Base, más un Agente de IA que trabaja por ti — analiza, recomienda y actúa.</p>
+      <ul class="pricing-features">
+        <li>Todo lo incluido en el plan Base</li>
+      </ul>
+      <hr class="pricing-divider">
+      <div class="ai-section-label">Agente de Inteligencia Artificial</div>
+      <ul class="pricing-features">
+        <li>Analiza tu negocio y recomienda qué hacer para subir márgenes de ganancia</li>
+        <li>Detecta productos con bajo margen y sugiere descuentos estratégicos</li>
+        <li>Envía estado de cuenta por WhatsApp a clientes con crédito activo</li>
+        <li>Recibe pagos de clientes, registra el cobro y actualiza el saldo automáticamente</li>
+        <li>Lee facturas de proveedores y las ingresa al sistema por su cuenta</li>
+        <li>Alertas inteligentes de reposición basadas en patrones de venta</li>
+        <li>7 días de prueba gratuita</li>
+      </ul>
+      <a href="https://www.app.merkapos.pro" target="_blank" class="pricing-btn purple-btn">Activar Agente IA gratis →</a>
     </div>
   </div>
-  <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:20px">14 días gratis · Sin tarjeta de crédito para empezar · Cancela cuando quieras</p>
+  <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:20px;font-family:var(--mono)">7 días gratis · Sin tarjeta para empezar · Cancela cuando quieras</p>
 </section>
 
 <!-- TESTIMONIALS -->
@@ -768,14 +1076,14 @@ footer{
         ¿Necesito instalar algo?
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">No. Merka POS funciona directamente en el navegador. Solo abres la URL desde cualquier dispositivo. Opcionalmente puedes "instalarlo" en la pantalla de inicio de tu celular para que se vea como una app nativa.</div>
+      <div class="faq-a">No. Merka POS funciona directamente en el navegador. Solo abres app.merkapos.pro desde cualquier dispositivo. Puedes "instalarlo" en la pantalla de inicio de tu celular para que se vea como una app nativa.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         ¿Funciona sin internet?
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">Sí. El sistema tiene una capa de caché que permite seguir vendiendo aunque se corte el internet. Cuando vuelve la conexión, los datos se sincronizan automáticamente con la base de datos.</div>
+      <div class="faq-a">Sí. El sistema tiene una capa de caché que permite seguir vendiendo aunque se corte el internet. Cuando vuelve la conexión, los datos se sincronizan automáticamente.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
@@ -786,17 +1094,24 @@ footer{
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
+        ¿Cómo funciona el Agente IA?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">El Agente analiza en tiempo real tus datos de ventas, márgenes y clientes. Te envía recomendaciones por WhatsApp, gestiona cobros de crédito y procesa facturas de proveedores de forma autónoma. No requiere configuración adicional.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
         ¿Funciona con balanzas?
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">Sí. Compatible con balanzas electrónicas que generan código EAN-13 con peso embebido (formato estándar). Al pistoliar el código, el sistema detecta el producto y el peso automáticamente — no necesitas ingresar nada manualmente.</div>
+      <div class="faq-a">Sí. Compatible con balanzas electrónicas que generan código EAN-13 con peso embebido (formato estándar). Al pistoliar el código, el sistema detecta el producto y el peso automáticamente.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         ¿Puedo importar mi inventario actual?
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">Sí. Merka POS acepta importación desde Excel (.xlsx). Exporta tu inventario actual a Excel con las columnas indicadas y lo cargamos en segundos.</div>
+      <div class="faq-a">Sí. Merka POS acepta importación desde Excel (.xlsx). Exporta tu inventario actual con las columnas indicadas y lo cargamos en segundos.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
@@ -810,93 +1125,203 @@ footer{
 
 <!-- CTA BANNER -->
 <div class="cta-banner">
-  <h2 class="cta-h">¿Listo para modernizar<br>tu negocio?</h2>
-  <p class="cta-sub">Empieza gratis hoy. Sin tarjeta. Sin contrato.</p>
+  <h2 class="cta-h">Tu negocio no espera.<br><span style="color:var(--lime)">Empieza hoy.</span></h2>
+  <p class="cta-sub">7 días gratis. Sin tarjeta. Sin contrato. Sin excusas.</p>
   <div class="cta-actions">
-    <a href="#pricing" class="btn-hero btn-hero-primary">Crear mi cuenta gratis →</a>
+    <a href="https://www.app.merkapos.pro" target="_blank" class="btn-hero btn-hero-primary">⚡ Crear mi cuenta gratis →</a>
     <a href="#features" class="btn-hero btn-hero-ghost">Ver todas las funciones</a>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="footer-logo">
+  <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
     <div class="nav-logo-icon">M</div>
-    <div class="nav-logo-text" style="font-family:var(--head);font-size:16px;font-weight:800">Merka<span style="color:var(--blue)">POS</span></div>
+    <div class="nav-logo-text">Merka<span>POS</span></div>
   </a>
-  <div class="footer-copy">© 2026 Merka POS · Desarrollado por <a href="https://autix.cl" style="color:var(--blue);text-decoration:none">Autix</a></div>
+  <div class="footer-copy">© 2026 Merka POS · Desarrollado por <a href="https://autix.cl" style="color:var(--lime);text-decoration:none">Autix</a></div>
   <div class="footer-links">
-    <a href="#">Términos</a>
-    <a href="#">Privacidad</a>
-    <a href="#">Soporte</a>
+    <a href="#" onclick="openModal('terms');return false;">Términos</a>
+    <a href="#" onclick="openModal('privacy');return false;">Privacidad</a>
+    <a href="#" onclick="openModal('support');return false;">Soporte</a>
   </div>
   <div class="footer-tag">Powered by <span>Autix</span></div>
 </footer>
 
-<script src="https://sdk.mercadopago.com/js/v2"></script>
-<script>
-// ── MercadoPago Config ──
-const MP_PUBLIC_KEY = 'TEST-d0c6a68a-c2f7-43d0-a5a8-f0cf4905bab4';
-const N8N_WEBHOOK = 'https://n8n-n8n.fa2cjf.easypanel.host/webhook/merka-crear-preferencia';
-let planActual = 'anual'; // 'anual' o 'mensual'
+<!-- ═══ MODAL: TÉRMINOS ═══ -->
+<div class="modal-overlay" id="modal-terms">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">Términos de <span>Servicio</span></div>
+      <button class="modal-close" onclick="closeModal('terms')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>1. Aceptación</h3>
+      <p>Al acceder y usar Merka POS (<span class="chip">app.merkapos.pro</span>), aceptas los presentes Términos de Servicio. El servicio es operado por Autix SpA, empresa constituida en Chile.</p>
 
+      <h3>2. Descripción del servicio</h3>
+      <p>Merka POS es un sistema de punto de venta basado en la nube que incluye terminal de ventas, gestión de inventario, cierres de caja, administración de créditos y reportería. Se ofrece bajo modelo de suscripción mensual o anual.</p>
+
+      <h3>3. Cuenta y acceso</h3>
+      <ul>
+        <li>Eres responsable de mantener la confidencialidad de tus credenciales de acceso.</li>
+        <li>Puedes crear usuarios adicionales con permisos diferenciados.</li>
+        <li>Debes notificarnos de inmediato ante cualquier uso no autorizado de tu cuenta.</li>
+      </ul>
+
+      <h3>4. Planes y facturación</h3>
+      <p>Los precios están expresados en dólares estadounidenses (USD). El cobro se realiza al inicio de cada ciclo (mensual o anual). El plan anual se descuenta un 21% respecto al valor mensual. Puedes cambiar de plan en cualquier momento desde tu panel.</p>
+
+      <h3>5. Período de prueba</h3>
+      <p>Nuevos usuarios tienen acceso gratuito durante 7 días calendario contados desde el registro, sin requerir tarjeta de crédito. Al vencer el período de prueba, debes seleccionar un plan para continuar usando el servicio.</p>
+
+      <h3>6. Cancelación</h3>
+      <p>Puedes cancelar tu suscripción en cualquier momento desde tu panel de usuario. No existen penalidades ni cargos por cancelación. Al cancelar, el acceso al sistema permanece activo hasta el final del período pagado.</p>
+
+      <h3>7. Datos y propiedad</h3>
+      <p>Los datos ingresados en Merka POS son de tu exclusiva propiedad. Autix SpA no vende ni cede tu información a terceros. Ante cancelación, puedes solicitar exportación de todos tus datos en formato Excel.</p>
+
+      <h3>8. Disponibilidad</h3>
+      <p>Merka POS garantiza una disponibilidad mínima del 99.9% mensual, excluyendo ventanas de mantenimiento programadas que serán notificadas con al menos 24 horas de anticipación.</p>
+
+      <h3>9. Limitación de responsabilidad</h3>
+      <p>Merka POS no será responsable por pérdidas indirectas, lucro cesante o daños derivados del uso o la imposibilidad de uso del servicio. La responsabilidad máxima de Autix SpA estará limitada al monto pagado en los últimos 30 días.</p>
+
+      <h3>10. Modificaciones</h3>
+      <p>Autix SpA se reserva el derecho de modificar estos términos con un aviso previo de 30 días a través del correo registrado. El uso continuado del servicio constituye aceptación de los términos actualizados.</p>
+
+      <h3>11. Ley aplicable</h3>
+      <p>Estos términos se rigen por las leyes de la República de Chile. Cualquier disputa será sometida a los tribunales ordinarios de justicia de la ciudad de Santiago.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="pricing-btn green" style="width:auto;padding:10px 24px;font-size:13px;" onclick="closeModal('terms')">Entendido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL: PRIVACIDAD ═══ -->
+<div class="modal-overlay" id="modal-privacy">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">Política de <span>Privacidad</span></div>
+      <button class="modal-close" onclick="closeModal('privacy')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>¿Quiénes somos?</h3>
+      <p>Merka POS es un producto de Autix SpA, empresa chilena de automatización e inteligencia artificial. Operamos bajo la Ley N° 19.628 sobre Protección de la Vida Privada de Chile.</p>
+
+      <h3>Datos que recopilamos</h3>
+      <ul>
+        <li><strong>Datos de cuenta:</strong> nombre del negocio, email y contraseña (encriptada).</li>
+        <li><strong>Datos comerciales:</strong> productos, precios, ventas, inventario y clientes que ingresas al sistema.</li>
+        <li><strong>Datos de uso:</strong> registros de acceso, dispositivos utilizados y funciones empleadas.</li>
+        <li><strong>Datos de pago:</strong> procesados exclusivamente por MercadoPago. Merka POS no almacena números de tarjeta.</li>
+      </ul>
+
+      <h3>Cómo usamos tus datos</h3>
+      <ul>
+        <li>Para operar y mejorar el servicio.</li>
+        <li>Para enviarte notificaciones transaccionales (boletas, cierres de caja, alertas de stock).</li>
+        <li>Para comunicaciones de soporte y actualizaciones del servicio.</li>
+        <li>Para análisis agregados y anónimos de uso del producto.</li>
+      </ul>
+
+      <h3>Con quién compartimos datos</h3>
+      <p>No vendemos ni cedemos tus datos a terceros con fines comerciales. Compartimos información únicamente con:</p>
+      <ul>
+        <li><strong>MercadoPago:</strong> para procesar pagos de suscripción.</li>
+        <li><strong>Proveedores de infraestructura:</strong> servidores cloud que alojan el sistema, bajo contratos de confidencialidad.</li>
+        <li><strong>Autoridades:</strong> solo cuando sea legalmente requerido.</li>
+      </ul>
+
+      <h3>Seguridad</h3>
+      <p>Todos los datos se transmiten mediante HTTPS/TLS. Las contraseñas se almacenan con hash bcrypt. Realizamos respaldos automáticos diarios con retención de 30 días.</p>
+
+      <h3>Retención de datos</h3>
+      <p>Tus datos se conservan mientras tu cuenta esté activa. Tras cancelación, los datos permanecen disponibles para exportación por 60 días, luego son eliminados de forma permanente.</p>
+
+      <h3>Tus derechos</h3>
+      <p>Tienes derecho a acceder, rectificar, exportar y eliminar tus datos en cualquier momento. Escríbenos a <a href="mailto:privacidad@merkapos.pro">privacidad@merkapos.pro</a> para ejercer estos derechos.</p>
+
+      <h3>Cookies</h3>
+      <p>Usamos cookies estrictamente necesarias para mantener tu sesión activa. No usamos cookies de rastreo ni publicidad de terceros.</p>
+
+      <h3>Contacto</h3>
+      <p>Para consultas sobre privacidad: <a href="mailto:privacidad@merkapos.pro">privacidad@merkapos.pro</a></p>
+    </div>
+    <div class="modal-footer">
+      <button class="pricing-btn green" style="width:auto;padding:10px 24px;font-size:13px;" onclick="closeModal('privacy')">Entendido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL: SOPORTE ═══ -->
+<div class="modal-overlay" id="modal-support">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">Centro de <span>Soporte</span></div>
+      <button class="modal-close" onclick="closeModal('support')">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>Horario de atención</h3>
+      <p>Soporte disponible <strong>24/7</strong> para incidencias críticas. Para consultas generales: lunes a viernes de 9:00 a 20:00 hrs (hora Chile).</p>
+
+      <h3>Canales de soporte</h3>
+      <ul>
+        <li>📧 <strong>Email:</strong> <a href="mailto:soporte@merkapos.pro">soporte@merkapos.pro</a> — respuesta en menos de 4 horas hábiles.</li>
+        <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/56912345678" target="_blank">+56 9 1234 5678</a> — respuesta inmediata en horario hábil.</li>
+        <li>🌐 <strong>Sistema:</strong> el botón de ayuda dentro de <span class="chip">app.merkapos.pro</span> abre un chat directo con soporte.</li>
+      </ul>
+
+      <h3>Onboarding y configuración inicial</h3>
+      <p>Todo cliente nuevo recibe una sesión de onboarding gratuita de 30 minutos por videollamada para configurar su negocio, cargar el inventario y capacitar a su equipo.</p>
+
+      <h3>Preguntas frecuentes rápidas</h3>
+      <ul>
+        <li><strong>Olvidé mi contraseña:</strong> usa el enlace "Recuperar acceso" en la pantalla de inicio de sesión.</li>
+        <li><strong>Cambiar plan:</strong> ve a Configuración → Suscripción en tu panel.</li>
+        <li><strong>Agregar un usuario:</strong> ve a Configuración → Usuarios → Agregar cajero.</li>
+        <li><strong>Importar inventario:</strong> ve a Inventario → Importar → descarga la plantilla Excel y súbela con tus productos.</li>
+        <li><strong>El sistema no carga:</strong> verifica tu conexión. Si el problema persiste, escríbenos con captura de pantalla.</li>
+      </ul>
+
+      <h3>Reportar un problema</h3>
+      <p>Al contactarnos, incluye: descripción del problema, dispositivo y navegador que usas, y captura de pantalla si aplica. Esto agiliza la resolución.</p>
+
+      <h3>Estado del servicio</h3>
+      <p>Consulta el estado en tiempo real en <a href="https://status.merkapos.pro" target="_blank">status.merkapos.pro</a>. En caso de incidencias, publicamos actualizaciones cada 30 minutos.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="mailto:soporte@merkapos.pro" class="pricing-btn purple-btn" style="width:auto;padding:10px 24px;font-size:13px;text-decoration:none;">Contactar soporte →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Plan Toggle ──
+let planActual = 'anual';
 function togglePlan(){
   const dot = document.getElementById('toggle-dot');
-  const toggle = document.getElementById('plan-toggle');
   const labelAnual = document.getElementById('label-anual');
   const labelMensual = document.getElementById('label-mensual');
-  const priceAnual = document.getElementById('price-anual');
-  const priceMensual = document.getElementById('price-mensual');
+  const paBase = document.getElementById('price-anual-base');
+  const pmBase = document.getElementById('price-mensual-base');
+  const paPro = document.getElementById('price-anual-pro');
+  const pmPro = document.getElementById('price-mensual-pro');
   if(planActual === 'anual'){
     planActual = 'mensual';
     dot.style.left = '26px';
-    toggle.style.background = 'var(--acc)';
-    labelAnual.style.color = 'var(--muted)'; labelAnual.style.fontWeight = '500';
-    labelMensual.style.color = 'var(--text)'; labelMensual.style.fontWeight = '700';
-    priceAnual.style.display = 'none'; priceMensual.style.display = 'flex';
+    labelAnual.style.color='var(--muted)'; labelAnual.style.fontWeight='500';
+    labelMensual.style.color='var(--text)'; labelMensual.style.fontWeight='700';
+    paBase.style.display='none'; pmBase.style.display='block';
+    paPro.style.display='none'; pmPro.style.display='block';
   } else {
     planActual = 'anual';
     dot.style.left = '2px';
-    toggle.style.background = 'var(--sur2)';
-    labelAnual.style.color = 'var(--text)'; labelAnual.style.fontWeight = '700';
-    labelMensual.style.color = 'var(--muted)'; labelMensual.style.fontWeight = '500';
-    priceAnual.style.display = 'flex'; priceMensual.style.display = 'none';
-  }
-}
-
-async function iniciarPago(){
-  const btn = document.getElementById('btn-pagar');
-  btn.textContent = 'Preparando pago...';
-  btn.disabled = true;
-  try {
-    // Ask for business name first
-    const nombre = prompt('¿Cuál es el nombre de tu negocio?');
-    if(!nombre){ btn.textContent='Comenzar prueba gratis →'; btn.disabled=false; return; }
-    const email = prompt('¿Cuál es tu email?');
-    if(!email){ btn.textContent='Comenzar prueba gratis →'; btn.disabled=false; return; }
-
-    // Create preference via n8n
-    const res = await fetch(N8N_WEBHOOK, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({
-        action: 'crear-preferencia',
-        plan: planActual,
-        nombre_negocio: nombre,
-        email: email,
-        monto: planActual === 'anual' ? 9.5 : 12,
-      })
-    });
-    const data = await res.json();
-    if(data && data.init_point){
-      window.location.href = data.init_point;
-    } else {
-      alert('Error al iniciar el pago. Intenta de nuevo.');
-      btn.textContent='Comenzar prueba gratis →'; btn.disabled=false;
-    }
-  } catch(e){
-    alert('Error de conexión. Intenta de nuevo.');
-    btn.textContent='Comenzar prueba gratis →'; btn.disabled=false;
+    labelAnual.style.color='var(--text)'; labelAnual.style.fontWeight='700';
+    labelMensual.style.color='var(--muted)'; labelMensual.style.fontWeight='500';
+    paBase.style.display='block'; pmBase.style.display='none';
+    paPro.style.display='block'; pmPro.style.display='none';
   }
 }
 
@@ -910,44 +1335,61 @@ function toggleFaq(el){
 
 // ── Scroll reveal ──
 const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('visible'); }
-  });
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
 },{threshold:0.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// ── Nav scroll effect ──
+// ── Nav scroll ──
 window.addEventListener('scroll',()=>{
   const nav = document.querySelector('nav');
-  nav.style.borderBottomColor = window.scrollY>50 ? 'rgba(14,165,233,0.15)' : 'rgba(14,165,233,0.1)';
+  nav.style.borderBottomColor = window.scrollY>50 ? 'rgba(132,204,22,0.18)' : 'rgba(132,204,22,0.12)';
 });
 
-// ── Animated counter ──
+// ── Modals ──
+function openModal(id){
+  document.getElementById('modal-'+id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById('modal-'+id).classList.remove('open');
+  document.body.style.overflow='';
+}
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+  overlay.addEventListener('click',e=>{
+    if(e.target===overlay) closeModal(overlay.id.replace('modal-',''));
+  });
+});
+// Close on Escape
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));
+});
+
+// ── Counter ──
 function animateCounter(el){
-  const target = el.textContent;
+  const target = el.textContent.trim();
+  if(target.includes('/') || target.startsWith('<')) return;
   const num = parseFloat(target.replace(/[^0-9.]/g,''));
   if(isNaN(num)||num===0) return;
   const prefix = target.match(/^[^0-9]*/)?.[0]||'';
   const suffix = target.match(/[^0-9.]+$/)?.[0]||'';
   let current = 0;
-  const duration = 1500;
   const step = num/60;
   const timer = setInterval(()=>{
     current = Math.min(current+step, num);
     el.textContent = prefix + (Number.isInteger(num)?Math.round(current):current.toFixed(1)) + suffix;
     if(current>=num) clearInterval(timer);
-  }, duration/60);
+  }, 1500/60);
 }
-
-const counterObserver = new IntersectionObserver(entries=>{
+const counterObs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       e.target.querySelectorAll('.stat-num').forEach(animateCounter);
-      counterObserver.unobserve(e.target);
+      counterObs.unobserve(e.target);
     }
   });
 },{threshold:0.5});
-document.querySelectorAll('.stats-bar').forEach(el=>counterObserver.observe(el));
+document.querySelectorAll('.stats-bar').forEach(el=>counterObs.observe(el));
 </script>
 </body>
 </html>
