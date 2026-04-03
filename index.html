@@ -315,7 +315,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(32px);transition:all 0.7s cubic-bezier(.16,1,.3,1);}
+.reveal{opacity:0;transform:translateY(32px);transition:all 0.7s cubic-bezier(.16,1,.3,1);} .no-js .reveal{opacity:1;transform:none;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* ── MOBILE ── */
@@ -575,7 +575,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
         <li>Sincronización multi-dispositivo</li>
         <li>7 días de prueba gratuita</li>
       </ul>
-      <button onclick="openRegistro('anual')" class="pricing-btn green">Activar plan Base →</button>
+      <button onclick="openRegistro('anual')" class="pricing-btn green">💳 Obtener plan Base →</button>
     </div>
 
     <div class="pricing-card ai-plan reveal">
@@ -598,7 +598,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
         <li>Alertas inteligentes de reposición basadas en patrones de venta</li>
         <li>7 días de prueba gratuita</li>
       </ul>
-      <button onclick="openRegistro('pro-anual')" class="pricing-btn purple-btn">Activar plan IA →</button>
+      <button onclick="openComingSoon()" class="pricing-btn purple-btn" style="opacity:0.7;cursor:default;">🚧 En construcción — Próximamente</button>
     </div>
   </div>
   <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:20px;font-family:var(--mono)">7 días gratis · Sin tarjeta para empezar · Cancela cuando quieras</p>
@@ -658,7 +658,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 <div class="modal-overlay" id="modal-registro">
   <div class="modal-box reg-modal-box">
     <div class="modal-header">
-      <div class="modal-title">Crear tu <span>cuenta</span></div>
+      <div class="modal-title">Obtener tu <span>plan</span></div>
       <button class="modal-close" onclick="closeModal('registro')">✕</button>
     </div>
     <div class="modal-body" id="reg-body">
@@ -695,7 +695,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 
       <!-- Submit -->
       <button class="reg-submit" id="reg-btn" onclick="submitRegistro()">
-        ⚡ Empezar prueba gratuita →
+        💳 Ir a pagar →
       </button>
 
       <!-- Loading -->
@@ -707,7 +707,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <p class="reg-legal">
         Al continuar aceptas nuestros <a href="#" onclick="openModal('terms');return false;">Términos de Servicio</a> y
         <a href="#" onclick="openModal('privacy');return false;">Política de Privacidad</a>.<br>
-        7 días gratis · Sin tarjeta · Sin compromiso
+        Los primeros 7 días son gratis. Se cobra al finalizar el período de prueba.
       </p>
     </div>
   </div>
@@ -738,7 +738,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <h3>Datos que recopilamos</h3><ul><li><strong>Datos de cuenta:</strong> nombre del negocio y email.</li><li><strong>Datos comerciales:</strong> productos, ventas, inventario y clientes que ingresas al sistema.</li><li><strong>Datos de pago:</strong> procesados exclusivamente por MercadoPago.</li></ul>
       <h3>Con quién compartimos datos</h3><p>No vendemos ni cedemos tus datos a terceros con fines comerciales. Solo compartimos con MercadoPago para procesar pagos.</p>
       <h3>Seguridad</h3><p>Todos los datos se transmiten mediante HTTPS/TLS. Realizamos respaldos automáticos diarios.</p>
-      <h3>Contacto</h3><p>Para consultas: <a href="mailto:privacidad@merkapos.pro">privacidad@merkapos.pro</a></p>
+      <h3>Contacto</h3><p>Para consultas: <a href="/cdn-cgi/l/email-protection#4b3b39223d2a28222f2a2f0b262e39202a3b2438653b3924"><span class="__cf_email__" data-cfemail="a2d2d0cbd4c3c1cbc6c3c6e2cfc7d0c9c3d2cdd18cd2d0cd">[email&#160;protected]</span></a></p>
     </div>
     <div class="modal-footer"><button class="pricing-btn green" style="width:auto;padding:10px 24px;font-size:13px;" onclick="closeModal('privacy')">Entendido</button></div>
   </div>
@@ -749,15 +749,15 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <div class="modal-header"><div class="modal-title">Centro de <span>Soporte</span></div><button class="modal-close" onclick="closeModal('support')">✕</button></div>
     <div class="modal-body">
       <h3>Canales de soporte</h3>
-      <ul><li>📧 <strong>Email:</strong> <a href="mailto:soporte@merkapos.pro">soporte@merkapos.pro</a></li><li>💬 <strong>WhatsApp:</strong> respuesta en horario hábil.</li></ul>
+      <ul><li>📧 <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#b6c5d9c6d9c4c2d3f6dbd3c4ddd7c6d9c598c6c4d9"><span class="__cf_email__" data-cfemail="52213d223d202637123f37203933223d217c22203d">[email&#160;protected]</span></a></li><li>💬 <strong>WhatsApp:</strong> respuesta en horario hábil.</li></ul>
       <h3>Horario</h3><p>Lunes a viernes de 9:00 a 20:00 hrs (hora Chile). Incidencias críticas 24/7.</p>
       <h3>Onboarding</h3><p>Todo cliente nuevo recibe una sesión de configuración gratuita de 30 minutos.</p>
     </div>
-    <div class="modal-footer"><a href="mailto:soporte@merkapos.pro" class="pricing-btn purple-btn" style="width:auto;padding:10px 24px;font-size:13px;text-decoration:none;">Contactar soporte →</a></div>
+    <div class="modal-footer"><a href="/cdn-cgi/l/email-protection#12617d627d606677527f77607973627d613c62607d" class="pricing-btn purple-btn" style="width:auto;padding:10px 24px;font-size:13px;text-decoration:none;">Contactar soporte →</a></div>
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const N8N = 'https://n8n-n8n.fa2cjf.easypanel.host/webhook';
 const PRECIOS = { anual: 9.5, mensual: 12, 'pro-anual': 25, 'pro-mensual': 30 };
 let planSeleccionado = 'anual';
@@ -790,6 +790,10 @@ function togglePlan(){
 }
 
 // ── Registration modal ──
+function openComingSoon(){
+  alert('El plan Agente IA está en construcción. Pronto estará disponible. Por ahora puedes comenzar con el plan Base.');
+}
+
 function openRegistro(plan){
   planSeleccionado = plan || 'anual';
   selectPlan(planSeleccionado);
@@ -879,9 +883,14 @@ function toggleFaq(el){
 }
 
 // ── Scroll reveal ──
+// Reveal — show all after 300ms as fallback in case observer fails
+setTimeout(()=>{
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el.classList.add('visible'));
+}, 300);
+
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+},{threshold:0.05, rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // ── Nav scroll ──
