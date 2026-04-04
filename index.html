@@ -419,7 +419,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <li><a href="#pricing">Precios</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="https://app.merkapos.pro" target="_blank" class="nav-cta">Prueba gratis →</a>
+  <button onclick="openRegistroGratis()" class="nav-cta">Prueba gratis →</button>
 </nav>
 
 <!-- HERO -->
@@ -428,7 +428,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <h1 class="hero-h1">Vende más.<br>Pierde <span class="accent-blue">menos.</span><br>Controla <span class="accent-green">todo.</span></h1>
   <p class="hero-sub">Terminal de ventas, inventario, cierres de caja, proveedores y reportes. Todo en una sola pantalla. Sin complicaciones.</p>
   <div class="hero-actions">
-    <a href="https://app.merkapos.pro" target="_blank" class="btn-hero btn-hero-primary">⚡ Prueba gratis 7 días →</a>
+    <button onclick="openRegistroGratis()" class="btn-hero btn-hero-primary">⚡ Prueba gratis 7 días →</button>
     <a href="#features" class="btn-hero btn-hero-ghost">Ver funciones</a>
   </div>
   <div class="hero-trust">
@@ -594,11 +594,10 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
         <li>Detecta productos con bajo margen y sugiere ajustes de precio</li>
         <li>Chat con IA para hacerle preguntas a tu negocio en lenguaje natural</li>
         <li>Resumen de clientes con crédito activo y montos pendientes</li>
-        <li>Sube una foto de factura — la IA la lee y propone el registro</li>
-        <li>Alertas inteligentes de reposición basadas en patrones de venta</li>
-        <li>7 días de prueba gratuita</li>
+        <li>Orden de compra automática basada en stock e historial de ventas</li>
+        <li>Detector de pérdidas y anomalías por cajero</li>
       </ul>
-      <button onclick="openComingSoon()" class="pricing-btn purple-btn" style="opacity:0.7;cursor:default;">🚧 En construcción — Próximamente</button>
+      <button onclick="openRegistro('pro-anual')" class="pricing-btn purple-btn">💳 Obtener plan IA →</button>
     </div>
   </div>
   <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:20px;font-family:var(--mono)">7 días gratis · Sin tarjeta para empezar · Cancela cuando quieras</p>
@@ -623,7 +622,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Necesito instalar algo?<span class="faq-icon">+</span></div><div class="faq-a">No. Merka POS funciona directamente en el navegador. Solo abres app.merkapos.pro desde cualquier dispositivo.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Funciona sin internet?<span class="faq-icon">+</span></div><div class="faq-a">Sí. El sistema tiene una capa de caché que permite seguir vendiendo aunque se corte el internet. Cuando vuelve la conexión, los datos se sincronizan automáticamente.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cuántos dispositivos puedo usar?<span class="faq-icon">+</span></div><div class="faq-a">Los datos se sincronizan en tiempo real entre todos los dispositivos. Puedes tener el sistema abierto simultáneamente en la caja, un tablet y el celular del dueño.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el Agente IA?<span class="faq-icon">+</span></div><div class="faq-a">El Agente vive dentro del sistema. Al abrirlo ves automáticamente análisis de márgenes, productos críticos y clientes con deuda. También puedes hacerle preguntas en lenguaje natural: "¿qué producto me da más ganancia?" o "¿cuánto gané neto este mes?". Además lee fotos de facturas y las registra solo.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cómo funciona el Agente IA?<span class="faq-icon">+</span></div><div class="faq-a">El Agente vive dentro del sistema. Al abrirlo ves automáticamente análisis de márgenes, productos críticos y clientes con deuda. También puedes hacerle preguntas en lenguaje natural: "¿qué producto me da más ganancia?" o "¿cuánto gané neto este mes?". Además genera órdenes de compra automáticas, detecta pérdidas y sugiere ajustes de precio.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Funciona con balanzas?<span class="faq-icon">+</span></div><div class="faq-a">Sí. Compatible con balanzas electrónicas que generan código EAN-13 con peso embebido. Al pistoliar el código, el sistema detecta el producto y el peso automáticamente.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Puedo cancelar en cualquier momento?<span class="faq-icon">+</span></div><div class="faq-a">Sí. Sin contratos ni permanencia mínima. Cancelas cuando quieras desde tu panel. No hay cargos adicionales ni penalidades.</div></div>
   </div>
@@ -634,7 +633,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <h2 class="cta-h">Tu negocio no espera.<br><span style="color:var(--lime)">Empieza hoy.</span></h2>
   <p class="cta-sub">7 días gratis. Sin tarjeta. Sin contrato. Sin excusas.</p>
   <div class="cta-actions">
-    <a href="https://app.merkapos.pro" target="_blank" class="btn-hero btn-hero-primary">⚡ Crear mi cuenta gratis →</a>
+    <button onclick="openRegistroGratis()" class="btn-hero btn-hero-primary">⚡ Crear mi cuenta gratis →</button>
     <a href="#features" class="btn-hero btn-hero-ghost">Ver todas las funciones</a>
   </div>
 </div>
@@ -761,6 +760,63 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 const N8N = 'https://n8n-n8n.fa2cjf.easypanel.host/webhook';
 const PRECIOS = { anual: 9.5, mensual: 12, 'pro-anual': 25, 'pro-mensual': 30 };
 let planSeleccionado = 'anual';
+
+
+// ── Registro gratuito ──
+function openRegistroGratis(){
+  document.getElementById('rg-negocio').value = '';
+  document.getElementById('rg-email').value = '';
+  document.getElementById('rg-pass').value = '';
+  document.getElementById('rg-pass2').value = '';
+  document.getElementById('rg-gratis-error').style.display = 'none';
+  document.getElementById('rg-btn').style.display = 'block';
+  document.getElementById('rg-btn').disabled = false;
+  document.getElementById('rg-loading').style.display = 'none';
+  document.getElementById('rg-success').style.display = 'none';
+  document.getElementById('reg-gratis-body').style.display = 'block';
+  openModal('registro-gratis');
+}
+
+async function submitRegistroGratis(){
+  const negocio = document.getElementById('rg-negocio').value.trim();
+  const email = document.getElementById('rg-email').value.trim();
+  const pass = document.getElementById('rg-pass').value;
+  const pass2 = document.getElementById('rg-pass2').value;
+  const errEl = document.getElementById('rg-gratis-error');
+
+  errEl.style.display = 'none';
+
+  if(!negocio){ errEl.textContent='Ingresa el nombre de tu negocio.'; errEl.style.display='block'; return; }
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ errEl.textContent='Ingresa un email válido.'; errEl.style.display='block'; return; }
+  if(!pass || pass.length < 6){ errEl.textContent='La contraseña debe tener al menos 6 caracteres.'; errEl.style.display='block'; return; }
+  if(pass !== pass2){ errEl.textContent='Las contraseñas no coinciden.'; errEl.style.display='block'; return; }
+
+  document.getElementById('rg-btn').style.display = 'none';
+  document.getElementById('rg-loading').style.display = 'block';
+
+  try {
+    const res = await fetch(N8N + '/merka-registro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre_negocio: negocio, email, password: pass })
+    });
+    const data = await res.json();
+
+    if(data.ok && data.org_id){
+      document.getElementById('reg-gratis-body').style.display = 'none';
+      document.getElementById('rg-success').style.display = 'block';
+      document.getElementById('rg-result-id').textContent = data.org_id;
+      document.getElementById('rg-result-pass').textContent = pass;
+    } else {
+      throw new Error(data.error || 'Error al crear cuenta');
+    }
+  } catch(e){
+    document.getElementById('rg-loading').style.display = 'none';
+    document.getElementById('rg-btn').style.display = 'block';
+    errEl.textContent = e.message.includes('duplicate') ? 'Ese email ya tiene una cuenta. Intenta con otro.' : 'Error al crear la cuenta. Intenta de nuevo.';
+    errEl.style.display = 'block';
+  }
+}
 
 // ── Plan toggle (pricing section) ──
 let planActual = 'anual';
@@ -958,5 +1014,73 @@ if(urlParams.get('pago') === 'ok'){
   }, 500);
 }
 </script>
+
+<!-- ═══ MODAL: REGISTRO GRATUITO ═══ -->
+<div class="modal-overlay" id="modal-registro-gratis">
+  <div class="modal-box reg-modal-box">
+    <div class="modal-header">
+      <div class="modal-title">Crear cuenta <span>gratis</span></div>
+      <button class="modal-close" onclick="closeModal('registro-gratis')">✕</button>
+    </div>
+    <div class="modal-body" id="reg-gratis-body">
+
+      <div class="reg-error" id="reg-gratis-error"></div>
+
+      <div class="reg-field">
+        <label class="reg-label">Nombre de tu negocio</label>
+        <input id="rg-negocio" class="reg-input" type="text" placeholder="Ej: Minimarket El Sol" autocomplete="organization">
+      </div>
+      <div class="reg-field">
+        <label class="reg-label">Tu email</label>
+        <input id="rg-email" class="reg-input" type="email" placeholder="tu@email.com" autocomplete="email">
+      </div>
+      <div class="reg-field">
+        <label class="reg-label">Contraseña</label>
+        <input id="rg-pass" class="reg-input" type="password" placeholder="Mínimo 6 caracteres">
+      </div>
+      <div class="reg-field">
+        <label class="reg-label">Confirmar contraseña</label>
+        <input id="rg-pass2" class="reg-input" type="password" placeholder="Repite la contraseña">
+      </div>
+
+      <button class="reg-submit" id="rg-btn" onclick="submitRegistroGratis()">
+        ⚡ Crear cuenta gratis →
+      </button>
+
+      <div class="reg-loading" id="rg-loading">
+        <div class="reg-spinner"></div>
+        <div class="reg-loading-text">Creando tu cuenta...</div>
+      </div>
+
+      <p class="reg-legal">
+        7 días gratis · Sin tarjeta · Tus datos se guardan realmente.<br>
+        Al continuar aceptas nuestros <a href="#" onclick="openModal('terms');return false;">Términos</a> y
+        <a href="#" onclick="openModal('privacy');return false;">Privacidad</a>.
+      </p>
+    </div>
+
+    <!-- Success state -->
+    <div id="rg-success" style="display:none;padding:32px 28px;text-align:center;">
+      <div style="font-size:48px;margin-bottom:16px;">🎉</div>
+      <div style="font-family:var(--head);font-size:22px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px;">¡Cuenta creada!</div>
+      <div style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.7;">Usa estos datos para entrar al sistema. <strong style="color:var(--text)">Guárdalos ahora.</strong></div>
+      <div style="background:var(--sur2);border:1px solid var(--bdr);border-radius:12px;padding:20px;margin-bottom:24px;text-align:left;">
+        <div style="margin-bottom:12px;">
+          <div style="font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">ID del negocio</div>
+          <div id="rg-result-id" style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--lime);"></div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Contraseña</div>
+          <div id="rg-result-pass" style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--acc);"></div>
+        </div>
+      </div>
+      <a id="rg-ir-btn" href="https://app.merkapos.pro" target="_blank"
+        style="display:block;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--lime3),var(--lime2));color:#000;font-size:15px;font-weight:800;text-decoration:none;transition:all 0.2s;">
+        Ir al sistema →
+      </a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
