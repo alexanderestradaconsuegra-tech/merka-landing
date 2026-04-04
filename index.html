@@ -764,6 +764,7 @@ let planSeleccionado = 'anual';
 
 // ── Registro gratuito ──
 function openRegistroGratis(){
+  openModal('registro-gratis');
   document.getElementById('rg-negocio').value = '';
   document.getElementById('rg-email').value = '';
   document.getElementById('rg-pass').value = '';
@@ -774,7 +775,6 @@ function openRegistroGratis(){
   document.getElementById('rg-loading').style.display = 'none';
   document.getElementById('rg-success').style.display = 'none';
   document.getElementById('reg-gratis-body').style.display = 'block';
-  openModal('registro-gratis');
 }
 
 async function submitRegistroGratis(){
