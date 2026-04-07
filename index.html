@@ -12,7 +12,7 @@
 
 <!-- ═══ SEO ═══ -->
 <meta name="robots" content="index, follow">
-<meta name="author" content="Autix SpA">
+<meta name="author" content="Autix">
 <meta name="keywords" content="sistema pos minimarket, punto de venta chile, software caja registradora, inventario tienda, sistema ventas, pos gratis, merka pos">
 <link rel="canonical" href="https://merkapos.pro">
 
@@ -49,8 +49,8 @@
   },
   "provider": {
     "@type": "Organization",
-    "name": "Autix SpA",
-    "url": "https://autix.cl"
+    "name": "Autix",
+    "url": "https://autix.pro"
   }
 }
 </script>
@@ -717,12 +717,12 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <div class="modal-box">
     <div class="modal-header"><div class="modal-title">Términos de <span>Servicio</span></div><button class="modal-close" onclick="closeModal('terms')">✕</button></div>
     <div class="modal-body">
-      <h3>1. Aceptación</h3><p>Al acceder y usar Merka POS (<span class="chip">app.merkapos.pro</span>), aceptas los presentes Términos de Servicio. El servicio es operado por Autix SpA, empresa constituida en Chile.</p>
+      <h3>1. Aceptación</h3><p>Al acceder y usar Merka POS (<span class="chip">app.merkapos.pro</span>), aceptas los presentes Términos de Servicio. El servicio es operado por Autix, empresa constituida en Chile.</p>
       <h3>2. Descripción del servicio</h3><p>Merka POS es un sistema de punto de venta basado en la nube que incluye terminal de ventas, gestión de inventario, cierres de caja, administración de créditos y reportería. Se ofrece bajo modelo de suscripción mensual o anual.</p>
       <h3>3. Período de prueba</h3><p>Nuevos usuarios tienen acceso gratuito durante 7 días calendario contados desde el registro, sin requerir tarjeta de crédito.</p>
       <h3>4. Planes y facturación</h3><p>Los precios están expresados en dólares estadounidenses (USD). El cobro se realiza al inicio de cada ciclo. Puedes cambiar de plan en cualquier momento.</p>
       <h3>5. Cancelación</h3><p>Puedes cancelar tu suscripción en cualquier momento. No existen penalidades ni cargos por cancelación.</p>
-      <h3>6. Datos y propiedad</h3><p>Los datos ingresados en Merka POS son de tu exclusiva propiedad. Autix SpA no vende ni cede tu información a terceros.</p>
+      <h3>6. Datos y propiedad</h3><p>Los datos ingresados en Merka POS son de tu exclusiva propiedad. Autix no vende ni cede tu información a terceros.</p>
       <h3>7. Ley aplicable</h3><p>Estos términos se rigen por las leyes de la República de Chile.</p>
     </div>
     <div class="modal-footer"><button class="pricing-btn green" style="width:auto;padding:10px 24px;font-size:13px;" onclick="closeModal('terms')">Entendido</button></div>
@@ -733,7 +733,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <div class="modal-box">
     <div class="modal-header"><div class="modal-title">Política de <span>Privacidad</span></div><button class="modal-close" onclick="closeModal('privacy')">✕</button></div>
     <div class="modal-body">
-      <h3>¿Quiénes somos?</h3><p>Merka POS es un producto de Autix SpA, empresa chilena de automatización e inteligencia artificial.</p>
+      <h3>¿Quiénes somos?</h3><p>Merka POS es un producto de Autix, empresa chilena de automatización e inteligencia artificial.</p>
       <h3>Datos que recopilamos</h3><ul><li><strong>Datos de cuenta:</strong> nombre del negocio y email.</li><li><strong>Datos comerciales:</strong> productos, ventas, inventario y clientes que ingresas al sistema.</li><li><strong>Datos de pago:</strong> procesados exclusivamente por MercadoPago.</li></ul>
       <h3>Con quién compartimos datos</h3><p>No vendemos ni cedemos tus datos a terceros con fines comerciales. Solo compartimos con MercadoPago para procesar pagos.</p>
       <h3>Seguridad</h3><p>Todos los datos se transmiten mediante HTTPS/TLS. Realizamos respaldos automáticos diarios.</p>
@@ -777,7 +777,20 @@ function openRegistroGratis(){
   document.getElementById('reg-gratis-body').style.display = 'block';
 }
 
-async function submitRegistroGratis(){
+function togglePass(inputId, eyeId){
+  const input = document.getElementById(inputId);
+  const eye = document.getElementById(eyeId);
+  if(!input) return;
+  if(input.type === 'password'){
+    input.type = 'text';
+    if(eye) eye.textContent = '🙈';
+  } else {
+    input.type = 'password';
+    if(eye) eye.textContent = '👁';
+  }
+}
+
+window.submitRegistroGratis = async function submitRegistroGratis(){
   const negocio = document.getElementById('rg-negocio').value.trim();
   const email = document.getElementById('rg-email').value.trim();
   const pass = document.getElementById('rg-pass').value;
@@ -1036,14 +1049,20 @@ if(urlParams.get('pago') === 'ok'){
       </div>
       <div class="reg-field">
         <label class="reg-label">Contraseña</label>
-        <input id="rg-pass" class="reg-input" type="password" placeholder="Mínimo 6 caracteres">
+        <div style="position:relative;">
+          <input id="rg-pass" class="reg-input" type="password" placeholder="Mínimo 6 caracteres" style="padding-right:44px;">
+          <button type="button" onclick="togglePass('rg-pass','eye1')" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);font-size:16px;" id="eye1">👁</button>
+        </div>
       </div>
       <div class="reg-field">
         <label class="reg-label">Confirmar contraseña</label>
-        <input id="rg-pass2" class="reg-input" type="password" placeholder="Repite la contraseña">
+        <div style="position:relative;">
+          <input id="rg-pass2" class="reg-input" type="password" placeholder="Repite la contraseña" style="padding-right:44px;">
+          <button type="button" onclick="togglePass('rg-pass2','eye2')" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);font-size:16px;" id="eye2">👁</button>
+        </div>
       </div>
 
-      <button class="reg-submit" id="rg-btn" onclick="submitRegistroGratis()">
+      <button type="button" class="reg-submit" id="rg-btn" onclick="window.submitRegistroGratis && window.submitRegistroGratis()">
         ⚡ Crear cuenta gratis →
       </button>
 
