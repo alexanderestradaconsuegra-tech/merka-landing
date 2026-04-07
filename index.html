@@ -419,7 +419,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <li><a href="#pricing">Precios</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <button onclick="openRegistroGratis()" class="nav-cta">Prueba gratis →</button>
+  <button onclick="openRegistroGratis()" data-action="registro-gratis" class="nav-cta">Prueba gratis →</button>
 </nav>
 
 <!-- HERO -->
@@ -737,7 +737,7 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <h3>Datos que recopilamos</h3><ul><li><strong>Datos de cuenta:</strong> nombre del negocio y email.</li><li><strong>Datos comerciales:</strong> productos, ventas, inventario y clientes que ingresas al sistema.</li><li><strong>Datos de pago:</strong> procesados exclusivamente por MercadoPago.</li></ul>
       <h3>Con quién compartimos datos</h3><p>No vendemos ni cedemos tus datos a terceros con fines comerciales. Solo compartimos con MercadoPago para procesar pagos.</p>
       <h3>Seguridad</h3><p>Todos los datos se transmiten mediante HTTPS/TLS. Realizamos respaldos automáticos diarios.</p>
-      <h3>Contacto</h3><p>Para consultas: <a href="/cdn-cgi/l/email-protection#4b3b39223d2a28222f2a2f0b262e39202a3b2438653b3924"><span class="__cf_email__" data-cfemail="a2d2d0cbd4c3c1cbc6c3c6e2cfc7d0c9c3d2cdd18cd2d0cd">[email&#160;protected]</span></a></p>
+      <h3>Contacto</h3><p>Para consultas: <strong>info@autix.pro</strong></p>
     </div>
     <div class="modal-footer"><button class="pricing-btn green" style="width:auto;padding:10px 24px;font-size:13px;" onclick="closeModal('privacy')">Entendido</button></div>
   </div>
@@ -748,11 +748,11 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <div class="modal-header"><div class="modal-title">Centro de <span>Soporte</span></div><button class="modal-close" onclick="closeModal('support')">✕</button></div>
     <div class="modal-body">
       <h3>Canales de soporte</h3>
-      <ul><li>📧 <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#b6c5d9c6d9c4c2d3f6dbd3c4ddd7c6d9c598c6c4d9"><span class="__cf_email__" data-cfemail="52213d223d202637123f37203933223d217c22203d">[email&#160;protected]</span></a></li><li>💬 <strong>WhatsApp:</strong> respuesta en horario hábil.</li></ul>
+      <ul><li>📧 <strong>Email:</strong> <strong>info@autix.pro</strong></li><li>💬 <strong>WhatsApp:</strong> respuesta en horario hábil.</li></ul>
       <h3>Horario</h3><p>Lunes a viernes de 9:00 a 20:00 hrs (hora Chile). Incidencias críticas 24/7.</p>
       <h3>Onboarding</h3><p>Todo cliente nuevo recibe una sesión de configuración gratuita de 30 minutos.</p>
     </div>
-    <div class="modal-footer"><a href="/cdn-cgi/l/email-protection#12617d627d606677527f77607973627d613c62607d" class="pricing-btn purple-btn" style="width:auto;padding:10px 24px;font-size:13px;text-decoration:none;">Contactar soporte →</a></div>
+    <div class="modal-footer">info@autix.pro</div>
   </div>
 </div>
 
@@ -765,16 +765,23 @@ let planSeleccionado = 'anual';
 // ── Registro gratuito ──
 function openRegistroGratis(){
   openModal('registro-gratis');
-  document.getElementById('rg-negocio').value = '';
-  document.getElementById('rg-email').value = '';
-  document.getElementById('rg-pass').value = '';
-  document.getElementById('rg-pass2').value = '';
-  document.getElementById('rg-gratis-error').style.display = 'none';
-  document.getElementById('rg-btn').style.display = 'block';
-  document.getElementById('rg-btn').disabled = false;
-  document.getElementById('rg-loading').style.display = 'none';
-  document.getElementById('rg-success').style.display = 'none';
-  document.getElementById('reg-gratis-body').style.display = 'block';
+  // Reset form after modal is open
+  setTimeout(()=>{
+    const fields = ['rg-negocio','rg-email','rg-pass','rg-pass2'];
+    fields.forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+    const err = document.getElementById('rg-gratis-error');
+    if(err) err.style.display='none';
+    const btn = document.getElementById('rg-btn');
+    if(btn){ btn.style.display='block'; btn.disabled=false; }
+    const loading = document.getElementById('rg-loading');
+    if(loading) loading.style.display='none';
+    const success = document.getElementById('rg-success');
+    if(success) success.style.display='none';
+    const body = document.getElementById('reg-gratis-body');
+    if(body) body.style.display='block';
+    const neg = document.getElementById('rg-negocio');
+    if(neg) neg.focus();
+  }, 50);
 }
 
 function togglePass(inputId, eyeId){
@@ -791,21 +798,24 @@ function togglePass(inputId, eyeId){
 }
 
 window.submitRegistroGratis = async function submitRegistroGratis(){
-  const negocio = document.getElementById('rg-negocio').value.trim();
-  const email = document.getElementById('rg-email').value.trim();
-  const pass = document.getElementById('rg-pass').value;
-  const pass2 = document.getElementById('rg-pass2').value;
+  const negocio = document.getElementById('rg-negocio')?.value.trim();
+  const email = document.getElementById('rg-email')?.value.trim();
+  const pass = document.getElementById('rg-pass')?.value;
+  const pass2 = document.getElementById('rg-pass2')?.value;
   const errEl = document.getElementById('rg-gratis-error');
 
-  errEl.style.display = 'none';
+  const showErr = (msg) => { if(errEl){ errEl.textContent=msg; errEl.style.display='block'; } };
+  if(errEl) errEl.style.display='none';
 
-  if(!negocio){ errEl.textContent='Ingresa el nombre de tu negocio.'; errEl.style.display='block'; return; }
-  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ errEl.textContent='Ingresa un email válido.'; errEl.style.display='block'; return; }
-  if(!pass || pass.length < 6){ errEl.textContent='La contraseña debe tener al menos 6 caracteres.'; errEl.style.display='block'; return; }
-  if(pass !== pass2){ errEl.textContent='Las contraseñas no coinciden.'; errEl.style.display='block'; return; }
+  if(!negocio){ showErr('Ingresa el nombre de tu negocio.'); return; }
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showErr('Ingresa un email válido.'); return; }
+  if(!pass || pass.length < 6){ showErr('La contraseña debe tener al menos 6 caracteres.'); return; }
+  if(pass !== pass2){ showErr('Las contraseñas no coinciden.'); return; }
 
-  document.getElementById('rg-btn').style.display = 'none';
-  document.getElementById('rg-loading').style.display = 'block';
+  const btn = document.getElementById('rg-btn');
+  const loading = document.getElementById('rg-loading');
+  if(btn) btn.style.display='none';
+  if(loading) loading.style.display='block';
 
   try {
     const res = await fetch(N8N + '/merka-registro', {
@@ -824,10 +834,11 @@ window.submitRegistroGratis = async function submitRegistroGratis(){
       throw new Error(data.error || 'Error al crear cuenta');
     }
   } catch(e){
-    document.getElementById('rg-loading').style.display = 'none';
-    document.getElementById('rg-btn').style.display = 'block';
-    errEl.textContent = e.message.includes('duplicate') ? 'Ese email ya tiene una cuenta. Intenta con otro.' : 'Error al crear la cuenta. Intenta de nuevo.';
-    errEl.style.display = 'block';
+    const loading2 = document.getElementById('rg-loading');
+    const btn2 = document.getElementById('rg-btn');
+    if(loading2) loading2.style.display='none';
+    if(btn2) btn2.style.display='block';
+    showErr(e.message.includes('duplicate') ? 'Ese email ya tiene una cuenta.' : 'Error al crear la cuenta. Intenta de nuevo.');
   }
 }
 
@@ -1014,6 +1025,12 @@ const counterObs = new IntersectionObserver(entries=>{
   });
 },{threshold:0.5});
 document.querySelectorAll('.stats-bar').forEach(el=>counterObs.observe(el));
+
+// Init buttons after DOM ready
+document.addEventListener('DOMContentLoaded', function(){
+  const btnGratis = document.querySelectorAll('[data-action="registro-gratis"]');
+  btnGratis.forEach(btn => btn.addEventListener('click', openRegistroGratis));
+});
 
 // Check for payment result in URL
 const urlParams = new URLSearchParams(window.location.search);
