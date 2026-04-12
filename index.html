@@ -661,9 +661,9 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <button class="modal-close" onclick="closeModal('registro')">✕</button>
     </div>
     <div class="modal-body" id="reg-body">
-      <!-- Plan selector -->
-      <div style="margin-bottom:20px;">
-        <div class="reg-label">Elige tu plan</div>
+      <!-- Plan selector BASE -->
+      <div id="reg-planes-base" style="margin-bottom:20px;">
+        <div class="reg-label">Elige tu ciclo de pago — Plan Base</div>
         <div class="reg-plan-selector">
           <div class="reg-plan selected" id="plan-anual" onclick="selectPlan('anual')">
             <div class="reg-plan-badge">AHORRA 21%</div>
@@ -679,6 +679,29 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
         </div>
       </div>
 
+      <!-- Plan selector IA -->
+      <div id="reg-planes-ia" style="margin-bottom:20px;display:none;">
+        <div class="reg-label">Elige tu ciclo de pago — Plan IA ✦</div>
+        <div class="reg-plan-selector">
+          <div class="reg-plan selected" id="plan-pro-anual" onclick="selectPlan('pro-anual')">
+            <div class="reg-plan-badge">AHORRA 17%</div>
+            <div class="reg-plan-name">Anual</div>
+            <div class="reg-plan-price"><sup>$</sup>25</div>
+            <div class="reg-plan-period">USD/mes · pagado anual</div>
+          </div>
+          <div class="reg-plan" id="plan-pro-mensual" onclick="selectPlan('pro-mensual')">
+            <div class="reg-plan-name">Mensual</div>
+            <div class="reg-plan-price"><sup>$</sup>30</div>
+            <div class="reg-plan-period">USD/mes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upgrade notice (visible solo si viene con org_id) -->
+      <div id="reg-upgrade-notice" style="display:none;padding:10px 14px;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.25);border-radius:8px;margin-bottom:16px;font-size:12px;color:#0ea5e9;">
+        ✓ Tu cuenta de prueba será activada automáticamente al completar el pago.
+      </div>
+
       <!-- Error -->
       <div class="reg-error" id="reg-error"></div>
 
@@ -691,6 +714,9 @@ footer{padding:48px 40px;border-top:1px solid rgba(255,255,255,0.06);display:fle
         <label class="reg-label">Tu email</label>
         <input id="reg-email" class="reg-input" type="email" placeholder="tu@email.com" autocomplete="email">
       </div>
+
+      <!-- Campo oculto org_id (upgrade de trial) -->
+      <input type="hidden" id="reg-org-id" value="">
 
       <!-- Submit -->
       <button class="reg-submit" id="reg-btn" onclick="submitRegistro()">
@@ -870,31 +896,42 @@ function togglePlan(){
 }
 
 // ── Registration modal ──
-function openComingSoon(){
-  alert('El plan Agente IA está en construcción. Pronto estará disponible. Por ahora puedes comenzar con el plan Base.');
-}
-
 function openRegistro(plan){
   planSeleccionado = plan || 'anual';
-  selectPlan(planSeleccionado);
   resetForm();
   openModal('registro');
+  selectPlan(planSeleccionado);
+  // Si viene ?upgrade=ORG_ID en la URL → pre-carga para upgrade de trial
+  const params = new URLSearchParams(window.location.search);
+  const upgradeOrg = params.get('upgrade') || '';
+  const orgIdField = document.getElementById('reg-org-id');
+  const upgradeNotice = document.getElementById('reg-upgrade-notice');
+  if(orgIdField) orgIdField.value = upgradeOrg;
+  if(upgradeNotice) upgradeNotice.style.display = upgradeOrg ? 'block' : 'none';
 }
 
 function selectPlan(plan){
   planSeleccionado = plan;
-  document.getElementById('plan-anual').classList.toggle('selected', plan === 'anual');
-  document.getElementById('plan-mensual').classList.toggle('selected', plan === 'mensual');
+  const esIA = plan.startsWith('pro-');
+  const planesBase = document.getElementById('reg-planes-base');
+  const planesIA   = document.getElementById('reg-planes-ia');
+  if(planesBase) planesBase.style.display = esIA ? 'none' : 'block';
+  if(planesIA)   planesIA.style.display   = esIA ? 'block' : 'none';
+  // Selección visual
+  ['plan-anual','plan-mensual','plan-pro-anual','plan-pro-mensual'].forEach(id => {
+    document.getElementById(id)?.classList.remove('selected');
+  });
+  const activeId = {'anual':'plan-anual','mensual':'plan-mensual','pro-anual':'plan-pro-anual','pro-mensual':'plan-pro-mensual'}[plan];
+  if(activeId) document.getElementById(activeId)?.classList.add('selected');
 }
 
 function resetForm(){
-  document.getElementById('reg-error').style.display = 'none';
-  document.getElementById('reg-error').textContent = '';
-  document.getElementById('reg-negocio').value = '';
-  document.getElementById('reg-email').value = '';
-  document.getElementById('reg-btn').disabled = false;
-  document.getElementById('reg-loading').style.display = 'none';
-  document.getElementById('reg-btn').style.display = 'block';
+  ['reg-error'].forEach(id=>{ const e=document.getElementById(id); if(e){e.style.display='none';e.textContent='';} });
+  ['reg-negocio','reg-email','reg-org-id'].forEach(id=>{ const e=document.getElementById(id); if(e) e.value=''; });
+  const notice = document.getElementById('reg-upgrade-notice');
+  if(notice) notice.style.display='none';
+  const btn=document.getElementById('reg-btn'); if(btn){btn.disabled=false;btn.style.display='block';}
+  const loading=document.getElementById('reg-loading'); if(loading) loading.style.display='none';
 }
 
 function showRegError(msg){
@@ -905,9 +942,9 @@ function showRegError(msg){
 
 async function submitRegistro(){
   const negocio = document.getElementById('reg-negocio').value.trim();
-  const email = document.getElementById('reg-email').value.trim();
+  const email   = document.getElementById('reg-email').value.trim();
+  const orgId   = document.getElementById('reg-org-id')?.value.trim() || '';
 
-  // Validations
   if(!negocio){ showRegError('Ingresa el nombre de tu negocio.'); return; }
   if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showRegError('Ingresa un email válido.'); return; }
 
@@ -915,23 +952,25 @@ async function submitRegistro(){
   document.getElementById('reg-btn').style.display = 'none';
   document.getElementById('reg-loading').style.display = 'block';
 
+  // Mapear plan a clave del backend: n8n usa plan.includes('ia')
+  const planKey = planSeleccionado.startsWith('pro-') ? 'pro-ia' : 'pro';
+  const monto   = PRECIOS[planSeleccionado] || 12;
+
   try {
-    const monto = PRECIOS[planSeleccionado];
+    const body = { email, nombre_negocio: negocio, plan: planKey, monto };
+    if(orgId) body.org_id = orgId; // upgrade de trial → n8n hace UPDATE en vez de INSERT
+
     const res = await fetch(`${N8N}/merka-crear-preferencia`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        nombre_negocio: negocio,
-        plan: planSeleccionado,
-        monto
-      })
+      body: JSON.stringify(body)
     });
 
     const data = await res.json();
-
-    // MercadoPago returns init_point for checkout URL
-    const checkoutUrl = data?.init_point || data?.sandbox_init_point;
+    // n8n envuelve en { data: [{init_point:...}], ok:true }
+    const checkoutUrl = data?.data?.[0]?.init_point
+      || data?.init_point
+      || data?.sandbox_init_point;
 
     if(checkoutUrl){
       window.location.href = checkoutUrl;
