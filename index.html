@@ -35,7 +35,7 @@
   "description": "Sistema de punto de venta en la nube para minimarkets, tiendas y distribuidoras.",
   "url": "https://merkapos.pro/",
   "offers": { "@type": "Offer", "price": "4", "priceCurrency": "USD", "description": "Plan anual (US$48 al año), por mes. 30 días de prueba gratis." },
-  "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.cl", "telephone": "+56992025527", "email": "info@autix.pro" }
+  "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.pro", "telephone": "+56992025527" }
 }
 </script>
 <style>
@@ -471,6 +471,29 @@ header.nav.scrolled{border-bottom-color:rgba(255,255,255,.14)}
 .demo__card figcaption b{display:block;color:#101B2C;font-size:17px}
 .demo__rail.is-static{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
 .demo__rail.is-static .demo__card{scroll-snap-align:start}
+
+/* FOOTER PRO */
+footer.ft{background:#061324;border-top:0;padding:72px 0 28px;position:relative;color:#b6c4d6}
+footer.ft::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#22D3AB 25%,#22D3AB 75%,transparent)}
+.ft__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px}
+.ft__brand p{margin:18px 0 22px;max-width:36ch;font-size:15px;line-height:1.65;color:#9fb1c5}
+.ft__brand img{height:44px;width:auto}
+.ft__social{display:flex;gap:12px}
+.ft__social a{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;transition:background .15s,border-color .15s,transform .15s}
+.ft__social a:hover{background:rgba(34,211,171,.16);border-color:#22D3AB;transform:translateY(-2px)}
+.ft__social svg{width:23px;height:23px}
+.ft__social img{width:26px;height:26px}
+.ft__col{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+.ft__col h3{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin:0 0 6px;font-weight:800}
+.ft__col a:not(.btn),.ft__col button{background:none;border:0;padding:0;font:inherit;font-weight:600;font-size:15px;color:#b6c4d6;text-decoration:none;text-align:left;transition:color .15s}
+.ft__col a:not(.btn):hover,.ft__col button:hover{color:#22D3AB}
+.ft__cta{margin-top:8px;color:#101B2C!important}
+.ft__bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:14px;color:#8da1b8}
+.ft__bar a{color:#22D3AB;font-weight:700;text-decoration:none}
+.ft__bar a:hover{text-decoration:underline}
+footer.ft :focus-visible{outline-color:#22D3AB}
+@media(max-width:900px){.ft__grid{grid-template-columns:1fr 1fr;gap:36px 28px}.ft__brand{grid-column:1/-1}}
+@media(max-width:520px){.ft__grid{grid-template-columns:1fr}footer.ft{padding:56px 0 92px}}
 </style>
 </head>
 <body>
@@ -712,7 +735,6 @@ header.nav.scrolled{border-bottom-color:rgba(255,255,255,.14)}
         <h3>Cuéntanos qué necesitas</h3>
         <p>No es parte del plan de Merka POS. Conversamos tu caso por WhatsApp y te respondemos con una propuesta.</p>
         <a class="btn btn-wa" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20consultar%20por%20un%20sistema%20a%20medida." rel="noopener"><img class="wa" src="media/whatsapp.webp" width="24" height="24" alt="">Consultar por WhatsApp</a>
-        <small>o escríbenos a <a href="mailto:info@autix.pro">info@autix.pro</a></small>
       </div>
     </div>
   </section>
@@ -736,17 +758,39 @@ header.nav.scrolled{border-bottom-color:rgba(255,255,255,.14)}
   </section>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <a class="brand" href="#" aria-label="Merka POS, inicio"><img src="favicon.svg" width="36" height="36" alt=""><span>Merka<b>POS</b></span></a>
-    <nav aria-label="Legal y soporte">
-      <button type="button" data-open="dlg-terminos">Términos</button>
-      <button type="button" data-open="dlg-privacidad">Privacidad</button>
-      <button type="button" data-open="dlg-soporte">Soporte</button>
-      <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">WhatsApp +56 9 9202 5527</a>
-      <a href="mailto:info@autix.pro">info@autix.pro</a>
-    </nav>
-    <p class="foot__copy">© 2026 Merka POS · Desarrollado por <a href="https://autix.cl" rel="noopener">Autix</a></p>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div class="ft__brand">
+        <a href="#" aria-label="Merka POS, inicio"><img src="media/logo-merka-pos.svg" width="190" height="44" alt="Merka POS"></a>
+        <p>Punto de venta en la nube para minimarkets, tiendas y distribuidoras. Vende, controla tu inventario y cierra caja desde cualquier dispositivo.</p>
+        <div class="ft__social">
+          <a href="https://instagram.com/merka.pos" rel="noopener" aria-label="Instagram de Merka POS: @merka.pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><img src="media/whatsapp.webp" width="26" height="26" alt=""></a>
+        </div>
+      </div>
+      <nav class="ft__col" aria-label="Producto">
+        <h3>Producto</h3>
+        <a href="#demo">Demo</a><a href="#funciones">Funciones</a><a href="#como-funciona">Cómo funciona</a><a href="#precio">Precio</a><a href="#preguntas">Preguntas</a>
+      </nav>
+      <nav class="ft__col" aria-label="Legal y soporte">
+        <h3>Legal y soporte</h3>
+        <button type="button" data-open="dlg-terminos">Términos</button>
+        <button type="button" data-open="dlg-privacidad">Privacidad</button>
+        <button type="button" data-open="dlg-soporte">Soporte</button>
+        <a href="#a-medida">Sistemas a medida</a>
+      </nav>
+      <div class="ft__col ft__contact">
+        <h3>Contacto</h3>
+        <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">WhatsApp +56 9 9202 5527</a>
+        <a href="https://instagram.com/merka.pos" rel="noopener">Instagram @merka.pos</a>
+        <a class="btn btn-primary btn-sm ft__cta" href="https://app.merkapos.pro/">Probar 30 días gratis</a>
+      </div>
+    </div>
+    <div class="ft__bar">
+      <span>© 2026 Merka POS. Todos los derechos reservados.</span>
+      <span>Desarrollado por <a href="https://autix.pro" rel="noopener">Autix</a></span>
+    </div>
   </div>
 </footer>
 
@@ -777,14 +821,14 @@ header.nav.scrolled{border-bottom-color:rgba(255,255,255,.14)}
     </ul>
     <h3>Con quién compartimos datos</h3><p>No vendemos ni cedemos tus datos a terceros con fines comerciales.</p>
     <h3>Seguridad</h3><p>Los datos se transmiten mediante HTTPS/TLS y las contraseñas se almacenan cifradas.</p>
-    <h3>Contacto</h3><p>Para consultas escríbenos a <a href="mailto:info@autix.pro">info@autix.pro</a> o por WhatsApp al <a href="https://wa.me/56992025527" rel="noopener">+56 9 9202 5527</a>.</p>
+    <h3>Contacto</h3><p>Para consultas escríbenos por WhatsApp al <a href="https://wa.me/56992025527" rel="noopener">+56 9 9202 5527</a> o por Instagram a <a href="https://instagram.com/merka.pos" rel="noopener">@merka.pos</a>.</p>
   </div>
 </dialog>
 
 <dialog id="dlg-soporte" aria-labelledby="t-soporte">
   <div class="dlg__head"><h2 id="t-soporte">Centro de Soporte</h2><button class="dlg__x" type="button" data-close aria-label="Cerrar">×</button></div>
   <div class="dlg__body">
-    <h3>Canales</h3><p>WhatsApp: <a href="https://wa.me/56992025527" rel="noopener">+56 9 9202 5527</a><br>Correo: <a href="mailto:info@autix.pro">info@autix.pro</a></p>
+    <h3>Canales</h3><p>WhatsApp: <a href="https://wa.me/56992025527" rel="noopener">+56 9 9202 5527</a><br>Instagram: <a href="https://instagram.com/merka.pos" rel="noopener">@merka.pos</a></p>
     <h3>Horario</h3><p>Lunes a viernes, de 9:00 a 20:00 (hora de Chile).</p>
     <h3>Puesta en marcha</h3><p>Todo cliente nuevo recibe una sesión de configuración gratuita de 30 minutos.</p>
   </div>
