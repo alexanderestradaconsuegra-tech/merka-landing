@@ -32,7 +32,7 @@
   "operatingSystem": "Web, Android, iOS",
   "description": "Sistema de punto de venta en la nube para minimarkets, tiendas y distribuidoras.",
   "url": "https://merkapos.pro/",
-  "offers": { "@type": "Offer", "price": "9.99", "priceCurrency": "USD", "description": "Plan anual, por mes. 30 días de prueba gratis." },
+  "offers": { "@type": "Offer", "price": "4", "priceCurrency": "USD", "description": "Plan anual (US$48 al año), por mes. 30 días de prueba gratis." },
   "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.cl", "telephone": "+56992025527", "email": "info@autix.pro" }
 }
 </script>
@@ -643,8 +643,8 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
       <div class="plan">
         <span class="plan__tag">Todo incluido</span>
         <div class="plan__name">Merka POS</div>
-        <div class="price" aria-live="polite"><strong id="price">US$9.99</strong><span>/mes</span></div>
-        <div class="plan__sub" id="priceNote">Con pago anual. Si prefieres pagar mes a mes: US$12/mes.</div>
+        <div class="price" aria-live="polite"><strong id="price">US$4</strong><span>/mes</span></div>
+        <div class="plan__sub" id="priceNote">Con pago anual (US$48 al año). Si prefieres pagar mes a mes: US$5/mes.</div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de ventas con lector de códigos de barras</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inventario con fotos de productos</li>
@@ -797,8 +797,8 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   var price=document.getElementById('price'), note=document.getElementById('priceNote');
   function setBilling(anual){
     bA.setAttribute('aria-pressed',anual); bM.setAttribute('aria-pressed',!anual);
-    price.textContent = anual ? 'US$9.99' : 'US$12';
-    note.textContent = anual ? 'Con pago anual. Si prefieres pagar mes a mes: US$12/mes.' : 'Pago mes a mes. Con pago anual pagas US$9.99/mes.';
+    price.textContent = anual ? 'US$4' : 'US$5';
+    note.textContent = anual ? 'Con pago anual (US$48 al año). Si prefieres pagar mes a mes: US$5/mes.' : 'Pago mes a mes. Con pago anual pagas US$4/mes (US$48 al año).';
   }
   bA.addEventListener('click', function(){ setBilling(true); });
   bM.addEventListener('click', function(){ setBilling(false); });
