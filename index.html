@@ -345,7 +345,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   .fact:nth-child(3){border-left:0}
   section{padding:76px 0}
 }
-@media (max-width:760px){
+@media (max-width:900px){
   .nav__toggle{display:inline-flex}
   .menu{position:fixed;inset:72px 0 auto 0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 22px;border-bottom:1px solid var(--line);box-shadow:0 30px 40px -20px rgba(12,26,46,.2);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.2s}
   body.nav-open .menu{transform:none;opacity:1;pointer-events:auto}
@@ -399,6 +399,41 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 .demo__shot figcaption{font-size:14px;color:var(--muted);margin-top:10px;text-align:center}
 .demo__shot--m{max-width:230px;margin-inline:auto}
 @media(max-width:900px){.demo__grid{grid-template-columns:1fr}.demo__tabs{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.demo__tab{flex:0 0 220px;scroll-snap-align:start}.demo__shots{grid-template-columns:1fr}}
+
+/* HERO CON FOTO + CTA FINAL CON FOTO */
+.hero.hero--img{--hbg:#07121d;background:var(--hbg);padding:0;text-align:left;min-height:clamp(540px,50vw,740px);display:flex;align-items:center;overflow:hidden}
+.hero--img::before{display:none}
+.hero__media{position:absolute;inset:0}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.hero--img .wrap{position:relative;z-index:1;padding-block:64px}
+.hero--img .hero__copy{max-width:520px;margin:0}
+.hero--img h1{color:#fff;font-size:clamp(38px,4.6vw,64px)}
+.hero--img h1 em{background:linear-gradient(transparent 84%, var(--lime-bright) 84% 94%, transparent 94%)}
+.hero--img .eyebrow{color:#7dd3fc}
+.hero--img .lead{color:var(--slate);margin-inline:0}
+.hero--img .cta-row{justify-content:flex-start}
+.hero--img .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.hero--img .btn-ghost:hover{border-color:#fff}
+.hero--img .trust{justify-content:flex-start;color:var(--slate)}
+.hero--img .trust svg{color:var(--lime-bright)}
+@media(max-width:1000px){
+  .hero.hero--img{display:block;min-height:0}
+  .hero__media{position:relative;inset:auto;aspect-ratio:16/10}
+  .hero__media::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,var(--hbg))}
+  .hero__media img{object-position:72% center}
+  .hero--img .wrap{padding-block:8px 48px}
+  .hero--img .hero__copy{max-width:640px}
+}
+.final__box{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;text-align:left;padding:0;min-height:clamp(340px,34vw,460px);background:#07121d}
+.final__box::before,.final__box::after{display:none}
+.final__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;z-index:0!important}
+.final__copy{position:relative;z-index:1;max-width:520px;padding:56px clamp(24px,5vw,64px)}
+.final__box .final__row{justify-content:flex-start}
+@media(max-width:1000px){
+  .final__box{display:block;min-height:0}
+  .final__bg{position:relative;inset:auto;height:auto;aspect-ratio:16/9;object-position:72% center}
+  .final__copy{max-width:none;padding:8px 22px 44px}
+}
 </style>
 </head>
 <body>
@@ -425,7 +460,8 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 
 <main id="contenido">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero--img">
+    <div class="hero__media"><img src="media/hero.webp" width="1920" height="1080" fetchpriority="high" alt="Cajera atendiendo en la pantalla táctil de Merka POS en un minimarket, con impresora de comprobantes y lector de códigos"></div>
     <div class="wrap">
       <div class="hero__copy">
         <span class="eyebrow">Punto de venta para minimarkets, tiendas y distribuidoras</span>
@@ -443,75 +479,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
         </ul>
       </div>
 
-      <div class="stage-wrap">
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
-<symbol id="g-cheese" viewBox="0 0 48 48"><path d="M6 30 L40 14 V34 H6Z" fill="#f6c343"/><path d="M6 30 L40 14" stroke="#e0a516" stroke-width="2" fill="none"/><circle cx="18" cy="29" r="2.6" fill="#e0a516"/><circle cx="29" cy="25" r="2" fill="#e0a516"/><circle cx="31" cy="31" r="1.8" fill="#e0a516"/></symbol>
-<symbol id="g-milk" viewBox="0 0 48 48"><path d="M14 18 L24 10 L34 18 V40 H14Z" fill="#fff" stroke="#9fb4cb" stroke-width="2"/><rect x="14" y="24" width="20" height="9" fill="#0ea5e9"/></symbol>
-<symbol id="g-soda" viewBox="0 0 48 48"><rect x="19" y="6" width="10" height="7" rx="2" fill="#dc2626"/><path d="M19 13 H29 L33 20 V40 a3 3 0 0 1 -3 3 H18 a3 3 0 0 1 -3 -3 V20Z" fill="#7f1d1d"/><rect x="15" y="24" width="18" height="9" fill="#fff" opacity=".9"/></symbol>
-<symbol id="g-bread" viewBox="0 0 48 48"><path d="M8 28 a10 10 0 0 1 6 -17 H34 a10 10 0 0 1 6 17 V37 a3 3 0 0 1 -3 3 H11 a3 3 0 0 1 -3 -3Z" fill="#e7b778"/><path d="M16 15 l3 8 M24 15 l3 8 M32 15 l3 8" stroke="#c98f48" stroke-width="2.4" stroke-linecap="round"/></symbol>
-<symbol id="g-rice" viewBox="0 0 48 48"><path d="M12 12 H36 L40 40 H8Z" fill="#f3e6c9" stroke="#c9b27c" stroke-width="2"/><rect x="14" y="22" width="20" height="10" rx="2" fill="#4d7c0f"/></symbol>
-<symbol id="g-oil" viewBox="0 0 48 48"><rect x="20" y="5" width="8" height="8" rx="2" fill="#f59e0b"/><path d="M18 13 H30 L34 20 V40 a3 3 0 0 1 -3 3 H17 a3 3 0 0 1 -3 -3 V20Z" fill="#fbbf24"/><rect x="16" y="24" width="16" height="9" fill="#fff" opacity=".85"/></symbol>
-<symbol id="g-coffee" viewBox="0 0 48 48"><rect x="13" y="8" width="22" height="6" rx="2" fill="#92400e"/><rect x="12" y="14" width="24" height="27" rx="4" fill="#78350f"/><rect x="15" y="21" width="18" height="12" rx="2" fill="#fde68a"/></symbol>
-<symbol id="g-juice" viewBox="0 0 48 48"><rect x="13" y="12" width="22" height="29" rx="3" fill="#fb923c"/><rect x="13" y="12" width="22" height="7" fill="#ea580c"/><circle cx="24" cy="30" r="6" fill="#fff" opacity=".9"/><path d="M26 6 l-3 6" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/></symbol>
-<symbol id="g-nuts" viewBox="0 0 48 48"><path d="M12 10 H36 L38 40 H10Z" fill="#fbbf24"/><circle cx="24" cy="27" r="7" fill="#b45309"/><circle cx="21" cy="25" r="1.6" fill="#fde68a"/></symbol>
-<symbol id="g-water" viewBox="0 0 48 48"><rect x="20" y="5" width="8" height="6" rx="2" fill="#0369a1"/><path d="M18 11 H30 L33 18 V40 a3 3 0 0 1 -3 3 H18 a3 3 0 0 1 -3 -3 V18Z" fill="#bae6fd" stroke="#38bdf8" stroke-width="2"/><rect x="15" y="23" width="18" height="8" fill="#0ea5e9"/></symbol>
-<symbol id="g-yogurt" viewBox="0 0 48 48"><path d="M12 14 H36 L33 41 H15Z" fill="#fff" stroke="#c4cfdc" stroke-width="2"/><rect x="13" y="8" width="22" height="6" rx="2" fill="#ec4899"/><path d="M14 24 H34 L33 31 H15Z" fill="#f9a8d4"/></symbol>
-<symbol id="g-butter" viewBox="0 0 48 48"><path d="M6 20 L20 12 H42 L28 20Z" fill="#fde68a"/><path d="M6 20 H28 V38 H6Z" fill="#fbbf24"/><path d="M28 20 L42 12 V30 L28 38Z" fill="#f59e0b"/></symbol>
-</defs></svg>
-        <div class="stage" role="img" aria-label="Merka POS en un monitor: panel con ventas del día, venta actual y catálogo de productos, junto a una impresora de comprobantes y un terminal de pago.">
-          <div class="stage__bg"><div class="blob2"></div></div>
-
-          <div class="mon">
-            <div class="mon__bezel"><div class="mon__screen">
-              <aside class="sb">
-                <div class="sb__brand"><img src="/icon-192.png" alt="">MerkaPOS</div>
-                <div class="sb__it on"><i></i>Panel</div><div class="sb__it"><i></i>Ventas</div><div class="sb__it"><i></i>Productos</div><div class="sb__it"><i></i>Clientes</div><div class="sb__it"><i></i>Proveedores</div><div class="sb__it"><i></i>Inventario</div><div class="sb__it"><i></i>Cierre de caja</div><div class="sb__it"><i></i>Reportes</div><div class="sb__it"><i></i>Usuarios</div><div class="sb__it"><i></i>Configuración</div>
-                <div class="sb__help"><b>¿Necesitas ayuda?</b>Soporte por correo</div>
-                <div class="sb__user"><i></i><div>Carla<small>Administradora</small></div></div>
-              </aside>
-              <div class="mn">
-                <div class="mn__top">
-                  <div><h4>Hola, Carla</h4><small>Así va tu negocio hoy</small></div>
-                  <div class="mn__tools"><div class="search">Buscar producto o código…</div><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="kpis"><div class="kpi"><div class="kpi__h"><i style="background:#bae6fd"></i>Ventas del día</div><b>$184.620</b><em>↑ 12,5% vs. ayer</em></div><div class="kpi"><div class="kpi__h"><i style="background:#d9f99d"></i>Ventas</div><b>41</b><em>↑ 8,2% vs. ayer</em></div><div class="kpi"><div class="kpi__h"><i style="background:#fde68a"></i>Clientes</div><b>28</b><em>↑ 5,4% vs. ayer</em></div><div class="kpi"><div class="kpi__h"><i style="background:#fbcfe8"></i>Ticket promedio</div><b>$4.503</b><em>↑ 3,1% vs. ayer</em></div></div>
-                <div class="body">
-                  <div class="panel">
-                    <div class="panel__h">Venta actual</div>
-                    <div class="row"><span class="th" style="background:#fdf3d3"><svg viewBox="0 0 48 48"><use href="#g-cheese"/></svg></span><div><b>Queso mantecoso</b><small>350 g</small></div><span></span><span class="pr">$2.797</span></div><div class="row"><span class="th" style="background:#e3f2fb"><svg viewBox="0 0 48 48"><use href="#g-milk"/></svg></span><div><b>Leche entera 1 L</b><small>$1.200 c/u</small></div><span class="qty">− 2 +</span><span class="pr">$2.400</span></div><div class="row"><span class="th" style="background:#f6e9d6"><svg viewBox="0 0 48 48"><use href="#g-bread"/></svg></span><div><b>Pan de molde</b><small>$1.650 c/u</small></div><span class="qty">− 1 +</span><span class="pr">$1.650</span></div><div class="row"><span class="th" style="background:#fbe3e1"><svg viewBox="0 0 48 48"><use href="#g-soda"/></svg></span><div><b>Gaseosa 1,5 L</b><small>$1.490 c/u</small></div><span class="qty">− 1 +</span><span class="pr">$1.490</span></div>
-                    <div class="tot"><div><span>Subtotal</span><span>$8.337</span></div><div class="big"><span>Total</span><strong>$8.337</strong></div></div>
-                    <div class="acts"><span class="c">Vaciar</span><span class="p">Cobrar $8.337</span></div>
-                  </div>
-                  <div class="panel">
-                    <div class="chips"><span class="on">Todos</span><span>Lácteos</span><span>Abarrotes</span><span>Bebidas</span><span>Panadería</span></div>
-                    <div class="pgrid"><div class="pt"><div class="pt__a" style="background:#fdf3d3"><svg viewBox="0 0 48 48"><use href="#g-cheese"/></svg></div><b>Queso mantecoso</b><span>$7.990/kg</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#e3f2fb"><svg viewBox="0 0 48 48"><use href="#g-milk"/></svg></div><b>Leche entera 1 L</b><span>$1.200</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#fbe3e1"><svg viewBox="0 0 48 48"><use href="#g-soda"/></svg></div><b>Gaseosa 1,5 L</b><span>$1.490</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#f6efdc"><svg viewBox="0 0 48 48"><use href="#g-rice"/></svg></div><b>Arroz grado 1</b><span>$1.490</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#f6e9d6"><svg viewBox="0 0 48 48"><use href="#g-bread"/></svg></div><b>Pan de molde</b><span>$1.650</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#fdf0c4"><svg viewBox="0 0 48 48"><use href="#g-oil"/></svg></div><b>Aceite vegetal</b><span>$2.790</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#efe0d2"><svg viewBox="0 0 48 48"><use href="#g-coffee"/></svg></div><b>Café 170 g</b><span>$4.290</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#fde6d2"><svg viewBox="0 0 48 48"><use href="#g-juice"/></svg></div><b>Jugo naranja 1 L</b><span>$1.890</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#fcefc9"><svg viewBox="0 0 48 48"><use href="#g-nuts"/></svg></div><b>Maní salado</b><span>$990</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#dff3fd"><svg viewBox="0 0 48 48"><use href="#g-water"/></svg></div><b>Agua mineral</b><span>$690</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#fce4f0"><svg viewBox="0 0 48 48"><use href="#g-yogurt"/></svg></div><b>Yogur frutilla</b><span>$850</span><i>+</i></div><div class="pt"><div class="pt__a" style="background:#fdf1c9"><svg viewBox="0 0 48 48"><use href="#g-butter"/></svg></div><b>Mantequilla</b><span>$2.490</span><i>+</i></div></div>
-                  </div>
-                </div>
-              </div>
-            </div></div>
-            <div class="mon__neck"></div><div class="mon__base"></div>
-          </div>
-
-          <div class="prn">
-            <div class="prn__paper"><b>Merka POS</b>Comprobante de venta<hr>
-              <div><span>Queso mant. 350 g</span><span>2.797</span></div>
-              <div><span>Leche entera ×2</span><span>2.400</span></div>
-              <div><span>Pan de molde</span><span>1.650</span></div>
-              <div><span>Gaseosa 1,5 L</span><span>1.490</span></div><hr>
-              <div class="t"><span>Total</span><span>$8.337</span></div>
-            </div>
-            <div class="prn__body"><span>Merka</span><i></i></div>
-          </div>
-
-          <div class="term">
-            <div class="term__dev"><div class="term__scr">
-              <div class="term__ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0c1a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-              <small>Pago exitoso</small><strong>$8.337</strong>
-            </div></div>
-            <div class="term__base"></div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </section>
 
@@ -713,12 +681,15 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   <section class="final">
     <div class="wrap">
       <div class="final__box">
+        <img class="final__bg" src="media/final.webp" width="1920" height="1080" loading="lazy" alt="Mostrador con pantalla de Merka POS, lector de códigos, cajón de dinero e impresora">
+        <div class="final__copy">
         <h2>Tu negocio no espera. Empieza hoy.</h2>
         <p>30 días gratis. Sin tarjeta. Sin contrato.</p>
         <div class="final__row">
           <a class="btn btn-light" href="https://app.merkapos.pro/">Crear mi cuenta gratis
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn-wa-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg>Hablar por WhatsApp</a>
+        </div>
         </div>
       </div>
     </div>
