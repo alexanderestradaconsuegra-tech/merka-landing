@@ -4,7 +4,7 @@ FROM nginx:1.27-alpine
 # (antes se descargaban con curl desde la rama main: la capa se cacheaba y no era trazable).
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY security-headers.conf /etc/nginx/snippets/security-headers.conf
-COPY index.html icon-192.png icon-512.png og-image.png /usr/share/nginx/html/
+COPY index.html favicon.svg favicon.ico favicon-32.png apple-touch-icon.png icon-192.png icon-512.png og-image.png /usr/share/nginx/html/
 COPY media/ /usr/share/nginx/html/media/
 
 EXPOSE 80

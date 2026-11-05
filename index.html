@@ -8,8 +8,10 @@
 <meta name="description" content="Sistema de punto de venta en la nube para minimarkets, tiendas y distribuidoras: terminal de ventas, inventario, cierre de caja, proveedores y reportes. 30 días gratis, sin tarjeta.">
 <link rel="canonical" href="https://merkapos.pro/">
 <meta name="theme-color" content="#0c1a2e">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_LA">
 <meta property="og:site_name" content="Merka POS">
@@ -41,7 +43,7 @@
   --ink:#0c1a2e; --body:#34445a; --muted:#5a6a7f;
   --bg:#ffffff; --paper:#f4f7fb; --line:#e3eaf2;
   --sky:#0ea5e9; --sky-ink:#0369a1; --sky-soft:#e0f2fe;
-  --lime:#4d7c0f; --lime-hover:#3f6212; --lime-bright:#a3e635; --lime-soft:#ecf8d9;
+  --lime:#0d9477; --lime-hover:#0a7a62; --lime-bright:#22D3AB; --lime-soft:#d9f7ef;
   --navy:#0c1a2e; --slate:#b6c4d6;
   --r:18px; --r-sm:12px;
   --shadow:0 1px 2px rgba(12,26,46,.06), 0 12px 32px -12px rgba(12,26,46,.18);
@@ -68,8 +70,8 @@ h3{font-size:19px;letter-spacing:-.01em;line-height:1.25}
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;transition:transform .15s ease, background .15s ease, box-shadow .15s ease}
 .btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--lime);color:#fff;box-shadow:0 8px 20px -8px rgba(77,124,15,.6)}
-.btn-primary:hover{background:var(--lime-hover)}
+.btn-primary{background:var(--lime-bright);color:#101B2C;box-shadow:0 8px 20px -8px rgba(34,211,171,.6)}
+.btn-primary:hover{background:#1bbf9a}
 .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--ink)}
 .btn-sm{padding:10px 18px;font-size:15px}
@@ -434,6 +436,18 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   .final__bg{position:relative;inset:auto;height:auto;aspect-ratio:16/9;object-position:72% center}
   .final__copy{max-width:none;padding:8px 22px 44px}
 }
+
+/* DEMO sobre fondo oscuro */
+.demo{background:#07121d}
+.demo h2{color:#fff}.demo .lead{color:var(--slate)}.demo .eyebrow{color:#5eead4}
+.demo__tab{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.demo__tab strong{color:#fff}.demo__tab span{color:var(--slate)}
+.demo__tab:hover{border-color:rgba(255,255,255,.35)}
+.demo__tab[aria-selected=true]{border-color:var(--lime-bright);box-shadow:0 0 0 3px rgba(34,211,171,.2);background:rgba(34,211,171,.08)}
+.demo__frame{border-color:rgba(255,255,255,.12);box-shadow:0 30px 60px -24px rgba(0,0,0,.7)}
+.demo__shot img{border-color:rgba(255,255,255,.12);box-shadow:0 20px 40px -20px rgba(0,0,0,.7)}
+.demo__shot figcaption{color:var(--slate)}
+.demo :focus-visible{outline-color:var(--lime-bright)}
 </style>
 </head>
 <body>
@@ -441,7 +455,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 
 <header class="nav" id="nav">
   <div class="wrap nav__bar">
-    <a class="brand" href="#" aria-label="Merka POS, inicio"><img src="/icon-192.png" width="36" height="36" alt=""><span>Merka<b>POS</b></span></a>
+    <a class="brand" href="#" aria-label="Merka POS, inicio"><img src="favicon.svg" width="36" height="36" alt=""><span>Merka<b>POS</b></span></a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -698,7 +712,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#" aria-label="Merka POS, inicio"><img src="/icon-192.png" width="36" height="36" alt=""><span>Merka<b>POS</b></span></a>
+    <a class="brand" href="#" aria-label="Merka POS, inicio"><img src="favicon.svg" width="36" height="36" alt=""><span>Merka<b>POS</b></span></a>
     <nav aria-label="Legal y soporte">
       <button type="button" data-open="dlg-terminos">Términos</button>
       <button type="button" data-open="dlg-privacidad">Privacidad</button>
