@@ -449,6 +449,28 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 .demo__shot img{border-color:rgba(16,27,44,.15);box-shadow:0 20px 40px -20px rgba(7,40,50,.5)}
 .demo__shot figcaption{color:#16403a}
 .demo :focus-visible{outline-color:#101B2C}
+
+/* HEADER OSCURO + LOGO */
+header.nav{background:rgba(6,19,36,.92);border-bottom-color:rgba(255,255,255,.08)}
+header.nav.scrolled{border-bottom-color:rgba(255,255,255,.14)}
+.brand--logo img{width:auto;height:38px;border-radius:0}
+.menu a:not(.btn){color:#d5e2f0}.menu a:not(.btn):hover{color:#fff}
+.nav__toggle{color:#fff;border-color:rgba(255,255,255,.28)}
+@media(max-width:900px){.menu{background:#061324!important;border-bottom-color:rgba(255,255,255,.1)!important}.menu a:not(.btn){border-bottom-color:rgba(255,255,255,.1)!important;color:#e8f0f8}}
+/* WhatsApp real */
+.wa-float{background:none!important;box-shadow:none!important;width:62px;height:62px;filter:drop-shadow(0 10px 18px rgba(12,26,46,.4))}
+.wa-float img{width:100%;height:100%}
+.btn .wa{width:24px;height:24px}
+/* RIEL DE TARJETAS CON SCROLL */
+.demo{overflow-x:clip}
+.demo__rail{margin-top:64px}
+.demo__track{display:flex;gap:26px;width:max-content;will-change:transform}
+.demo__card{margin:0;width:min(620px,80vw);flex:none}
+.demo__card img{width:100%;height:auto;border-radius:var(--r);border:1px solid rgba(16,27,44,.18);box-shadow:0 30px 60px -28px rgba(7,40,50,.6);background:#f4f7fb}
+.demo__card figcaption{margin-top:14px;color:#16403a;font-size:15px;line-height:1.4}
+.demo__card figcaption b{display:block;color:#101B2C;font-size:17px}
+.demo__rail.is-static{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+.demo__rail.is-static .demo__card{scroll-snap-align:start}
 </style>
 </head>
 <body>
@@ -456,7 +478,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 
 <header class="nav" id="nav">
   <div class="wrap nav__bar">
-    <a class="brand" href="#" aria-label="Merka POS, inicio"><img src="favicon.svg" width="36" height="36" alt=""><span>Merka<b>POS</b></span></a>
+    <a class="brand brand--logo" href="#" aria-label="Merka POS, inicio"><img src="media/logo-merka-pos.svg" width="165" height="38" alt="Merka POS"></a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -552,10 +574,13 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
           <video id="demoVideo" muted playsinline loop preload="none" poster="media/venta-poster.webp" aria-label="Demostración del sistema Merka POS"></video>
         </div>
       </div>
-      <div class="demo__shots">
-        <figure class="demo__shot"><img src="media/panel.webp" width="1600" height="1000" loading="lazy" alt="Panel de control con ventas del día, ganancia neta, cuentas por cobrar y stock bajo"><figcaption>Panel de control</figcaption></figure>
-        <figure class="demo__shot"><img src="media/inventario.webp" width="1600" height="1000" loading="lazy" alt="Pantalla de inventario con productos y niveles de stock"><figcaption>Inventario</figcaption></figure>
-        <figure class="demo__shot demo__shot--m"><img src="media/m-terminal.webp" width="390" height="844" loading="lazy" alt="Terminal de ventas en el celular"><figcaption>Y en tu celular</figcaption></figure>
+      <div class="demo__rail" id="demoRail" aria-label="Pantallas del sistema">
+        <div class="demo__track">
+          <figure class="demo__card"><img src="media/panel.webp" width="1500" height="938" loading="lazy" alt="Panel de control con ventas del día, ganancia neta, cuentas por cobrar y stock bajo"><figcaption><b>Panel de control</b>Ventas, ganancia y alertas del día</figcaption></figure>
+          <figure class="demo__card"><img src="media/inventario.webp" width="1500" height="938" loading="lazy" alt="Pantalla de inventario con productos, precios y niveles de stock"><figcaption><b>Inventario</b>Productos, precios y stock en tiempo real</figcaption></figure>
+          <figure class="demo__card"><img src="media/ventas.webp" width="1500" height="938" loading="lazy" alt="Ventas del día con totales por método de pago y detalle de cada venta"><figcaption><b>Ventas del día</b>Cada venta con su método de pago</figcaption></figure>
+          <figure class="demo__card"><img src="media/terminal-peso.webp" width="1500" height="938" loading="lazy" alt="Terminal de ventas con selector de peso para vender queso por gramos"><figcaption><b>Venta por peso</b>Eliges los gramos y calcula el total</figcaption></figure>
+        </div>
       </div>
     </div>
   </section>
@@ -686,7 +711,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
         <span class="ccard__tag">Se cotiza aparte</span>
         <h3>Cuéntanos qué necesitas</h3>
         <p>No es parte del plan de Merka POS. Conversamos tu caso por WhatsApp y te respondemos con una propuesta.</p>
-        <a class="btn btn-wa" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20consultar%20por%20un%20sistema%20a%20medida." rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg>Consultar por WhatsApp</a>
+        <a class="btn btn-wa" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20consultar%20por%20un%20sistema%20a%20medida." rel="noopener"><img class="wa" src="media/whatsapp.webp" width="24" height="24" alt="">Consultar por WhatsApp</a>
         <small>o escríbenos a <a href="mailto:info@autix.pro">info@autix.pro</a></small>
       </div>
     </div>
@@ -703,7 +728,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
         <div class="final__row">
           <a class="btn btn-light" href="https://app.merkapos.pro/">Crear mi cuenta gratis
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-wa-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg>Hablar por WhatsApp</a>
+          <a class="btn btn-wa-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener"><img class="wa" src="media/whatsapp.webp" width="24" height="24" alt="">Hablar por WhatsApp</a>
         </div>
         </div>
       </div>
@@ -725,7 +750,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg></a>
+<a class="wa-float" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><img src="media/whatsapp.webp" width="60" height="60" alt=""></a>
 
 <!-- Diálogos -->
 <dialog id="dlg-terminos" aria-labelledby="t-terminos">
@@ -819,6 +844,22 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
       if(visible){ if(!v.getAttribute("src")) load(cur); else if(!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){})} } else v.pause();
     },{threshold:.35}).observe(v);
   } else { load(cur); }
+})();
+
+(function(){
+  var rail=document.getElementById("demoRail"); if(!rail) return;
+  var track=rail.firstElementChild;
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){rail.classList.add("is-static");return}
+  var ticking=false;
+  function upd(){
+    ticking=false;
+    var r=rail.getBoundingClientRect(), vh=window.innerHeight;
+    var p=(vh-r.top)/(vh+r.height); p=Math.min(1,Math.max(0,(p-.12)/.6));
+    var max=Math.max(0,track.scrollWidth-rail.clientWidth);
+    track.style.transform="translate3d("+(-p*max).toFixed(1)+"px,0,0)";
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(upd)}}
+  window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);upd();
 })();
 </script>
 </body>
