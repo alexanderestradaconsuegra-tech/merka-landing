@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Merka POS — Punto de venta para minimarkets y tiendas | 30 días gratis</title>
 <meta name="description" content="Sistema de punto de venta en la nube para minimarkets, tiendas y distribuidoras: terminal de ventas, inventario, cierre de caja, proveedores y reportes. 30 días gratis, sin tarjeta.">
@@ -331,8 +332,8 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 @media print{.wa-float{display:none}}
 
 /* animación de entrada */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
-.rv.in{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
 
 /* responsive */
 @media (max-width:980px){
@@ -375,7 +376,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
-  .rv{opacity:1;transform:none}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
