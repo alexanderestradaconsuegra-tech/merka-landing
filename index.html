@@ -378,6 +378,27 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   *{transition:none!important;animation:none!important}
   .js .rv{opacity:1;transform:none}
 }
+
+/* DEMO EN VIDEO */
+.demo{background:#fff}
+.demo__grid{display:grid;grid-template-columns:300px 1fr;gap:32px;margin-top:44px;align-items:start}
+.demo__tabs{display:flex;flex-direction:column;gap:10px}
+.demo__tab{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;color:var(--body);transition:border-color .15s,box-shadow .15s}
+.demo__tab strong{display:block;color:var(--ink);font-size:16px}
+.demo__tab span{font-size:14px;color:var(--muted)}
+.demo__tab[aria-selected=true]{border-color:var(--lime);box-shadow:0 0 0 3px var(--lime-soft)}
+.demo__tab:hover{border-color:var(--slate)}
+.demo__frame{border-radius:var(--r);overflow:hidden;background:var(--navy);box-shadow:var(--shadow);border:1px solid var(--line)}
+.demo__bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#e9eff6}
+.demo__bar i{width:10px;height:10px;border-radius:50%;background:#c3cfdc}
+.demo__bar b{margin-left:10px;font-size:12.5px;font-weight:600;color:var(--muted);background:#fff;border-radius:999px;padding:3px 14px}
+.demo__frame video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
+.demo__shots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:end}
+.demo__shot{margin:0}
+.demo__shot img{width:100%;height:auto;border-radius:var(--r-sm);border:1px solid var(--line);box-shadow:var(--shadow);background:#f4f7fb}
+.demo__shot figcaption{font-size:14px;color:var(--muted);margin-top:10px;text-align:center}
+.demo__shot--m{max-width:230px;margin-inline:auto}
+@media(max-width:900px){.demo__grid{grid-template-columns:1fr}.demo__tabs{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.demo__tab{flex:0 0 220px;scroll-snap-align:start}.demo__shots{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -390,6 +411,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#demo">Demo</a>
       <a href="#funciones">Funciones</a>
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#precio">Precio</a>
@@ -523,6 +545,34 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div><h3>Panel de control</h3><p>Indicadores clave en tiempo real: ventas, stock crítico y clientes con crédito activo.</p></article>
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Cierre de caja</h3><p>Cierre por turnos con fondo inicial, conteo de billetes y diferencias. El resumen del turno en segundos.</p></article>
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M1 6h13v10H1z"/><path d="M14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><h3>Proveedores y compras</h3><p>Registra facturas, controla las cuentas por pagar y actualiza el inventario al recibir mercadería.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO EN VIDEO -->
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Míralo en acción</span>
+        <h2>Así se usa Merka POS en tu mostrador.</h2>
+        <p class="lead">Grabaciones reales del sistema, sin edición. Elige un flujo.</p>
+      </div>
+      <div class="demo__grid">
+        <div class="demo__tabs" role="tablist" aria-label="Flujos del sistema">
+          <button class="demo__tab" role="tab" aria-selected="true" data-v="venta"><strong>Vender en segundos</strong><span>Productos al carrito, método de pago y cobro.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="peso"><strong>Venta por peso</strong><span>Quesos y carnes: eliges los gramos y el sistema calcula.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="inventario"><strong>Agregar un producto</strong><span>Nombre, precios y stock en un solo formulario.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="tour"><strong>Control del negocio</strong><span>Ventas del día, clientes, cierre de caja y reportes.</span></button>
+        </div>
+        <div class="demo__frame">
+          <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b>app.merkapos.pro</b></div>
+          <video id="demoVideo" muted playsinline loop preload="none" poster="media/venta-poster.webp" aria-label="Demostración del sistema Merka POS"></video>
+        </div>
+      </div>
+      <div class="demo__shots">
+        <figure class="demo__shot"><img src="media/panel.webp" width="1600" height="1000" loading="lazy" alt="Panel de control con ventas del día, ganancia neta, cuentas por cobrar y stock bajo"><figcaption>Panel de control</figcaption></figure>
+        <figure class="demo__shot"><img src="media/inventario.webp" width="1600" height="1000" loading="lazy" alt="Pantalla de inventario con productos y niveles de stock"><figcaption>Inventario</figcaption></figure>
+        <figure class="demo__shot demo__shot--m"><img src="media/m-terminal.webp" width="390" height="844" loading="lazy" alt="Terminal de ventas en el celular"><figcaption>Y en tu celular</figcaption></figure>
       </div>
     </div>
   </section>
@@ -768,6 +818,21 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
     var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
     items.forEach(function(el,i){ el.style.transitionDelay=(i%3)*70+'ms'; io.observe(el); });
   } else { items.forEach(function(el){ el.classList.add('in'); }); }
+})();
+
+(function(){
+  var v=document.getElementById("demoVideo"); if(!v) return;
+  var tabs=[].slice.call(document.querySelectorAll(".demo__tab"));
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var visible=false, cur="venta";
+  function load(n){cur=n;v.poster="media/"+n+"-poster.webp";v.src="media/"+n+".mp4";v.load();if(visible&&!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+  if(reduce) v.controls=true;
+  tabs.forEach(function(t){t.addEventListener("click",function(){tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false")});load(t.dataset.v)})});
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(e){visible=e[0].isIntersecting;
+      if(visible){ if(!v.getAttribute("src")) load(cur); else if(!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){})} } else v.pause();
+    },{threshold:.35}).observe(v);
+  } else { load(cur); }
 })();
 </script>
 </body>
