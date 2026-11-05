@@ -32,7 +32,7 @@
   "description": "Sistema de punto de venta en la nube para minimarkets, tiendas y distribuidoras.",
   "url": "https://merkapos.pro/",
   "offers": { "@type": "Offer", "price": "9.99", "priceCurrency": "USD", "description": "Plan anual, por mes. 30 días de prueba gratis." },
-  "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.cl" }
+  "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.cl", "telephone": "+56992025527", "email": "info@autix.pro" }
 }
 </script>
 <style>
@@ -300,6 +300,36 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
 .dlg__body ul{padding-left:20px;margin-top:6px}
 .dlg__body a{color:var(--sky-ink);font-weight:700}
 
+
+/* a medida + whatsapp */
+.btn-wa{background:#0f766e;color:#fff;box-shadow:0 8px 20px -8px rgba(15,118,110,.6)}
+.btn-wa:hover{background:#0b5f58}
+.btn .wa{width:20px;height:20px}
+.btn-wa-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-wa-ghost:hover{border-color:#fff}
+.custom{background:var(--paper)}
+.custom__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.custom ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:18px}
+.custom li{display:flex;gap:14px;align-items:flex-start}
+.custom li .tk{flex:none;width:40px;height:40px;border-radius:12px;background:var(--lime-soft);color:var(--lime-hover);display:grid;place-items:center}
+.custom li .tk svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.custom li b{display:block;color:var(--ink);font-size:17px}
+.custom li span{color:var(--muted);font-size:16px}
+.ccard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px;box-shadow:var(--shadow)}
+.ccard__tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--sky-ink);background:var(--sky-soft);border-radius:999px;padding:5px 12px}
+.ccard h3{font-size:26px;margin:16px 0 10px;letter-spacing:-.02em}
+.ccard p{color:var(--muted);font-size:16.5px;margin-bottom:24px}
+.ccard .btn{width:100%}
+.ccard small{display:block;text-align:center;margin-top:14px;color:var(--muted);font-size:14px}
+.ccard small a{color:var(--sky-ink);font-weight:700}
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#0f766e;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(12,26,46,.5);transition:transform .15s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:30px;height:30px}
+.final__row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+@media (max-width:980px){.custom__grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:600px){.wa-float{right:14px;bottom:14px;width:54px;height:54px}.final__row .btn{width:100%}}
+@media print{.wa-float{display:none}}
+
 /* animación de entrada */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
 .rv.in{opacity:1;transform:none}
@@ -338,6 +368,8 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   .plan{padding:32px 24px}
   .price strong{font-size:58px}
   .final__box{padding:56px 22px;border-radius:26px}
+  .final__box::after{width:110px;height:110px;right:-44px;top:-52px}
+  .final__box::before{width:130px;height:130px;left:-50px;bottom:-60px}
   .phone{width:min(300px,100%)}
 }
 @media (prefers-reduced-motion:reduce){
@@ -361,6 +393,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#precio">Precio</a>
       <a href="#preguntas">Preguntas</a>
+      <a href="#a-medida">A medida</a>
       <a href="https://app.merkapos.pro/">Iniciar sesión</a>
       <a class="btn btn-primary btn-sm" href="https://app.merkapos.pro/">Probar 30 días gratis</a>
     </nav>
@@ -577,7 +610,7 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
         <a class="btn btn-primary" href="https://app.merkapos.pro/">Empezar 30 días gratis</a>
         <p class="plan__fine">Sin tarjeta · Sin contrato · Cancela cuando quieras</p>
       </div>
-      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo.</p>
+      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." style="color:var(--lime-bright);font-weight:700" rel="noopener">Escríbenos por WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -592,11 +625,35 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
         <details><summary>¿Necesito instalar algo?</summary><p>No. Merka POS funciona directamente en el navegador. Solo abres app.merkapos.pro desde cualquier dispositivo. Si quieres, puedes agregarlo a tu pantalla de inicio como una app.</p></details>
         <details><summary>¿Funciona sin internet?</summary><p>El sistema necesita conexión a internet para registrar ventas y sincronizar los datos. Si la conexión se corta, la información ya cargada sigue visible mientras no recargues la página.</p></details>
         <details><summary>¿Cuántos dispositivos puedo usar?</summary><p>Los datos se sincronizan entre todos tus dispositivos. Puedes tener el sistema abierto a la vez en la caja, en una tablet y en el celular del dueño.</p></details>
-        <details><summary>¿Cómo funciona el Agente IA?</summary><p>El Agente vive dentro del sistema. Al abrirlo ves un análisis de márgenes, productos críticos y clientes con deuda. También puedes hacerle preguntas en lenguaje natural, como «¿qué producto me deja más ganancia?» o «¿cuánto gané neto este mes?». Además puede generar órdenes de compra, detectar pérdidas y sugerir ajustes de precio.</p></details>
+        <details><summary>¿Hacen sistemas a medida?</summary><p>Sí. Un sistema a medida es un desarrollo hecho para las necesidades específicas de tu negocio: flujos propios, integraciones con otros sistemas, reportes particulares o automatizaciones. No forma parte del plan de Merka POS y se cotiza aparte. Escríbenos por <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20consultar%20por%20un%20sistema%20a%20medida." style="color:var(--sky-ink);font-weight:700" rel="noopener">WhatsApp</a> y lo conversamos.</p></details>
         <details><summary>¿Funciona con balanzas?</summary><p>Sí. Es compatible con balanzas electrónicas que generan un código EAN-13 con el peso incluido. Al escanear el código, el sistema detecta el producto y el peso automáticamente.</p></details>
         <details><summary>¿Cómo pago después de la prueba?</summary><p>Durante los 30 días no pagas nada ni ingresas una tarjeta. Antes de que termine la prueba te escribimos por correo para coordinar tu suscripción. Si decides no continuar, simplemente no pagas.</p></details>
         <details><summary>¿Puedo cancelar en cualquier momento?</summary><p>Sí. No hay contratos ni permanencia mínima, y no existen cargos por cancelación.</p></details>
         <details><summary>¿Mis datos son míos?</summary><p>Sí. La información que ingresas en Merka POS es de tu exclusiva propiedad. Autix no la vende ni la cede a terceros.</p></details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- A MEDIDA -->
+  <section class="custom" id="a-medida">
+    <div class="wrap custom__grid">
+      <div>
+        <span class="eyebrow">A medida</span>
+        <h2>¿Necesitas algo distinto?</h2>
+        <p class="lead">Merka POS cubre lo que necesita la mayoría de los negocios. Si el tuyo trabaja de otra forma, desarrollamos un sistema a medida: pensado desde cero para cómo operas.</p>
+        <ul>
+          <li><span class="tk"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16"/></svg></span><div><b>Flujos propios</b><span>El sistema se adapta a tu forma de trabajar, no al revés.</span></div></li>
+          <li><span class="tk"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></svg></span><div><b>Integraciones</b><span>Lo conectamos con tu contabilidad, tu tienda en línea u otros sistemas que ya uses.</span></div></li>
+          <li><span class="tk"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg></span><div><b>Automatizaciones</b><span>Tareas repetitivas, avisos y reportes. Si lo necesitas, también puede incluir un asistente de IA.</span></div></li>
+        </ul>
+      </div>
+      <div class="ccard">
+        <span class="ccard__tag">Se cotiza aparte</span>
+        <h3>Cuéntanos qué necesitas</h3>
+        <p>No es parte del plan de Merka POS. Conversamos tu caso por WhatsApp y te respondemos con una propuesta.</p>
+        <a class="btn btn-wa" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20consultar%20por%20un%20sistema%20a%20medida." rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg>Consultar por WhatsApp</a>
+        <small>o escríbenos a <a href="mailto:info@autix.pro">info@autix.pro</a></small>
       </div>
     </div>
   </section>
@@ -607,8 +664,11 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
       <div class="final__box">
         <h2>Tu negocio no espera. Empieza hoy.</h2>
         <p>30 días gratis. Sin tarjeta. Sin contrato.</p>
-        <a class="btn btn-light" href="https://app.merkapos.pro/">Crear mi cuenta gratis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="final__row">
+          <a class="btn btn-light" href="https://app.merkapos.pro/">Crear mi cuenta gratis
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-wa-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg>Hablar por WhatsApp</a>
+        </div>
       </div>
     </div>
   </section>
@@ -621,11 +681,14 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
       <button type="button" data-open="dlg-terminos">Términos</button>
       <button type="button" data-open="dlg-privacidad">Privacidad</button>
       <button type="button" data-open="dlg-soporte">Soporte</button>
+      <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">WhatsApp +56 9 9202 5527</a>
       <a href="mailto:info@autix.pro">info@autix.pro</a>
     </nav>
     <p class="foot__copy">© 2026 Merka POS · Desarrollado por <a href="https://autix.cl" rel="noopener">Autix</a></p>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><svg class="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c.2 2.2 2.6 5.2 5.6 6.2l1.2-1.1a.7.7 0 0 1 .8-.1l1.6.8a.7.7 0 0 1 .4.7c-.1 1.1-1 1.9-2.1 1.9-3.6-.2-7-3.4-7.3-7 0-1 .8-1.9 1.9-2a.7.7 0 0 1 .7.4l.8 1.6a.7.7 0 0 1-.1.8z"/></svg></a>
 
 <!-- Diálogos -->
 <dialog id="dlg-terminos" aria-labelledby="t-terminos">
@@ -652,14 +715,14 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
     </ul>
     <h3>Con quién compartimos datos</h3><p>No vendemos ni cedemos tus datos a terceros con fines comerciales.</p>
     <h3>Seguridad</h3><p>Los datos se transmiten mediante HTTPS/TLS y las contraseñas se almacenan cifradas.</p>
-    <h3>Contacto</h3><p>Para consultas escríbenos a <a href="mailto:info@autix.pro">info@autix.pro</a>.</p>
+    <h3>Contacto</h3><p>Para consultas escríbenos a <a href="mailto:info@autix.pro">info@autix.pro</a> o por WhatsApp al <a href="https://wa.me/56992025527" rel="noopener">+56 9 9202 5527</a>.</p>
   </div>
 </dialog>
 
 <dialog id="dlg-soporte" aria-labelledby="t-soporte">
   <div class="dlg__head"><h2 id="t-soporte">Centro de Soporte</h2><button class="dlg__x" type="button" data-close aria-label="Cerrar">×</button></div>
   <div class="dlg__body">
-    <h3>Canales</h3><p>Correo: <a href="mailto:info@autix.pro">info@autix.pro</a></p>
+    <h3>Canales</h3><p>WhatsApp: <a href="https://wa.me/56992025527" rel="noopener">+56 9 9202 5527</a><br>Correo: <a href="mailto:info@autix.pro">info@autix.pro</a></p>
     <h3>Horario</h3><p>Lunes a viernes, de 9:00 a 20:00 (hora de Chile).</p>
     <h3>Puesta en marcha</h3><p>Todo cliente nuevo recibe una sesión de configuración gratuita de 30 minutos.</p>
   </div>
