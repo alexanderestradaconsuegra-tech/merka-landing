@@ -501,6 +501,33 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 @media(prefers-reduced-motion:reduce){.chip{animation:none}}
 @media(max-width:1000px){.phones{height:600px;max-width:480px;margin-inline:auto;width:100%}}
 @media(max-width:520px){.phones{height:540px}.dev{width:224px}.chip--a{left:0}.chip--b{right:0}}
+
+/* HERO MOVIL COMPACTO */
+.mx{display:none}
+@media(max-width:700px){
+  .dx{display:none}.mx{display:inline}
+  .hero.hero--img{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding:0}
+  .hero__media{position:relative;inset:auto;flex:none;width:100%;aspect-ratio:auto;height:80vw;max-height:420px}
+  .hero__media img{position:absolute;top:0;left:-49%;width:150%;max-width:none;height:auto;object-fit:initial;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 60%,transparent 100%)}
+  .hero__media::after{display:none}
+  .hero--img .wrap{flex:none;display:block;padding:0 18px 22px;margin-top:-72px;position:relative;z-index:2}
+  .wa-float{opacity:0;pointer-events:none;transition:opacity .25s,transform .15s}
+  body.wa-on .wa-float{opacity:1;pointer-events:auto}
+  .hero--img .hero__copy{max-width:none}
+  .hero--img .eyebrow{font-size:11.5px;letter-spacing:.07em}
+  .hero--img h1{font-size:clamp(31px,9vw,38px);line-height:1.04;margin:12px 0 12px}
+  .hero--img .lead{font-size:15.5px;line-height:1.5}
+  .hero--img .cta-row{flex-wrap:nowrap;gap:10px;margin:18px 0 16px}
+  .hero--img .cta-row .btn{width:auto;padding:14px 18px;font-size:15.5px;gap:8px}
+  .hero--img .cta-row .btn-primary{flex:1 1 auto;white-space:nowrap}
+  .hero--img .cta-row .btn-ghost{flex:none}
+  .hero--img .cta-row .arrow{width:16px;height:16px}
+  .hero--img .trust{flex-wrap:nowrap;gap:6px 14px;font-size:12.5px;justify-content:space-between}
+  .hero--img .trust li{gap:5px;white-space:nowrap}
+  .hero--img .trust svg{width:14px;height:14px}
+}
+@media(max-width:380px){.hero--img .cta-row .btn{padding:13px 14px;font-size:14.5px}.hero--img .cta-row .arrow{display:none}.hero--img .trust{font-size:12px;gap:6px 10px}}
+@media(max-width:340px){.hero--img .trust li:last-child{display:none}.hero--img .trust{justify-content:flex-start;gap:14px}}
 </style>
 </head>
 <body>
@@ -531,18 +558,18 @@ footer.ft :focus-visible{outline-color:#22D3AB}
     <div class="hero__media"><img src="media/hero.webp" width="1920" height="1080" fetchpriority="high" alt="Cajera atendiendo en la pantalla táctil de Merka POS en un minimarket, con impresora de comprobantes y lector de códigos"></div>
     <div class="wrap">
       <div class="hero__copy">
-        <span class="eyebrow">Punto de venta para minimarkets, tiendas y distribuidoras</span>
+        <span class="eyebrow"><span class="dx">Punto de venta para minimarkets, tiendas y distribuidoras</span><span class="mx">Punto de venta en la nube</span></span>
         <h1>Vende más. Pierde menos. <em>Controla todo.</em></h1>
-        <p class="lead">Terminal de ventas, inventario, cierre de caja, proveedores y reportes en una sola pantalla. Funciona en celular, tablet y computador, sin instalar nada.</p>
+        <p class="lead"><span class="dx">Terminal de ventas, inventario, cierre de caja, proveedores y reportes en una sola pantalla. Funciona en celular, tablet y computador, sin instalar nada.</span><span class="mx">Ventas, inventario, cierre de caja y reportes en una sola pantalla. Sin instalar nada.</span></p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona</a>
+          <a class="btn btn-ghost" href="#demo"><span class="dx">Ver cómo funciona</span><span class="mx">Ver demo</span></a>
         </div>
         <ul class="trust">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sin tarjeta de crédito</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Sin tarjeta de crédito</span><span class="mx">Sin tarjeta</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sin contrato</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Desde cualquier dispositivo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Desde cualquier dispositivo</span><span class="mx">Todo dispositivo</span></li>
         </ul>
       </div>
 
@@ -889,6 +916,10 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 })();
 
 
+(function(){
+  var on=false;function f(){var v=window.scrollY>240;if(v!==on){on=v;document.body.classList.toggle("wa-on",v)}}
+  window.addEventListener("scroll",f,{passive:true});f();
+})();
 </script>
 </body>
 </html>
