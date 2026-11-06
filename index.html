@@ -528,6 +528,35 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 }
 @media(max-width:380px){.hero--img .cta-row .btn{padding:13px 14px;font-size:14.5px}.hero--img .cta-row .arrow{display:none}.hero--img .trust{font-size:12px;gap:6px 10px}}
 @media(max-width:340px){.hero--img .trust li:last-child{display:none}.hero--img .trust{justify-content:flex-start;gap:14px}}
+
+/* HERO: MEJORAS DE ESCRITORIO */
+.hero--img .ln{display:inline-block;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero--img h1 .ln:nth-child(1){animation-delay:.05s}.hero--img h1 .ln:nth-child(2){animation-delay:.17s}.hero--img h1 .ln:nth-child(3){animation-delay:.29s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero--img h1 em.ln{background:linear-gradient(100deg,#22D3AB 35%,#c8fff3 50%,#22D3AB 65%) 100% 0/280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:rise .7s .29s cubic-bezier(.2,.7,.2,1) both,sheen 2.2s 1s ease-out 1 forwards}
+@keyframes sheen{to{background-position:0 0}}
+.hero--img .btn-primary{position:relative;overflow:hidden;box-shadow:0 10px 30px -8px rgba(34,211,171,.75)}
+.hero--img .btn-primary::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .6s ease}
+.hero--img .btn-primary:hover::after{left:130%}
+.hchip{display:none}
+@media(min-width:1001px){
+  .hero--img::before{display:block;content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(38% 60% at 16% 46%,rgba(34,211,171,.16),transparent 70%),radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.3px) 0 0/22px 22px;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 30%,transparent 52%);mask-image:linear-gradient(90deg,#000 0,#000 30%,transparent 52%)}
+  .hero__media{z-index:0}
+  .hero--img .wrap{z-index:3}
+  .hchip{display:flex;position:absolute;z-index:4;align-items:center;gap:12px;background:rgba(255,255,255,.96);border:1px solid rgba(34,211,171,.35);border-radius:16px;padding:12px 16px;box-shadow:0 24px 44px -18px rgba(0,0,0,.65);opacity:0;animation:chipin .7s cubic-bezier(.2,.7,.2,1) forwards,fl 7s ease-in-out infinite}
+  .hchip b{display:block;color:var(--ink);font-size:16px;line-height:1.2}
+  .hchip small{display:block;color:var(--muted);font-size:12.5px;font-weight:600}
+  .hchip__ic{width:32px;height:32px;border-radius:50%;background:#22D3AB;color:#06231d;display:grid;place-items:center;flex:none}
+  .hchip__ic svg{width:17px;height:17px}
+  .hchip__up{font-size:12.5px;font-weight:800;color:#0a7a62;background:#d9f7ef;border-radius:999px;padding:3px 10px}
+  .hchip--a{left:calc(50% - 40px);bottom:12%;animation-delay:1.1s,1.8s}
+  .hchip--b{left:calc(50% + 10px);top:17%;animation-delay:1.35s,2.6s}
+}
+@keyframes chipin{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.hero--img .ln,.hero--img h1 em.ln,.hchip{animation:none!important;opacity:1}.hero--img h1 em.ln{background-position:0 0}}
+
+.menu a{white-space:nowrap}
+@media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 </style>
 </head>
 <body>
@@ -556,10 +585,12 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   <!-- HERO -->
   <section class="hero hero--img">
     <div class="hero__media"><img src="media/hero.webp" width="1920" height="1080" fetchpriority="high" alt="Cajera atendiendo en la pantalla táctil de Merka POS en un minimarket, con impresora de comprobantes y lector de códigos"></div>
+    <div class="hchip hchip--a" aria-hidden="true"><span class="hchip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Venta registrada</b><small>$9.450 · Tarjeta</small></div></div>
+    <div class="hchip hchip--b" aria-hidden="true"><div><small>Ganancia hoy</small><b>$11.170</b></div><span class="hchip__up">+12,5%</span></div>
     <div class="wrap">
       <div class="hero__copy">
         <span class="eyebrow"><span class="dx">Punto de venta para minimarkets, tiendas y distribuidoras</span><span class="mx">Punto de venta en la nube</span></span>
-        <h1>Vende más. Pierde menos. <em>Controla todo.</em></h1>
+        <h1><span class="ln">Vende más.</span> <span class="ln">Pierde menos.</span> <em class="ln">Controla todo.</em></h1>
         <p class="lead"><span class="dx">Terminal de ventas, inventario, cierre de caja, proveedores y reportes en una sola pantalla. Funciona en celular, tablet y computador, sin instalar nada.</span><span class="mx">Ventas, inventario, cierre de caja y reportes en una sola pantalla. Sin instalar nada.</span></p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis
