@@ -381,26 +381,6 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   .js .rv{opacity:1;transform:none}
 }
 
-/* DEMO EN VIDEO */
-.demo{background:#fff}
-.demo__grid{display:grid;grid-template-columns:300px 1fr;gap:32px;margin-top:44px;align-items:start}
-.demo__tabs{display:flex;flex-direction:column;gap:10px}
-.demo__tab{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;color:var(--body);transition:border-color .15s,box-shadow .15s}
-.demo__tab strong{display:block;color:var(--ink);font-size:16px}
-.demo__tab span{font-size:14px;color:var(--muted)}
-.demo__tab[aria-selected=true]{border-color:var(--lime);box-shadow:0 0 0 3px var(--lime-soft)}
-.demo__tab:hover{border-color:var(--slate)}
-.demo__frame{border-radius:var(--r);overflow:hidden;background:var(--navy);box-shadow:var(--shadow);border:1px solid var(--line)}
-.demo__bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#e9eff6}
-.demo__bar i{width:10px;height:10px;border-radius:50%;background:#c3cfdc}
-.demo__bar b{margin-left:10px;font-size:12.5px;font-weight:600;color:var(--muted);background:#fff;border-radius:999px;padding:3px 14px}
-.demo__frame video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
-.demo__shots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:end}
-.demo__shot{margin:0}
-.demo__shot img{width:100%;height:auto;border-radius:var(--r-sm);border:1px solid var(--line);box-shadow:var(--shadow);background:#f4f7fb}
-.demo__shot figcaption{font-size:14px;color:var(--muted);margin-top:10px;text-align:center}
-.demo__shot--m{max-width:230px;margin-inline:auto}
-@media(max-width:900px){.demo__grid{grid-template-columns:1fr}.demo__tabs{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.demo__tab{flex:0 0 220px;scroll-snap-align:start}.demo__shots{grid-template-columns:1fr}}
 
 /* HERO CON FOTO + CTA FINAL CON FOTO */
 .hero.hero--img{--hbg:#061324;background:var(--hbg);padding:0;text-align:left;min-height:clamp(540px,50vw,740px);display:flex;align-items:center;overflow:hidden}
@@ -437,18 +417,6 @@ dialog::backdrop{background:rgba(12,26,46,.55);backdrop-filter:blur(3px)}
   .final__copy{max-width:none;padding:8px 22px 44px}
 }
 
-/* DEMO sobre fondo turquesa */
-.demo{background:var(--lime-bright)}
-.demo h2{color:#101B2C}.demo .lead{color:#16403a}.demo .eyebrow{color:#101B2C}
-.demo .eyebrow::before{background:#101B2C;box-shadow:0 0 0 3px rgba(16,27,44,.15)}
-.demo__tab{background:rgba(255,255,255,.55);border:1.5px solid rgba(16,27,44,.12)}
-.demo__tab strong{color:#101B2C}.demo__tab span{color:#24454a}
-.demo__tab:hover{border-color:rgba(16,27,44,.45)}
-.demo__tab[aria-selected=true]{background:#fff;border-color:#101B2C;box-shadow:0 10px 24px -12px rgba(16,27,44,.5)}
-.demo__frame{border:1px solid rgba(16,27,44,.2);box-shadow:0 30px 60px -24px rgba(7,40,50,.55)}
-.demo__shot img{border-color:rgba(16,27,44,.15);box-shadow:0 20px 40px -20px rgba(7,40,50,.5)}
-.demo__shot figcaption{color:#16403a}
-.demo :focus-visible{outline-color:#101B2C}
 
 /* HEADER OSCURO + LOGO */
 header.nav{background:rgba(6,19,36,.92);border-bottom-color:rgba(255,255,255,.08)}
@@ -461,16 +429,6 @@ header.nav.scrolled{border-bottom-color:rgba(255,255,255,.14)}
 .wa-float{background:none!important;box-shadow:none!important;width:62px;height:62px;filter:drop-shadow(0 10px 18px rgba(12,26,46,.4))}
 .wa-float img{width:100%;height:100%}
 .btn .wa{width:24px;height:24px}
-/* RIEL DE TARJETAS CON SCROLL */
-.demo{overflow-x:clip}
-.demo__rail{margin-top:64px}
-.demo__track{display:flex;gap:26px;width:max-content;will-change:transform}
-.demo__card{margin:0;width:min(620px,80vw);flex:none}
-.demo__card img{width:100%;height:auto;border-radius:var(--r);border:1px solid rgba(16,27,44,.18);box-shadow:0 30px 60px -28px rgba(7,40,50,.6);background:#f4f7fb}
-.demo__card figcaption{margin-top:14px;color:#16403a;font-size:15px;line-height:1.4}
-.demo__card figcaption b{display:block;color:#101B2C;font-size:17px}
-.demo__rail.is-static{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
-.demo__rail.is-static .demo__card{scroll-snap-align:start}
 
 /* FOOTER PRO */
 footer.ft{background:#061324;border-top:0;padding:72px 0 28px;position:relative;color:#b6c4d6}
@@ -494,6 +452,55 @@ footer.ft::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;b
 footer.ft :focus-visible{outline-color:#22D3AB}
 @media(max-width:900px){.ft__grid{grid-template-columns:1fr 1fr;gap:36px 28px}.ft__brand{grid-column:1/-1}}
 @media(max-width:520px){.ft__grid{grid-template-columns:1fr}footer.ft{padding:56px 0 92px}}
+
+/* DEMO PREMIUM */
+.demo{position:relative;background:#061324;overflow:hidden;padding:104px 0 112px;border-top:1px solid rgba(255,255,255,.07)}
+.demo__glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 45% at 50% 0%,rgba(34,211,171,.24),transparent 70%),radial-gradient(38% 38% at 92% 62%,rgba(14,165,233,.16),transparent 70%),radial-gradient(34% 34% at 6% 72%,rgba(34,211,171,.10),transparent 70%)}
+.demo .wrap{position:relative}
+.demo h2{color:#fff}.demo .lead{color:#a9bbce}.demo .eyebrow{color:#5eead4}
+.demo__stage{margin-top:52px}
+.demo__frame{max-width:1040px;margin:0 auto;border-radius:20px;padding:1.5px;background:linear-gradient(140deg,rgba(34,211,171,.85),rgba(255,255,255,.12) 38%,rgba(14,165,233,.55));box-shadow:0 50px 120px -40px rgba(34,211,171,.38),0 30px 60px -30px rgba(0,0,0,.7)}
+.demo__bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:#0b1b2f;border-radius:18.5px 18.5px 0 0}
+.demo__bar i{width:11px;height:11px;border-radius:50%;background:#2a3b52}
+.demo__bar i:nth-child(1){background:#ff5f57}.demo__bar i:nth-child(2){background:#febc2e}.demo__bar i:nth-child(3){background:#28c840}
+.demo__bar b{display:inline-flex;align-items:center;gap:7px;margin-left:14px;font-size:12.5px;font-weight:600;color:#9fb1c5;background:#06121f;border-radius:999px;padding:4px 16px}
+.demo__bar svg{width:13px;height:13px;color:#22D3AB}
+.demo__frame video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb;border-radius:0 0 18.5px 18.5px}
+.demo__tabs{max-width:1040px;margin:34px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.demo__tab{position:relative;text-align:left;background:none;border:0;padding:0;color:#fff;display:flex;flex-direction:column;gap:6px;opacity:.55;transition:opacity .2s}
+.demo__tab:hover{opacity:.85}
+.demo__tab[aria-selected=true]{opacity:1}
+.demo__prog{display:block;height:3px;border-radius:3px;background:rgba(255,255,255,.16);overflow:hidden;margin-bottom:10px}
+.demo__prog b{display:block;height:100%;width:100%;background:linear-gradient(90deg,#22D3AB,#5eead4);transform:scaleX(0);transform-origin:left}
+.demo__tab[aria-selected=true] .demo__prog b{transform:scaleX(var(--p,0))}
+.demo__tab strong{font-size:16.5px;line-height:1.3}
+.demo__tab span{font-size:14px;line-height:1.5;color:#a9bbce}
+.demo :focus-visible{outline-color:#22D3AB}
+@media(max-width:900px){.demo{padding:76px 0 84px}.demo__tabs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:220px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;gap:20px}.demo__tab{scroll-snap-align:start}}
+/* MOVIL CON TELEFONOS REALES */
+.mobile{position:relative;background:linear-gradient(180deg,#fff 0%,#ecfaf6 55%,#fff 100%);overflow:hidden}
+.ticks .tk{background:linear-gradient(140deg,#22D3AB,#14b793);color:#06231d;box-shadow:0 10px 20px -10px rgba(34,211,171,.9)}
+.phones{position:relative;height:640px;display:grid;place-items:center}
+.phones__blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.phones__blob--a{width:420px;height:420px;background:radial-gradient(circle at 35% 35%,rgba(34,211,171,.55),rgba(34,211,171,.08) 70%);top:40px;right:6%}
+.phones__blob--b{width:260px;height:260px;background:radial-gradient(circle at 40% 40%,rgba(14,165,233,.35),rgba(14,165,233,.04) 70%);bottom:10px;left:2%}
+.dev{position:absolute;width:270px;background:#0a1626;border-radius:44px;padding:9px;box-shadow:0 50px 80px -30px rgba(6,19,36,.65),inset 0 0 0 1.5px rgba(255,255,255,.14)}
+.dev::before{content:"";position:absolute;top:15px;left:50%;width:78px;height:20px;transform:translateX(-50%);border-radius:12px;background:#0a1626;z-index:2}
+.dev img{display:block;width:100%;height:auto;border-radius:36px}
+.dev--front{z-index:2;transform:translate(-8%,2%) rotate(-3deg)}
+.dev--back{z-index:1;transform:translate(46%,-5%) rotate(5deg) scale(.93)}
+.chip{position:absolute;z-index:3;display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.96);border:1px solid #d7efe9;border-radius:16px;padding:11px 15px;box-shadow:0 24px 40px -18px rgba(6,19,36,.45)}
+.chip b{display:block;color:var(--ink);font-size:14.5px;line-height:1.2}
+.chip small{display:block;color:var(--muted);font-size:12.5px;font-weight:600}
+.chip__ic{width:30px;height:30px;border-radius:50%;background:#22D3AB;color:#06231d;display:grid;place-items:center;flex:none}
+.chip__ic svg{width:16px;height:16px}
+.chip__up{font-size:12px;font-weight:800;color:#0a7a62;background:#d9f7ef;border-radius:999px;padding:3px 9px}
+.chip--a{left:-2%;bottom:15%;animation:fl 6s ease-in-out infinite}
+.chip--b{right:-1%;top:12%;animation:fl 7s ease-in-out -2s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(prefers-reduced-motion:reduce){.chip{animation:none}}
+@media(max-width:1000px){.phones{height:600px;max-width:480px;margin-inline:auto;width:100%}}
+@media(max-width:520px){.phones{height:540px}.dev{width:224px}.chip--a{left:0}.chip--b{right:0}}
 </style>
 </head>
 <body>
@@ -579,30 +586,23 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 
   <!-- DEMO EN VIDEO -->
   <section class="demo" id="demo">
+    <div class="demo__glow" aria-hidden="true"></div>
     <div class="wrap">
       <div class="center">
         <span class="eyebrow">Míralo en acción</span>
         <h2>Así se usa Merka POS en tu mostrador.</h2>
         <p class="lead">Grabaciones reales del sistema, sin edición. Elige un flujo.</p>
       </div>
-      <div class="demo__grid">
-        <div class="demo__tabs" role="tablist" aria-label="Flujos del sistema">
-          <button class="demo__tab" role="tab" aria-selected="true" data-v="venta"><strong>Vender en segundos</strong><span>Productos al carrito, método de pago y cobro.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="peso"><strong>Venta por peso</strong><span>Quesos y carnes: eliges los gramos y el sistema calcula.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="inventario"><strong>Agregar un producto</strong><span>Nombre, precios y stock en un solo formulario.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="tour"><strong>Control del negocio</strong><span>Ventas del día, clientes, cierre de caja y reportes.</span></button>
-        </div>
+      <div class="demo__stage">
         <div class="demo__frame">
-          <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b>app.merkapos.pro</b></div>
-          <video id="demoVideo" muted playsinline loop preload="none" poster="media/venta-poster.webp" aria-label="Demostración del sistema Merka POS"></video>
+          <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>app.merkapos.pro</b></div>
+          <video id="demoVideo" muted playsinline preload="none" poster="media/venta-poster.webp" aria-label="Demostración del sistema Merka POS"></video>
         </div>
-      </div>
-      <div class="demo__rail" id="demoRail" aria-label="Pantallas del sistema">
-        <div class="demo__track">
-          <figure class="demo__card"><img src="media/panel.webp" width="1500" height="938" loading="lazy" alt="Panel de control con ventas del día, ganancia neta, cuentas por cobrar y stock bajo"><figcaption><b>Panel de control</b>Ventas, ganancia y alertas del día</figcaption></figure>
-          <figure class="demo__card"><img src="media/inventario.webp" width="1500" height="938" loading="lazy" alt="Pantalla de inventario con productos, precios y niveles de stock"><figcaption><b>Inventario</b>Productos, precios y stock en tiempo real</figcaption></figure>
-          <figure class="demo__card"><img src="media/ventas.webp" width="1500" height="938" loading="lazy" alt="Ventas del día con totales por método de pago y detalle de cada venta"><figcaption><b>Ventas del día</b>Cada venta con su método de pago</figcaption></figure>
-          <figure class="demo__card"><img src="media/terminal-peso.webp" width="1500" height="938" loading="lazy" alt="Terminal de ventas con selector de peso para vender queso por gramos"><figcaption><b>Venta por peso</b>Eliges los gramos y calcula el total</figcaption></figure>
+        <div class="demo__tabs" role="tablist" aria-label="Flujos del sistema">
+          <button class="demo__tab" role="tab" aria-selected="true" data-v="venta"><i class="demo__prog"><b></b></i><strong>Vender en segundos</strong><span>Productos al carrito, método de pago y cobro.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="peso"><i class="demo__prog"><b></b></i><strong>Venta por peso</strong><span>Eliges los gramos y el sistema calcula.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="inventario"><i class="demo__prog"><b></b></i><strong>Agregar un producto</strong><span>Nombre, precios y stock en un formulario.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="tour"><i class="demo__prog"><b></b></i><strong>Control del negocio</strong><span>Ventas, clientes, cierre de caja y reportes.</span></button>
         </div>
       </div>
     </div>
@@ -640,21 +640,12 @@ footer.ft :focus-visible{outline-color:#22D3AB}
         <a class="btn btn-primary" href="https://app.merkapos.pro/">Probar en mi celular
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="phone-wrap" aria-hidden="true">
-        <div class="phone"><div class="phone__screen">
-          <div class="phone__top"><span>10:31</span><span>Merka POS</span></div>
-          <div><div class="phone__h">Ventas de hoy</div><div class="phone__big">$184.620</div></div>
-          <div class="stats">
-            <div class="stat"><small>Efectivo</small><b>$96.300</b></div>
-            <div class="stat"><small>Transferencia</small><b>$88.320</b></div>
-            <div class="stat"><small>Ventas</small><b>41</b></div>
-            <div class="stat"><small>Ticket promedio</small><b>$4.503</b></div>
-          </div>
-          <div class="bars"><i style="height:38%"></i><i style="height:55%"></i><i style="height:42%"></i><i style="height:70%"></i><i class="hi" style="height:96%"></i><i style="height:62%"></i><i style="height:48%"></i></div>
-          <div class="sale"><div>Queso mantecoso + 2<small>10:24 · Efectivo</small></div><div>$9.480</div></div>
-          <div class="sale"><div>Leche entera 1 L ×6<small>10:17 · Transferencia</small></div><div>$7.200</div></div>
-          <div class="phone__note">Datos de ejemplo</div>
-        </div></div>
+      <div class="phones" role="img" aria-label="Merka POS en el celular: panel de control y terminal de ventas">
+        <span class="phones__blob phones__blob--a"></span><span class="phones__blob phones__blob--b"></span>
+        <div class="dev dev--back"><img src="media/phone-terminal.webp" width="390" height="844" loading="lazy" alt=""></div>
+        <div class="dev dev--front"><img src="media/phone-panel.webp" width="390" height="844" loading="lazy" alt=""></div>
+        <div class="chip chip--a"><span class="chip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Venta registrada</b><small>$9.450 · Tarjeta</small></div></div>
+        <div class="chip chip--b"><div><small>Ventas hoy</small><b>$78.170</b></div><span class="chip__up">8 ventas</span></div>
       </div>
     </div>
   </section>
@@ -879,32 +870,25 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   var v=document.getElementById("demoVideo"); if(!v) return;
   var tabs=[].slice.call(document.querySelectorAll(".demo__tab"));
   var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var visible=false, cur="venta";
-  function load(n){cur=n;v.poster="media/"+n+"-poster.webp";v.src="media/"+n+".mp4";v.load();if(visible&&!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+  var visible=false, idx=0;
+  function play(){ if(visible&&!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){})} }
+  function select(i){
+    idx=i; var t=tabs[i];
+    tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false");x.style.removeProperty("--p")});
+    v.poster="media/"+t.dataset.v+"-poster.webp"; v.src="media/"+t.dataset.v+".mp4"; v.load(); play();
+  }
   if(reduce) v.controls=true;
-  tabs.forEach(function(t){t.addEventListener("click",function(){tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false")});load(t.dataset.v)})});
+  tabs.forEach(function(t,i){t.addEventListener("click",function(){select(i)})});
+  v.addEventListener("timeupdate",function(){ if(v.duration) tabs[idx].style.setProperty("--p",(v.currentTime/v.duration).toFixed(3)) });
+  v.addEventListener("ended",function(){ if(!reduce) select((idx+1)%tabs.length) });
   if("IntersectionObserver" in window){
     new IntersectionObserver(function(e){visible=e[0].isIntersecting;
-      if(visible){ if(!v.getAttribute("src")) load(cur); else if(!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){})} } else v.pause();
+      if(visible){ if(!v.getAttribute("src")) select(idx); else play(); } else v.pause();
     },{threshold:.35}).observe(v);
-  } else { load(cur); }
+  } else { select(0); }
 })();
 
-(function(){
-  var rail=document.getElementById("demoRail"); if(!rail) return;
-  var track=rail.firstElementChild;
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){rail.classList.add("is-static");return}
-  var ticking=false;
-  function upd(){
-    ticking=false;
-    var r=rail.getBoundingClientRect(), vh=window.innerHeight;
-    var p=(vh-r.top)/(vh+r.height); p=Math.min(1,Math.max(0,(p-.12)/.6));
-    var max=Math.max(0,track.scrollWidth-rail.clientWidth);
-    track.style.transform="translate3d("+(-p*max).toFixed(1)+"px,0,0)";
-  }
-  function req(){if(!ticking){ticking=true;requestAnimationFrame(upd)}}
-  window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);upd();
-})();
+
 </script>
 </body>
 </html>
