@@ -35,7 +35,7 @@
   "description": "Punto de venta en la nube con boleta electrónica del SII para minimarkets, almacenes y tiendas en Chile.",
   "areaServed": { "@type": "Country", "name": "Chile" },
   "url": "https://merkapos.pro/",
-  "offers": { "@type": "Offer", "price": "4", "priceCurrency": "USD", "description": "Plan anual (US$48 al año), por mes. 30 días de prueba gratis." },
+  "offers": { "@type": "Offer", "price": "3990", "priceCurrency": "CLP", "description": "Plan anual ($47.880 al año), por mes. 30 días de prueba gratis." },
   "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.pro", "telephone": "+56992025527" }
 }
 </script>
@@ -827,10 +827,10 @@ footer.ft :focus-visible{outline-color:#22D3AB}
             <button type="button" id="bAnual" aria-pressed="true">Anual <span class="save">Ahorra 20%</span></button>
             <button type="button" id="bMensual" aria-pressed="false">Mensual</button>
           </div>
-          <div class="price-old"><span class="sr">Precio anterior: </span><s id="priceOld">US$9.99</s><span class="price-off" id="priceOff">60% de descuento</span></div>
-          <div class="price" aria-live="polite"><strong id="price">US$4</strong><span>/mes</span></div>
+          <div class="price-old"><span class="sr">Precio anterior: </span><s id="priceOld">$9.990</s><span class="price-off" id="priceOff">60% de descuento</span></div>
+          <div class="price" aria-live="polite"><strong id="price">$3.990</strong><span>/mes</span></div>
           <div class="plan__launch">Precio de lanzamiento</div>
-          <div class="plan__sub" id="priceNote">Con pago anual (US$48 al año). Si prefieres pagar mes a mes: US$5/mes.</div>
+          <div class="plan__sub" id="priceNote">Con pago anual ($47.880 al año). Si prefieres pagar mes a mes: $4.990/mes.</div>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de ventas con lector de códigos</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inventario con fotos y venta por peso</li>
@@ -995,7 +995,7 @@ footer.ft :focus-visible{outline-color:#22D3AB}
     <h3>1. Aceptación</h3><p>Al acceder y usar Merka POS (app.merkapos.pro), aceptas estos Términos de Servicio. El servicio es operado por Autix, empresa constituida en Chile.</p>
     <h3>2. Descripción del servicio</h3><p>Merka POS es un sistema de punto de venta en la nube que incluye terminal de ventas, gestión de inventario, cierres de caja, administración de créditos y reportes. Se ofrece mediante suscripción mensual o anual.</p>
     <h3>3. Período de prueba</h3><p>Los nuevos usuarios tienen acceso gratuito durante 30 días calendario desde el registro, sin necesidad de tarjeta de crédito.</p>
-    <h3>4. Planes y facturación</h3><p>Los precios están expresados en dólares estadounidenses (USD). El pago de la suscripción se coordina directamente con Autix antes de que termine el período de prueba. Puedes cambiar de plan en cualquier momento.</p>
+    <h3>4. Planes y facturación</h3><p>Los precios están expresados en pesos chilenos (CLP). El pago de la suscripción se coordina directamente con Autix antes de que termine el período de prueba. Puedes cambiar de plan en cualquier momento.</p>
     <h3>5. Cancelación</h3><p>Puedes cancelar tu suscripción en cualquier momento. No existen penalidades ni cargos por cancelación.</p>
     <h3>6. Datos y propiedad</h3><p>Los datos que ingresas en Merka POS son de tu exclusiva propiedad. Autix no vende ni cede tu información a terceros.</p>
     <h3>7. Ley aplicable</h3><p>Estos términos se rigen por las leyes de la República de Chile.</p>
@@ -1044,10 +1044,10 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   var price=document.getElementById('price'), note=document.getElementById('priceNote');
   function setBilling(anual){
     bA.setAttribute('aria-pressed',anual); bM.setAttribute('aria-pressed',!anual);
-    price.textContent = anual ? 'US$4' : 'US$5';
-    document.getElementById('priceOld').textContent = anual ? 'US$9.99' : 'US$12';
+    price.textContent = anual ? '$3.990' : '$4.990';
+    document.getElementById('priceOld').textContent = anual ? '$9.990' : '$11.990';
     document.getElementById('priceOff').textContent = anual ? '60% de descuento' : '58% de descuento';
-    note.textContent = anual ? 'Con pago anual (US$48 al año). Si prefieres pagar mes a mes: US$5/mes.' : 'Pago mes a mes. Con pago anual pagas US$4/mes (US$48 al año).';
+    note.textContent = anual ? 'Con pago anual ($47.880 al año). Si prefieres pagar mes a mes: $4.990/mes.' : 'Pago mes a mes. Con pago anual pagas $3.990/mes ($47.880 al año).';
   }
   bA.addEventListener('click', function(){ setBilling(true); });
   bM.addEventListener('click', function(){ setBilling(false); });
