@@ -1167,7 +1167,7 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
 
 /* hero: el video manda, la boleta acompana */
 @media(min-width:1001px){
-  .hc__grid{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:48px;padding-bottom:220px}
+  .hc__grid{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:48px;padding-bottom:144px}
   .hc h1{font-size:clamp(44px,5.4vw,80px)}
   .hc__price b{font-size:clamp(44px,4.8vw,72px)}
   .hc__price{margin-bottom:24px}
@@ -1236,6 +1236,32 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
 .ant__c2 .ant__a{text-decoration-color:#0E0E0E}
 @media(max-width:760px){.ant__list li.ant__c{top:calc(76px + var(--i)*10px);padding:22px 20px;min-height:0}}
 @media(prefers-reduced-motion:reduce){.ant__list li.ant__c{position:relative;top:auto}}
+
+/* CINTA */
+.cinta{background:#0E0E0E;color:#fff;border-bottom:1px solid #0E0E0E;overflow:hidden;padding:16px 0}
+.cinta__track{display:flex;width:max-content;animation:cinta 38s linear infinite}
+.cinta__row{display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap;font:600 14px/1 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em}
+.cinta__row i{font-style:normal;color:#22D3AB;font-size:9px}
+.cinta:hover .cinta__track{animation-play-state:paused}
+@keyframes cinta{to{transform:translateX(-50%)}}
+.cinta__note{margin:12px auto 0;font-size:12.5px;color:#5A5A55}
+@media(prefers-reduced-motion:reduce){.cinta__track{animation:none;flex-wrap:wrap;width:auto}.cinta__row[aria-hidden]{display:none}.cinta__row{flex-wrap:wrap;white-space:normal;padding:0 16px;gap:12px 20px}}
+/* IMPRESORA DEL HERO */
+.hc__printer{position:absolute;right:28px;bottom:-112px;width:212px;z-index:3;filter:drop-shadow(0 18px 24px rgba(14,14,14,.35))}
+.hc__clip{position:relative;height:300px;overflow:hidden;margin:0 18px -6px;display:flex;align-items:flex-end}
+.hc__paper{width:100%;background:#fff;padding:14px 9px 8px;border:1px solid #d9d9d4;border-bottom:0;transform:translateY(102%);transition:none;
+ -webkit-mask:conic-gradient(from 135deg at 50% 0,#0000,#000 1deg 89deg,#0000 90deg) 0 0/10px 6px repeat-x,linear-gradient(#000 0 0) 0 100%/100% calc(100% - 5px) no-repeat;mask:conic-gradient(from 135deg at 50% 0,#0000,#000 1deg 89deg,#0000 90deg) 0 0/10px 6px repeat-x,linear-gradient(#000 0 0) 0 100%/100% calc(100% - 5px) no-repeat}
+.hc__paper pre{margin:0;font:500 6.4px/1.5 "JetBrains Mono","Courier New",monospace;white-space:pre;color:#111;overflow:hidden}
+.hc__paper img{display:block;width:100%;height:30px;margin-top:5px}
+.hc__paper p{margin:4px 0 0;text-align:center;font:500 5.8px "JetBrains Mono",monospace;color:#777}
+.hc__printer.is-printing .hc__paper{transform:translateY(0);transition:transform 2.2s steps(22,end)}
+.hc__body{position:relative;height:84px;background:linear-gradient(#2a2a2a,#121212);border:1px solid #0E0E0E;border-radius:14px 14px 10px 10px}
+.hc__slot{position:absolute;left:14px;right:14px;top:8px;height:8px;border-radius:4px;background:#000;box-shadow:inset 0 2px 3px rgba(255,255,255,.08)}
+.hc__led{position:absolute;right:16px;bottom:16px;width:8px;height:8px;border-radius:50%;background:#2f2f2f}
+.hc__printer.is-printing .hc__led{background:#22D3AB;box-shadow:0 0 10px #22D3AB}
+.hc__body b{position:absolute;left:16px;bottom:13px;font:700 11px "JetBrains Mono",monospace;letter-spacing:.2em;color:#6b6b66}
+@media(max-width:1000px){.hc__printer{display:none}}
+@media(prefers-reduced-motion:reduce){.hc__printer .hc__paper{transform:none}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1340,8 +1366,8 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
             <div class="hc__bar">app.merkapos.pro</div>
             <video id="heroLoop" autoplay muted loop playsinline preload="auto" poster="media/venta-poster.webp?v=20261112" aria-label="Una venta en Merka POS, grabada del sistema"><source src="media/venta.mp4?v=20261112" type="video/mp4"></video>
           </div>
-          <div class="hc__ticket" role="img" aria-label="Ejemplo de boleta electrónica con timbre">
-            <pre>RAZON SOCIAL PRUEBA
+          <div class="hc__printer" aria-hidden="true">
+            <div class="hc__clip"><div class="hc__paper"><pre>RAZON SOCIAL PRUEBA
 RUT: 12.345.678-9
 
 BOLETA ELECTRONICA No.1042
@@ -1356,9 +1382,8 @@ CANT  DESCRIPCION          VALOR
 ---------------------------------
 TOTAL                     $9.660
 
-  El IVA de esta boleta es $1.542</pre>
-            <img src="media/timbre-pdf417.png" width="615" height="297" alt="" loading="lazy">
-            <p>Ejemplo de demostración, sin validez tributaria</p>
+  El IVA de esta boleta es $1.542</pre><img src="media/timbre-pdf417.png" width="615" height="297" alt=""><p>Ejemplo de demostración, sin validez tributaria</p></div></div>
+            <div class="hc__body"><span class="hc__slot"></span><span class="hc__led"></span><b>MERKA</b></div>
           </div>
         </figure>
       </div>
@@ -1366,28 +1391,11 @@ TOTAL                     $9.660
   </section>
 
   <!-- DATOS -->
-  <div class="facts">
-    <div class="wrap">
-      <div class="facts__row">
-        <div class="fact rv"><b>30 días</b><span>de prueba gratis, sin tarjeta</span></div>
-        <div class="fact rv"><b>Boleta SII</b><span>sale sola al cobrar, con nota de crédito</span></div>
-        <div class="fact rv"><b>Sin instalar</b><span>celular, tablet o computador</span></div>
-        <div class="fact rv"><b>Por peso</b><span>escaneas la balanza y el precio se calcula</span></div>
-      </div>
-    </div>
+  <div class="cinta" aria-label="Lo esencial de Merka POS">
+    <div class="cinta__track"><div class="cinta__row"><span>30 días gratis, sin tarjeta</span><i aria-hidden="true">&#9679;</i><span>Boleta del SII al cobrar</span><i aria-hidden="true">&#9679;</i><span>Nota de crédito al anular</span><i aria-hidden="true">&#9679;</i><span>Venta por peso con balanza</span><i aria-hidden="true">&#9679;</i><span>Funciona en celular y computador</span><i aria-hidden="true">&#9679;</i><span>Emisión a través de Tuu</span><i aria-hidden="true">&#9679;</i><span>Stock, caja y fiado en un solo lugar</span><i aria-hidden="true">&#9679;</i><span>Soporte por WhatsApp</span><i aria-hidden="true">&#9679;</i></div><div class="cinta__row" aria-hidden="true"><span>30 días gratis, sin tarjeta</span><i aria-hidden="true">&#9679;</i><span>Boleta del SII al cobrar</span><i aria-hidden="true">&#9679;</i><span>Nota de crédito al anular</span><i aria-hidden="true">&#9679;</i><span>Venta por peso con balanza</span><i aria-hidden="true">&#9679;</i><span>Funciona en celular y computador</span><i aria-hidden="true">&#9679;</i><span>Emisión a través de Tuu</span><i aria-hidden="true">&#9679;</i><span>Stock, caja y fiado en un solo lugar</span><i aria-hidden="true">&#9679;</i><span>Soporte por WhatsApp</span><i aria-hidden="true">&#9679;</i></div></div>
   </div>
-  <div class="integ">
-    <div class="wrap">
-      <p class="integ__t">Funciona con</p>
-      <div class="integ__row">
-        <div class="integ__i"><img src="media/logo-sii.webp" width="400" height="340" loading="lazy" alt="Servicio de Impuestos Internos, SII"><span>Boleta y nota de crédito electrónicas</span></div>
-        <div class="integ__i"><img src="media/logo-tuu.webp" width="440" height="182" loading="lazy" alt="Tuu"><span>Emisión de documentos y terminales de pago</span></div>
-      </div>
-      <p class="integ__f">Las marcas pertenecen a sus titulares. Merka POS es un software independiente de Autix.</p>
-    </div>
-  </div>
+  <p class="cinta__note wrap">Boleta electrónica emitida a través de Tuu. SII y Tuu son marcas de sus titulares; Merka POS es un software independiente de Autix.</p>
 
-  <!-- TODO PARA EMPEZAR -->
   <section class="ant" id="servicios">
     <div class="wrap">
       <div class="center">
@@ -1479,7 +1487,7 @@ TOTAL                     $9.660
       <div class="center">
         <span class="eyebrow">Boleta electrónica</span>
         <h2>De cero a tu primera boleta electrónica.</h2>
-        <p class="lead">Te orientamos en el proceso. La emisión se hace a través de Tuu, proveedor autorizado por el SII.</p>
+        <p class="lead">Te orientamos en el proceso. La emisión se hace a través de Tuu.</p>
       </div>
       <div class="stk" id="pasos">
         <article class="stk__c stk__c--paper" style="--i:0">
@@ -1789,6 +1797,16 @@ TOTAL                     $9.660
         }
       }
       addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+    });
+  })();
+  // impresora: imprime la boleta cuando la venta se cobra en el video
+  (function(){
+    var v=document.getElementById('heroLoop'), pr=document.querySelector('.hc__printer'); if(!v||!pr) return;
+    var T=12.6;
+    v.addEventListener('timeupdate',function(){
+      var on=v.currentTime>=T;
+      if(on && !pr.classList.contains('is-printing')) pr.classList.add('is-printing');
+      else if(!on && pr.classList.contains('is-printing')) pr.classList.remove('is-printing');
     });
   })();
   // menú móvil
