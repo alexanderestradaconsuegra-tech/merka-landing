@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -908,6 +908,59 @@ header.nav.scrolled,body.nav-open header.nav{background:rgba(245,243,238,.92);ba
 header.nav .btn-primary{background:var(--h-ink);color:#fff;box-shadow:none;border:1px solid var(--h-ink)}
 header.nav .btn-primary:hover{background:#000}
 @media(max-width:1180px){.menu{background:var(--h-bg)!important;border-bottom-color:var(--h-line)!important;box-shadow:0 24px 40px -24px rgba(20,23,28,.25)!important}.menu a:not(.btn){border-bottom-color:var(--h-line)!important;color:var(--h-ink)!important}}
+
+/* ===== HERO C: suizo directo con boleta =====
+   Tokens: papel #F1F1EE, tinta #0E0E0E, senal #FF4F1F (solo palabra clave, boton y precio), lineas #0E0E0E / #DCDCD7.
+   Tipografia: Manrope 800 para titulares, JetBrains Mono para etiquetas y boleta. Espaciado en multiplos de 8. */
+.hero.hc{background:#F1F1EE;color:#0E0E0E;text-align:left;padding:0;overflow:hidden;border-bottom:1px solid #0E0E0E;position:relative;
+ background-image:linear-gradient(#DCDCD7 1px,transparent 1px),linear-gradient(90deg,#DCDCD7 1px,transparent 1px);background-size:120px 120px;background-position:-1px -1px}
+.hero.hc::before{display:none}
+.hc__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:40px;align-items:start;padding-top:calc(72px + 56px);padding-bottom:88px}
+.hc__tag{font:600 13px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em;margin-bottom:24px}
+.hc__tag span{color:#FF4F1F;margin-right:8px}
+.hc h1{font-family:var(--font);font-weight:800;font-size:clamp(52px,7.2vw,108px);line-height:.92;letter-spacing:-.055em;color:#0E0E0E;margin:0}
+.hc h1 .ln{display:block}
+.hc h1 em{font-style:normal;color:#FF4F1F;-webkit-text-fill-color:#FF4F1F;background:none}
+.hc__lead{margin-top:32px;max-width:520px;font-size:19px;line-height:1.55;color:#2B2B2B}
+.hc__cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.hc__btn{text-decoration:none;display:inline-flex;align-items:center;padding:16px 24px;font:700 16px/1 var(--font);color:#0E0E0E;border:1px solid #0E0E0E;background:transparent;transition:background .15s,transform .15s}
+.hc__btn:hover{background:#fff}
+.hc__btn--main{background:#0E0E0E;color:#fff}.hc__btn--main:hover{background:#FF4F1F;color:#0E0E0E;border-color:#0E0E0E}
+.hc__facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:24px;padding:0;font:500 12.5px "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.04em;color:#3A3A3A}
+.hc__facts li::before{content:"+ ";color:#FF4F1F;font-weight:700}
+.hc__price{text-align:right;margin-bottom:32px}
+.hc__price b{display:block;font:800 clamp(56px,7.2vw,104px)/.95 var(--font);letter-spacing:-.06em}
+.hc__price span{font:500 12.5px "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em;color:#3A3A3A}
+.hc__fig{margin:0;position:relative}
+.hc__frame{border:1px solid #0E0E0E;background:#fff;box-shadow:10px 10px 0 #0E0E0E}
+.hc__bar{background:#0E0E0E;color:#fff;font:500 11.5px "JetBrains Mono",ui-monospace,monospace;padding:7px 12px;letter-spacing:.03em}
+.hc__frame video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
+.hc__ticket{position:absolute;left:-132px;bottom:-72px;width:236px;background:#fff;color:#111;padding:16px 16px 28px;transform:rotate(-3deg);font:500 11.5px/1.7 "JetBrains Mono",ui-monospace,monospace;box-shadow:0 16px 36px -16px rgba(14,14,14,.5);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.hc__ticket h6{font:700 12.5px "JetBrains Mono",ui-monospace,monospace;text-align:center;margin:0 0 4px}
+.hc__ticket div{display:flex;justify-content:space-between;gap:8px}
+.hc__ticket hr{border:0;border-top:1px dashed #9a9a9a;margin:6px 0}
+.hc__ticket .tot{font-weight:700;font-size:13.5px}
+.hc__ticket p{margin:8px 0 0;text-align:center;font-size:10px;color:#666}
+@media(min-width:1001px) and (max-width:1320px){.hc__ticket{left:-64px;bottom:-96px}}
+@media(max-width:1000px){
+  .hc__grid{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:calc(72px + 32px);padding-bottom:96px}
+  .hc h1{font-size:clamp(52px,15vw,96px)}
+  .hc__price{text-align:left;margin-bottom:24px}
+  .hc__ticket{position:relative;left:auto;bottom:auto;margin:-36px 0 0 16px}
+  .hc__grid{padding-bottom:72px}
+}
+@media(max-width:520px){
+  .hc__lead{font-size:17px}
+  .hc__btn{padding:15px 20px}
+  .hc__frame{box-shadow:6px 6px 0 #0E0E0E}
+  .hc__ticket{width:208px;font-size:10.5px}
+}
+/* menu en el mismo sistema */
+header.nav{border-bottom:1px solid #0E0E0E}
+header.nav.scrolled,body.nav-open header.nav{background:rgba(241,241,238,.94);border-bottom-color:#0E0E0E}
+header.nav .btn-primary{background:#FF4F1F;color:#0E0E0E;border:1px solid #0E0E0E;box-shadow:none;border-radius:0;font-weight:800}
+header.nav .btn-primary:hover{background:#0E0E0E;color:#fff}
+.menu a:not(.btn){font-weight:600}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -994,30 +1047,37 @@ header.nav .btn-primary:hover{background:#000}
 
 <main id="contenido">
   <!-- HERO -->
-  <section class="hero hero--v2">
-    <div class="hv2__bg" aria-hidden="true"></div>
-    <div class="wrap hv2__grid">
-      <div class="hero__copy">
-        <div class="hpills"><span class="hpill"><i class="hpill__dot"></i><span class="dx">Para minimarkets, queserías y botillerías de Chile</span><span class="mx">Para minimarkets y almacenes</span></span><span class="hpill hpill--mute"><i class="hpill__dot"></i>Chile</span></div>
-        <h1><span class="ln">Punto de venta con boleta del SII.</span> <em class="ln">Cobras. Lo demás sale solo.</em></h1>
-        <p class="lead"><span class="dx">La boleta del SII, el stock y las ventas del día se hacen solos. Para minimarkets, queserías y botillerías. Desde el celular o el computador, sin instalar nada, desde $3.990 al mes.</span><span class="mx">La boleta del SII, el stock y las ventas del día se hacen solos. Desde $3.990 al mes.</span></p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis
-            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Merka%20POS%20con%20boleta%20electr%C3%B3nica." rel="noopener"><span class="dx">Hablar por WhatsApp</span><span class="mx">WhatsApp</span></a>
+  <section class="hero hc">
+    <div class="wrap hc__grid">
+      <div class="hc__copy">
+        <p class="hc__tag"><span>(01)</span> Punto de venta con boleta del SII · Chile</p>
+        <h1><span class="ln">Cobras.</span> <span class="ln">Lo demás</span> <em class="ln">sale solo.</em></h1>
+        <p class="hc__lead">La boleta, el stock y las ventas del día se hacen solos. Para minimarkets, queserías y botillerías. Desde el celular o el computador, sin instalar nada.</p>
+        <div class="hc__cta">
+          <a class="hc__btn hc__btn--main" href="https://app.merkapos.pro/">Probar 30 días gratis</a>
+          <a class="hc__btn" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Merka%20POS%20con%20boleta%20electr%C3%B3nica." rel="noopener">WhatsApp</a>
         </div>
-        <ul class="trust">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Sin tarjeta de crédito</span><span class="mx">Sin tarjeta</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">30 días gratis</span><span class="mx">30 días</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Soporte por WhatsApp</span><span class="mx">Soporte</span></li>
-        </ul>
+        <ul class="hc__facts"><li>Sin tarjeta</li><li>30 días gratis</li><li>Soporte por WhatsApp</li></ul>
       </div>
-      <figure class="hv2__vid" aria-label="Una venta en Merka POS">
-        <div class="demo__frame">
-          <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>app.merkapos.pro</b></div>
-          <video id="heroLoop" autoplay muted loop playsinline preload="auto" poster="media/venta-poster.webp?v=20261112" aria-label="Una venta en Merka POS, grabada del sistema"><source src="media/venta.mp4?v=20261112" type="video/mp4"></video>
-        </div>
-      </figure>
+      <div class="hc__right">
+        <div class="hc__price"><b>$3.990</b><span>al mes · pago anual</span></div>
+        <figure class="hc__fig" aria-label="Una venta en Merka POS">
+          <div class="hc__frame">
+            <div class="hc__bar">app.merkapos.pro</div>
+            <video id="heroLoop" autoplay muted loop playsinline preload="auto" poster="media/venta-poster.webp?v=20261112" aria-label="Una venta en Merka POS, grabada del sistema"><source src="media/venta.mp4?v=20261112" type="video/mp4"></video>
+          </div>
+          <div class="hc__ticket" aria-label="Ejemplo de boleta">
+            <h6>MINIMARKET DEMO</h6>
+            <div><span>Boleta electrónica</span><span>N° 1042</span></div><hr>
+            <div><span>2 Leche Soprole 1L</span><span>2.580</span></div>
+            <div><span>1 Queso Gauda 250g</span><span>3.990</span></div>
+            <div><span>1 Coca-Cola 350ml</span><span>1.100</span></div>
+            <div><span>1 Néctar Watt's 1,5L</span><span>1.990</span></div><hr>
+            <div class="tot"><span>TOTAL</span><span>$9.660</span></div>
+            <p>Ejemplo de demostración</p>
+          </div>
+        </figure>
+      </div>
     </div>
   </section>
 
