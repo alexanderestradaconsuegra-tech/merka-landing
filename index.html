@@ -943,7 +943,7 @@ header.nav .btn-primary:hover{background:#000}
   .hc__grid{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:calc(72px + 32px);padding-bottom:96px}
   .hc h1{font-size:clamp(52px,15vw,96px)}
   .hc__price{text-align:left;margin-bottom:24px}
-  .hc__ticket{position:relative;left:auto;bottom:auto;margin:-36px 0 0 16px}
+  .hc__ticket{display:none}
   .hc__grid{padding-bottom:72px}
 }
 @media(max-width:520px){
@@ -1167,16 +1167,16 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
 
 /* hero: el video manda, la boleta acompana */
 @media(min-width:1001px){
-  .hc__grid{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:48px}
+  .hc__grid{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:48px;padding-bottom:220px}
   .hc h1{font-size:clamp(44px,5.4vw,80px)}
   .hc__price b{font-size:clamp(44px,4.8vw,72px)}
   .hc__price{margin-bottom:24px}
-  .hc__ticket{width:204px;left:-56px;bottom:-56px;padding:12px 11px 10px}
-  .hc__ticket pre{font-size:7.6px}
-  .hc__ticket img{height:44px;margin-top:6px}
-  .hc__ticket p{font-size:7px}
+  .hc__ticket{width:176px;left:auto;right:24px;bottom:-196px;padding:10px 10px 8px;transform:rotate(2deg)}
+  .hc__ticket pre{font-size:6.6px}
+  .hc__ticket img{height:34px;margin-top:5px}
+  .hc__ticket p{font-size:6px;margin-top:4px}
 }
-@media(min-width:1001px) and (max-width:1320px){.hc__ticket{left:-48px;bottom:-60px}}
+@media(min-width:1001px) and (max-width:1320px){.hc__ticket{right:12px;bottom:-196px}}
 
 /* DOCUMENTO */
 .doc{background:#fff;border-top:1px solid #0E0E0E;border-bottom:1px solid #0E0E0E}
@@ -1199,6 +1199,33 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
 .doc__chip{display:inline-block;margin:18px 0 0;padding:6px 12px;background:#22D3AB;color:#0E0E0E;font:700 12px "JetBrains Mono",monospace;letter-spacing:.06em}
 .doc__fine{margin:14px 0 0;font:500 10.5px "JetBrains Mono",monospace;color:#8a8a85}
 @media(max-width:900px){.doc__grid{grid-template-columns:1fr;gap:48px}.doc__card{transform:none;box-shadow:6px 6px 0 #0E0E0E}.doc__num{font-size:36px}}
+
+/* PASOS APILADOS (patron de tarjetas que se apilan al hacer scroll, hecho con position:sticky) */
+.stk{margin-top:48px;display:grid;gap:24px;padding-bottom:8px}
+.stk__c{position:sticky;top:calc(88px + var(--i)*22px);display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,.55fr);gap:32px;align-items:center;padding:40px;border:1px solid #0E0E0E;min-height:260px;box-shadow:0 -10px 24px -18px rgba(14,14,14,.35);transform-origin:50% 0;transition:transform .2s linear,filter .2s linear}
+.stk__c--paper{background:#fff}.stk__c--white{background:#F1F1EE}.stk__c--green{background:#22D3AB}.stk__c--ink{background:#0E0E0E;color:#fff}
+.stk__n{font:800 clamp(56px,6vw,88px)/1 var(--font);letter-spacing:-.06em}
+.stk__c--green .stk__n{color:#0E0E0E}.stk__c--ink .stk__n{color:#22D3AB}.stk__c--paper .stk__n,.stk__c--white .stk__n{color:#0B8F73}
+.stk__t h3{font-weight:800;font-size:clamp(26px,3vw,40px);line-height:1.02;letter-spacing:-.04em;color:inherit}
+.stk__t p{margin:14px 0 0;font-size:17px;line-height:1.5;max-width:52ch;color:inherit;opacity:.82}
+.stk__v{display:grid;gap:8px;justify-items:start;align-content:center;padding:24px;border:1px solid currentColor;min-height:140px}
+.stk__v b{font:800 clamp(24px,2.6vw,34px)/1.05 var(--font);letter-spacing:-.04em}
+.stk__v small{font:500 12px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.05em;opacity:.8}
+.stk__big{font-size:clamp(48px,5.4vw,76px)!important}
+.stk__badge{font:700 12px "JetBrains Mono",monospace;letter-spacing:.06em;padding:5px 10px;border:1px solid currentColor}
+.stk__badge--g{background:#22D3AB;color:#0E0E0E;border-color:#22D3AB}
+.stk__v--ui{font-family:"JetBrains Mono",monospace;gap:10px}
+.stk__v--ui i{font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.stk__v--ui em{font-style:normal;font-size:15px;font-weight:700;background:#fff;color:#0E0E0E;padding:8px 10px;border:1px solid #0E0E0E;width:100%}
+.stk__v--ui u{text-decoration:none;font-size:13px;font-weight:700;background:#0E0E0E;color:#fff;padding:8px 12px}
+@media(max-width:900px){.stk__c{grid-template-columns:64px minmax(0,1fr);gap:20px;padding:28px;top:calc(76px + var(--i)*14px)}.stk__v{grid-column:1/-1;min-height:0;padding:16px}.stk__n{font-size:48px}}
+@media(prefers-reduced-motion:reduce){.stk__c{position:relative;top:auto}}
+/* FAQ en dos columnas con titulo fijo */
+@media(min-width:1001px){
+  .faq .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:64px;align-items:start}
+  .faq .wrap>.center{position:sticky;top:104px}
+  .faq .faq__list{margin:0}
+}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1289,7 +1316,7 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
       <div class="hc__copy">
         <p class="hc__tag"><span>(01)</span> Punto de venta con boleta del SII · Chile</p>
         <h1><span class="ln">Estar al día</span> <span class="ln">no tiene que</span> <em class="ln">ser difícil.</em></h1>
-        <p class="hc__lead">Lo hice porque tuve un minimarket y no encontré un sistema simple, claro y barato. Boleta del SII, stock, caja, fiado y balanza, todo en uno. Desde el celular o el computador, sin instalar nada.</p>
+        <p class="hc__lead">Merka POS nació de la necesidad del minimarket y está pensado para el día a día de este rubro. Boleta del SII, stock, caja, fiado y balanza, todo en uno, sin instalar nada.</p>
         <div class="hc__cta">
           <a class="hc__btn hc__btn--main" href="https://app.merkapos.pro/">Probar 30 días gratis</a>
           <a class="hc__btn" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Merka%20POS%20con%20boleta%20electr%C3%B3nica." rel="noopener">WhatsApp</a>
@@ -1444,11 +1471,27 @@ TOTAL                     $9.660
         <h2>De cero a tu primera boleta electrónica.</h2>
         <p class="lead">Te orientamos en el proceso. La emisión se hace a través de Tuu, proveedor autorizado por el SII.</p>
       </div>
-      <div class="steps">
-        <div class="step rv"><h3>Firma electrónica</h3><p>El representante legal necesita una firma electrónica. Si aún no la tienes, te indicamos dónde sacarla.</p></div>
-        <div class="step rv"><h3>Habilitación del servicio</h3><p>Activas los documentos electrónicos en Tuu. Con el proveedor demora de 3 a 7 días hábiles una vez completa la información.</p></div>
-        <div class="step rv"><h3>Conexión con Merka POS</h3><p>Ingresas tu llave en Configuración y pulsas Probar conexión. Puedes probar con documentos de prueba antes de emitir los reales.</p></div>
-        <div class="step rv"><h3>Primera boleta</h3><p>Cobras una venta en efectivo o con tarjeta y la boleta se emite sola. La imprimes en 80 mm.</p></div>
+      <div class="stk" id="pasos">
+        <article class="stk__c stk__c--paper" style="--i:0">
+          <span class="stk__n">01</span>
+          <div class="stk__t"><h3>Firma electrónica</h3><p>El representante legal necesita una firma electrónica. Si aún no la tienes, te indicamos dónde sacarla.</p></div>
+          <div class="stk__v"><span class="stk__badge">FIRMA</span><b>Representante legal</b><small>Una sola vez</small></div>
+        </article>
+        <article class="stk__c stk__c--white" style="--i:1">
+          <span class="stk__n">02</span>
+          <div class="stk__t"><h3>Habilitación del servicio</h3><p>Activas los documentos electrónicos en Tuu. Con el proveedor demora de 3 a 7 días hábiles una vez completa la información.</p></div>
+          <div class="stk__v"><b class="stk__big">3 a 7</b><small>días hábiles con el proveedor</small></div>
+        </article>
+        <article class="stk__c stk__c--green" style="--i:2">
+          <span class="stk__n">03</span>
+          <div class="stk__t"><h3>Conexión con Merka POS</h3><p>Ingresas tu llave en Configuración y pulsas Probar conexión. Puedes probar con documentos de prueba antes de emitir los reales.</p></div>
+          <div class="stk__v stk__v--ui"><i>Llave de API</i><em>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;a4f2</em><u>Probar conexión</u></div>
+        </article>
+        <article class="stk__c stk__c--ink" style="--i:3">
+          <span class="stk__n">04</span>
+          <div class="stk__t"><h3>Primera boleta</h3><p>Cobras una venta en efectivo o con tarjeta y la boleta se emite sola. La imprimes en 80 mm.</p></div>
+          <div class="stk__v"><span class="stk__badge stk__badge--g">&#10003; EMITIDA</span><b>$9.660</b><small>Ejemplo de demostración</small></div>
+        </article>
       </div>
       <div class="sii__roles">
         <div class="sii__col"><h3>Lo que hace Merka POS</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Emitir la boleta al cobrar con efectivo o tarjeta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Imprimir la boleta y guardar su registro</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anular una venta con nota de crédito</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Orientarte por WhatsApp si algo no queda claro</li></ul></div>
@@ -1724,6 +1767,19 @@ TOTAL                     $9.660
     var x=d.querySelector('[data-close]'); if(x) x.addEventListener('click', function(){ d.close(); });
   })();
   (function(){ var v=document.getElementById('heroLoop'); if(v && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches){ v.removeAttribute('autoplay'); v.pause(); } })();
+  (function(){
+    var cs=[].slice.call(document.querySelectorAll('.stk__c')); if(cs.length<2) return;
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function upd(){
+      for(var i=0;i<cs.length-1;i++){
+        var n=cs[i+1].getBoundingClientRect(), c=cs[i].getBoundingClientRect();
+        var t=Math.max(0,Math.min(1,1-(n.top-c.top)/Math.max(1,c.height)));
+        cs[i].style.transform='scale('+(1-t*0.05).toFixed(3)+')';
+        cs[i].style.filter='brightness('+(1-t*0.12).toFixed(3)+')';
+      }
+    }
+    addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+  })();
   // menú móvil
   var tg=document.getElementById('navToggle');
   function setNav(open){ document.body.classList.toggle('nav-open',open); tg.setAttribute('aria-expanded',open?'true':'false'); tg.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); }
