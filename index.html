@@ -640,6 +640,11 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .eqf li::before{content:"";position:absolute;left:0;top:.35em;width:15px;height:15px;border-radius:50%;background:#22D3AB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306231d' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/10px no-repeat}
 @media(max-width:1000px){.eqf{grid-template-columns:1fr}.equip__grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.equip__grid{grid-template-columns:1fr}.integ__i{padding:12px 16px}}
+
+.kit{margin:48px 0 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#e6f7f4}
+.kit img{display:block;width:100%;height:auto}
+.kit figcaption{padding:12px 20px;font-size:13.5px;color:var(--muted);background:#fff;border-top:1px solid var(--line);text-align:center}
+.kit+.eqf{margin-top:22px}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -867,6 +872,10 @@ footer.ft :focus-visible{outline-color:#22D3AB}
         <h2>Todo lo que necesitas en el mostrador.</h2>
         <p class="lead">Te ayudamos a elegir, comprar e instalar. Trabajamos con Tuu para los terminales de pago.</p>
       </div>
+      <figure class="kit rv">
+        <img src="media/kit-completo.webp" width="1400" height="935" loading="lazy" alt="Kit completo de caja: monitor con Merka POS, impresora térmica, lector de tarjetas, cajón de dinero y lector de códigos de barras">
+        <figcaption>Ejemplo de caja completa con Merka POS. Los equipos se cotizan según tu negocio y su disponibilidad.</figcaption>
+      </figure>
       <div class="eqf rv">
         <div class="eqf__img"><img src="media/tuu-terminal.webp" width="1100" height="531" loading="lazy" alt="Terminal de pago Tuu con pantalla táctil, lector de tarjetas e impresora de boletas"></div>
         <div class="eqf__txt">
