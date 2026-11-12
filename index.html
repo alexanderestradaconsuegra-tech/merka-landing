@@ -5,7 +5,7 @@
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Merka POS — Punto de venta con boleta electrónica (SII) para negocios en Chile</title>
-<meta name="description" content="Punto de venta en la nube con boleta electrónica del SII para minimarkets, almacenes y tiendas en Chile. Te ayudamos con la habilitación, los equipos (terminal Tuu, impresora, lector) y la instalación en terreno. 30 días gratis.">
+<meta name="description" content="Punto de venta en la nube con boleta electrónica del SII para minimarkets, almacenes y tiendas en Chile. Funciona en el navegador, sin instalar nada. 30 días gratis, sin tarjeta.">
 <link rel="canonical" href="https://merkapos.pro/">
 <meta name="theme-color" content="#0c1a2e">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="es_CL">
 <meta property="og:site_name" content="Merka POS">
 <meta property="og:title" content="Merka POS — Punto de venta y boleta electrónica para tu negocio en Chile">
-<meta property="og:description" content="Vende en orden y en regla con el SII: punto de venta, boleta electrónica, equipos e instalación en terreno. 30 días gratis, sin tarjeta.">
+<meta property="og:description" content="Vende en orden y en regla con el SII: punto de venta en la nube con boleta electrónica. 30 días gratis, sin tarjeta.">
 <meta property="og:url" content="https://merkapos.pro/">
 <meta property="og:image" content="https://merkapos.pro/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -814,7 +814,7 @@ footer.ft .wrap{position:relative;z-index:1}
 .pstep__n{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#22D3AB;color:#06231d;font-weight:800;font-size:20px}
 .pstep h3{color:#fff;font-size:clamp(21px,2.4vw,27px)}
 .pstep p{margin-top:4px;color:#a9bbce;font-size:15.5px}
-.toggle--c{margin:22px auto 0;display:inline-grid}
+.toggle--c{margin:34px auto 0;display:inline-grid}
 .plans.plans--2{grid-template-columns:repeat(2,1fr);max-width:900px;margin-inline:auto;margin-top:28px}
 .plans.plans--2 .plan ul{flex:0 0 auto;margin-bottom:22px}
 .plans.plans--2 .plan .plan__how{margin-top:auto}
@@ -822,6 +822,11 @@ footer.ft .wrap{position:relative;z-index:1}
 .plans.plans--2 .plan .plan__how+.btn{margin-top:0}
 @media(max-width:860px){.plans.plans--2{grid-template-columns:1fr;max-width:560px}}
 @media(max-width:560px){.pstep{flex-direction:column;text-align:center;gap:10px}}
+
+/* SOLO SOFTWARE */
+.svc .grid3{grid-template-columns:repeat(2,1fr);max-width:860px;margin-inline:auto}
+@media(max-width:700px){.svc .grid3{grid-template-columns:1fr}}
+.pstep{margin-top:34px}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -897,7 +902,6 @@ footer.ft .wrap{position:relative;z-index:1}
       <a href="#demo">Demo</a>
       <a href="#funciones">Funciones</a>
       <a href="#boleta-sii">Boleta SII</a>
-      <a href="#equipos">Equipos</a>
       <a href="#precio">Planes</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#a-medida">A medida</a>
@@ -919,16 +923,16 @@ footer.ft .wrap{position:relative;z-index:1}
       <div class="hero__copy">
         <div class="hpills"><span class="hpill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="dx">Punto de venta y boleta electrónica para negocios en Chile</span><span class="mx">POS y boleta electrónica SII</span></span><span class="hpill hpill--mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>Chile</span></div>
         <h1><span class="ln">Vende más.</span> <span class="ln">Pierde menos.</span> <em class="ln">Controla todo.</em></h1>
-        <p class="lead"><span class="dx">Vende, controla tu inventario y emite boleta electrónica del SII desde un solo sistema. Te ayudamos con la habilitación, los equipos y la instalación en tu local.</span><span class="mx">Ventas, inventario y boleta electrónica SII. Te ayudamos a dejarlo funcionando.</span></p>
+        <p class="lead"><span class="dx">Vende, controla tu inventario y emite boleta electrónica del SII desde un solo sistema. Funciona en el navegador, sin instalar nada.</span><span class="mx">Ventas, inventario y boleta electrónica SII, desde el navegador.</span></p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20la%20puesta%20en%20marcha%20de%20Merka%20POS%20con%20boleta%20electr%C3%B3nica." rel="noopener"><span class="dx">Cotizar mi puesta en marcha</span><span class="mx">Cotizar</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Merka%20POS%20con%20boleta%20electr%C3%B3nica." rel="noopener"><span class="dx">Hablar por WhatsApp</span><span class="mx">WhatsApp</span></a>
         </div>
         <ul class="trust">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Sin tarjeta de crédito</span><span class="mx">Sin tarjeta</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Boleta electrónica SII</span><span class="mx">Boleta SII</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Instalación y soporte</span><span class="mx">Instalación</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Soporte por WhatsApp</span><span class="mx">Soporte</span></li>
         </ul>
       </div>
     </div>
@@ -940,7 +944,7 @@ footer.ft .wrap{position:relative;z-index:1}
       <div class="facts__row">
         <div class="fact rv"><b>30 días</b><span>de prueba gratis, sin tarjeta</span></div>
         <div class="fact rv"><b>Boleta SII</b><span>electrónica, a través de Tuu</span></div>
-        <div class="fact rv"><b>En terreno</b><span>instalación y capacitación en tu local</span></div>
+        <div class="fact rv"><b>En la nube</b><span>funciona en el navegador, sin instalar nada</span></div>
         <div class="fact rv"><b>Con balanza</b><span>venta por peso para quesos y granel</span></div>
       </div>
     </div>
@@ -961,14 +965,13 @@ footer.ft .wrap{position:relative;z-index:1}
     <div class="wrap">
       <div class="center">
         <span class="eyebrow">Todo para empezar</span>
-        <h2>Un solo proveedor para vender en orden y en regla.</h2>
-        <p class="lead">Software, boleta electrónica y equipos. Elige lo que necesitas o déjanos resolverlo todo.</p>
+        <h2>Vende en orden y en regla con un solo sistema.</h2>
+        <p class="lead">Software de ventas y boleta electrónica del SII, desde el navegador.</p>
       </div>
       <div class="grid3">
         <article class="card svc__card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Software de ventas</h3><p>Terminal, inventario, caja, proveedores y reportes en un solo sistema. Funciona en el navegador, sin instalar nada.</p><a class="svc__link" href="#demo">Ver el sistema</a></article>
-        <article class="card svc__card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg></div><h3>Boleta electrónica del SII</h3><p>Conectamos tu negocio al SII a través de Tuu. Te guiamos con la firma electrónica, la habilitación y tu primera boleta.</p><a class="svc__link" href="#boleta-sii">Cómo es el proceso</a></article>
-        <article class="card svc__card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg></div><h3>Equipos e instalación</h3><p>Terminal de pago Tuu, impresora térmica, lector de códigos y computador. Los dejamos instalados en tu local.</p><a class="svc__link" href="#equipos">Ver los equipos</a></article>
-      </div>
+        <article class="card svc__card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg></div><h3>Boleta electrónica del SII</h3><p>Conecta tu negocio al SII a través de Tuu. Te orientamos con la firma electrónica y la habilitación.</p><a class="svc__link" href="#boleta-sii">Cómo es el proceso</a></article>
+        </div>
     </div>
   </section>
 
@@ -1046,86 +1049,25 @@ footer.ft .wrap{position:relative;z-index:1}
       <div class="center">
         <span class="eyebrow">Boleta electrónica</span>
         <h2>De cero a tu primera boleta electrónica.</h2>
-        <p class="lead">Te acompañamos en todo el proceso. La emisión se hace a través de Tuu, proveedor autorizado por el SII.</p>
+        <p class="lead">Te orientamos en el proceso. La emisión se hace a través de Tuu, proveedor autorizado por el SII.</p>
       </div>
       <div class="steps">
         <div class="step rv"><h3>Firma electrónica</h3><p>El representante legal necesita una firma electrónica. Si aún no la tienes, te indicamos dónde sacarla.</p></div>
-        <div class="step rv"><h3>Habilitación del servicio</h3><p>Activamos contigo los documentos electrónicos en Tuu. Con el proveedor demora de 3 a 7 días hábiles una vez completa la información.</p></div>
-        <div class="step rv"><h3>Conexión con Merka POS</h3><p>Conectamos tu negocio y probamos con documentos de prueba antes de emitir los reales.</p></div>
-        <div class="step rv"><h3>Primera boleta y capacitación</h3><p>Emitimos contigo la primera boleta real y capacitamos a tu equipo en el mostrador.</p></div>
+        <div class="step rv"><h3>Habilitación del servicio</h3><p>Activas los documentos electrónicos en Tuu. Con el proveedor demora de 3 a 7 días hábiles una vez completa la información.</p></div>
+        <div class="step rv"><h3>Conexión con Merka POS</h3><p>Ingresas tu llave en Configuración y pulsas Probar conexión. Puedes probar con documentos de prueba antes de emitir los reales.</p></div>
+        <div class="step rv"><h3>Primera boleta</h3><p>Cobras una venta en efectivo o con tarjeta y la boleta se emite sola. La imprimes en 80 mm.</p></div>
       </div>
       <div class="sii__roles">
-        <div class="sii__col"><h3>Lo que hacemos nosotros</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Guiarte en la firma electrónica y la habilitación con Tuu</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Configurar y conectar el sistema</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hacer las pruebas y la primera boleta contigo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Capacitar a tu equipo y dar soporte</li></ul></div>
+        <div class="sii__col"><h3>Lo que hace Merka POS</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Emitir la boleta al cobrar con efectivo o tarjeta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Imprimir la boleta y guardar su registro</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anular una venta con nota de crédito</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Orientarte por WhatsApp si algo no queda claro</li></ul></div>
         <div class="sii__col sii__col--b"><h3>Lo que corresponde a tu negocio y tu contador</h3><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tener inicio de actividades en el SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Decidir qué ventas deben llevar boleta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Declarar en el SII el modelo de emisión de boletas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tus impuestos y obligaciones tributarias</li></ul></div>
       </div>
       <p class="sii__note">Merka POS no entrega asesoría tributaria. La boleta electrónica es opcional: el sistema funciona completo sin ella.</p>
-      <div class="center"><a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20la%20puesta%20en%20marcha%20de%20la%20boleta%20electr%C3%B3nica%20con%20Merka%20POS." rel="noopener">Cotizar la puesta en marcha</a></div>
+      <div class="center"><a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis</a></div>
     </div>
   </section>
 
   <!-- EQUIPOS -->
-  <section class="equip" id="equipos">
-    <div class="wrap">
-      <div class="center">
-        <span class="eyebrow">Equipos</span>
-        <h2>Todo lo que necesitas en el mostrador.</h2>
-        <p class="lead">Te ayudamos a elegir, conseguir e instalar lo que necesitas. Trabajamos con Tuu para los terminales de pago.</p>
-      </div>
-      <figure class="kit rv">
-        <img src="media/kit-completo.webp" width="1400" height="935" loading="lazy" alt="Kit completo de caja: monitor con Merka POS, impresora térmica, lector de tarjetas, cajón de dinero y lector de códigos de barras">
-        <figcaption>Ejemplo de caja completa con Merka POS. Los equipos se cotizan según tu negocio y su disponibilidad.</figcaption>
-      </figure>
-      <div class="kitc__head rv"><h3>Elige tu kit de caja</h3><p>Equipos que funcionan con Merka POS, configurados y probados antes de entregarlos. Los precios se cotizan según disponibilidad y tu negocio. El terminal de pago Tuu es opcional y se agrega según tu caso.</p></div>
-      <div class="kitc__grid">
-        <article class="kitc rv">
-          <h3>Kit Básico</h3>
-          <p class="kitc__for">Para almacenes, kioscos y negocios que parten.</p>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tablet o computador con Merka POS</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impresora térmica de boletas (80 mm)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lector de códigos de barras</li></ul>
-          <div class="kitc__price"><small>Precio</small><b>Se cotiza según tu negocio</b></div>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20Kit%20B%C3%A1sico%20de%20Merka%20POS." rel="noopener">Cotizar este kit</a>
-          <p class="kitc__fine">Incluye configuración y prueba. Instalación en terreno según zona.</p>
-        </article>
-        <article class="kitc rv kitc--feat">
-          <span class="kit__tag">Recomendado</span><h3>Kit Mostrador</h3>
-          <p class="kitc__for">Para minimarkets y tiendas con caja y cobro con tarjeta.</p>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Computador con pantalla y Merka POS</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impresora térmica de boletas (80 mm)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lector de códigos de barras</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cajón de dinero</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de pago Tuu (opcional)</li></ul>
-          <div class="kitc__price"><small>Precio</small><b>Se cotiza según tu negocio</b></div>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20Kit%20Mostrador%20de%20Merka%20POS." rel="noopener">Cotizar este kit</a>
-          <p class="kitc__fine">Incluye configuración y prueba. Instalación en terreno según zona.</p>
-        </article>
-        <article class="kitc rv">
-          <h3>Kit con balanza</h3>
-          <p class="kitc__for">Para queserías, carnicerías, fiambrerías y venta a granel.</p>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo el Kit Mostrador</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Balanza electrónica con códigos de barras</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Configuración de productos por peso</li></ul>
-          <div class="kitc__price"><small>Precio</small><b>Se cotiza según tu negocio</b></div>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20Kit%20con%20balanza%20de%20Merka%20POS." rel="noopener">Cotizar este kit</a>
-          <p class="kitc__fine">Incluye configuración y prueba. Instalación en terreno según zona.</p>
-        </article>
-        </div>
-      <p class="kitc__solo rv">¿Necesitas solo un equipo, como una impresora, un lector, un computador o una balanza? <a href="https://wa.me/56992025527?text=Hola%2C%20necesito%20cotizar%20un%20equipo%20suelto%20para%20usar%20con%20Merka%20POS." rel="noopener">Cotízalo por WhatsApp</a>.</p>
-      <div class="eqf rv">
-        <div class="eqf__img"><img src="media/tuu-terminal.webp" width="1100" height="531" loading="lazy" alt="Terminal de pago Tuu con pantalla táctil, lector de tarjetas e impresora de boletas"></div>
-        <div class="eqf__txt">
-          <span class="eq__tag">Terminal de pago</span>
-          <img class="eqf__logo" src="media/logo-tuu.webp" width="440" height="182" loading="lazy" alt="Tuu">
-          <h3>Cobra con tarjeta y emite la boleta en el mismo flujo</h3>
-          <ul>
-            <li>Pantalla táctil, lector de tarjetas con y sin contacto e impresora integrada</li>
-            <li>Se conecta con Merka POS para que cada venta quede registrada una sola vez</li>
-            <li>Te ayudamos a pedirlo, configurarlo e instalarlo en tu local</li>
-          </ul>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20terminal%20de%20pago%20Tuu%20para%20mi%20negocio." rel="noopener">Cotizar terminal Tuu</a>
-        </div>
-      </div>
-      <div class="equip__install">
-        <div><h3>Instalación y capacitación en terreno</h3><p>Dejamos todo funcionando en tu local: equipos configurados, Merka POS conectado, una venta de prueba y capacitación para tu equipo. Va incluida en el plan Llave en mano dentro de nuestra zona de cobertura, y como visita aparte si ya tienes tus equipos. Te confirmamos la zona al cotizar.</p></div>
-        <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20equipos%20e%20instalaci%C3%B3n%20en%20terreno%20para%20mi%20negocio." rel="noopener">Cotizar equipos e instalación</a>
-      </div>
-      <p class="equip__fine">Precios y disponibilidad se confirman al cotizar.</p>
-    </div>
-  </section>
-
-  <!-- CELULAR -->
+    <!-- CELULAR -->
   <section class="mobile">
     <div class="wrap mobile__grid">
       <div>
@@ -1156,7 +1098,7 @@ footer.ft .wrap{position:relative;z-index:1}
       <div class="origin rv">
         <span class="eyebrow">Por qué confiar</span>
         <h2>Pensado para el mostrador chileno.</h2>
-        <p>Boleta electrónica del SII, venta por peso con balanza, pago en efectivo, tarjeta y transferencia, y cierre de caja diario. Merka POS resuelve lo que un negocio de barrio necesita cada día, y te acompañamos desde la habilitación hasta la primera venta.</p>
+        <p>Boleta electrónica del SII, venta por peso con balanza, pago en efectivo, tarjeta y transferencia, y cierre de caja diario. Merka POS resuelve lo que un negocio de barrio necesita cada día.</p>
       </div>
       <div class="center">
         <h2 class="trust__h">Tu información y tu negocio, protegidos.</h2>
@@ -1180,10 +1122,10 @@ footer.ft .wrap{position:relative;z-index:1}
   <section class="pricing center" id="precio">
     <div class="wrap">
       <span class="eyebrow">Planes</span>
-      <h2>Elige hasta dónde llegamos contigo.</h2>
-      <p class="lead">Parte solo con el software o déjanos poner todo en marcha. 30 días gratis para probar Merka POS, sin tarjeta.</p>
+      <h2>Elige tu plan.</h2>
+      <p class="lead">Parte solo con el software o suma la boleta electrónica. 30 días gratis para probar Merka POS, sin tarjeta.</p>
 
-      <div class="pstep rv"><span class="pstep__n">1</span><div><h3>Elige tu suscripción</h3><p>Se paga todos los meses. Los primeros 30 días son gratis.</p></div></div>
+      </div>
       <div class="toggle toggle--sm toggle--c" role="group" aria-label="Ciclo de pago">
         <button type="button" id="bAnual" aria-pressed="true">Anual <span class="save">Ahorra 20%</span></button>
         <button type="button" id="bMensual" aria-pressed="false">Mensual</button>
@@ -1207,37 +1149,12 @@ footer.ft .wrap{position:relative;z-index:1}
           <div class="price" aria-live="polite"><strong id="priceSii">$7.990</strong><span>/mes</span></div>
           <div class="plan__launch">Se cobra desde tu primera boleta</div>
           <div class="plan__sub" id="priceSiiNote">Con pago anual ($95.880 al año). Si prefieres pagar mes a mes: $9.990/mes.</div>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo lo de Merka POS</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boleta electrónica del SII al cobrar con efectivo o tarjeta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impresión de la boleta en 80 mm</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anulación de ventas con nota de crédito</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tus boletas quedan registradas en el SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Necesitas firma electrónica y habilitación (te ayudamos abajo)</li></ul>
+          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo lo de Merka POS</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boleta electrónica del SII al cobrar con efectivo o tarjeta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impresión de la boleta en 80 mm</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anulación de ventas con nota de crédito</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tus boletas quedan registradas en el SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Necesitas firma electrónica y habilitación en Tuu (te orientamos)</li></ul>
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Empezar 30 días gratis</a>
           <p class="plan__fine">Sin tarjeta · Activas el módulo cuando estés listo</p>
         </div>
       </div>
-
-      <div class="pstep pstep--2 rv"><span class="pstep__n">2</span><div><h3>¿Quieres que lo dejemos funcionando?</h3><p>Opcional. Es un pago único que se cotiza según tu negocio.</p></div></div>
-      <div class="plans plans--2">
-        <div class="plan">
-          <span class="plan__tag">Pago único</span>
-          <div class="plan__name">Puesta en marcha SII</div>
-          <div class="price price--q"><strong>Cotiza</strong></div>
-          <div class="plan__sub">Dejamos tu boleta electrónica lista para emitir.</div>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Guía de firma electrónica y habilitación con Tuu</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Conexión y pruebas de boleta electrónica</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Primera boleta real contigo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Capacitación de tu equipo, en línea</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte el primer mes</li></ul>
-          <div class="plan__how"><div class="plan__howt">Así lo hacemos</div><ol><li><b>1</b><span>Nos cuentas cómo vendes hoy</span></li><li><b>2</b><span>Te enviamos la cotización por WhatsApp</span></li><li><b>3</b><span>Habilitamos y emitimos tu primera boleta</span></li></ol></div>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20la%20Puesta%20en%20marcha%20SII%20de%20Merka%20POS." rel="noopener">Cotizar</a>
-          <p class="plan__fine">Te respondemos por WhatsApp</p>
-        </div>
-
-        <div class="plan">
-          <span class="plan__tag">Todo resuelto</span>
-          <div class="plan__name">Llave en mano</div>
-          <div class="price price--q"><strong>Cotiza</strong></div>
-          <div class="plan__sub">Puesta en marcha SII, equipos e instalación en tu local.</div>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo lo de la Puesta en marcha SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de pago, impresora y lector</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Computador o tablet, si lo necesitas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Instalación y capacitación en terreno</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Equipos configurados y probados</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte prioritario el primer mes</li></ul>
-          <div class="plan__how"><div class="plan__howt">Así lo hacemos</div><ol><li><b>1</b><span>Conocemos tu local y lo que necesitas</span></li><li><b>2</b><span>Cotizamos software, equipos e instalación</span></li><li><b>3</b><span>Dejamos todo funcionando en tu mostrador</span></li></ol></div>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20plan%20Llave%20en%20mano%20de%20Merka%20POS." rel="noopener">Cotizar</a>
-          <p class="plan__fine">Zona de cobertura según tu ubicación</p>
-        </div>
-      </div>
-      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. El módulo de boleta SII se cobra desde que emites tu primera boleta, no antes. La puesta en marcha y los equipos se cotizan según tu negocio y se pagan una sola vez. Los costos del proveedor de documentos (Tuu) son aparte y dependen de tu caso: te lo explicamos antes de contratar. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">Escríbenos por WhatsApp</a>.</p>
+      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. El módulo de boleta SII se cobra desde que emites tu primera boleta, no antes. Los costos del proveedor de documentos (Tuu) son aparte y dependen de tu caso: te lo explicamos antes de contratar. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">Escríbenos por WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -1250,11 +1167,11 @@ footer.ft .wrap{position:relative;z-index:1}
       </div>
       <div class="faq__list">
         <details><summary>¿Necesito emitir boleta electrónica para usar Merka POS?</summary><p>No. Es un módulo opcional: Merka POS funciona completo sin él. Si no lo activas, el sistema entrega un comprobante interno, que no es un documento tributario. Qué ventas deben llevar boleta depende de tu situación ante el SII; confírmalo con tu contador.</p></details>
-        <details><summary>¿Qué necesito para emitir boleta electrónica?</summary><p>Tener inicio de actividades en el SII, una firma electrónica del representante legal y habilitar los documentos electrónicos con Tuu, que demora de 3 a 7 días hábiles una vez completa la información. Nosotros te guiamos en cada paso.</p></details>
-        <details><summary>¿Cuánto cuesta emitir las boletas?</summary><p>Con Tuu la emisión de documentos es gratis mientras cobres con su terminal de pago. Si no usas ese terminal, el proveedor tiene sus propios planes y te ayudamos a revisarlos. Nuestra puesta en marcha se cotiza aparte.</p></details>
-        <details><summary>¿Qué hacen ustedes y qué hace mi contador?</summary><p>Nosotros nos encargamos de lo técnico: guiarte en la habilitación, conectar y probar el sistema y capacitar a tu equipo. Tu contador define qué ventas llevan boleta, el modelo de emisión que declaras ante el SII y tus impuestos. Merka POS no entrega asesoría tributaria.</p></details>
-        <details><summary>¿Instalan en mi local?</summary><p>Sí, en terreno cuando compras tus equipos con nosotros y también como visita aparte si ya los tienes. Dejamos todo configurado, hacemos una venta de prueba y capacitamos a tu equipo. Te confirmamos la zona de cobertura y el valor al cotizar.</p></details>
-        <details><summary>Mi terminal de pago ya emite boleta, ¿se duplican?</summary><p>Podrían duplicarse si el terminal y Merka POS emiten boleta por la misma venta. Te ayudamos a dejar una sola fuente de boleta para cada medio de pago.</p></details>
+        <details><summary>¿Qué necesito para emitir boleta electrónica?</summary><p>Tener inicio de actividades en el SII, una firma electrónica del representante legal y habilitar los documentos electrónicos con Tuu, que demora de 3 a 7 días hábiles una vez completa la información. Te orientamos por WhatsApp en cada paso.</p></details>
+        <details><summary>¿Cuánto cuesta emitir las boletas?</summary><p>Con Tuu la emisión de documentos es gratis mientras cobres con su terminal de pago. Si no usas ese terminal, el proveedor tiene sus propios planes y te ayudamos a revisarlos.</p></details>
+        <details><summary>¿Qué hacen ustedes y qué hace mi contador?</summary><p>Merka POS se encarga de lo técnico: emitir la boleta al cobrar, imprimirla, anularla con nota de crédito y orientarte por WhatsApp. Tu contador define qué ventas llevan boleta, el modelo de emisión que declaras ante el SII y tus impuestos. Merka POS no entrega asesoría tributaria.</p></details>
+        <details><summary>¿Venden o instalan equipos?</summary><p>Por ahora ofrecemos solo el software. Funciona en el navegador, sin instalar nada, y puedes usarlo con tus propios equipos. Si dudas de la compatibilidad de uno, escríbenos por WhatsApp.</p></details>
+        <details><summary>Mi terminal de pago ya emite boleta, ¿se duplican?</summary><p>Podrían duplicarse si el terminal y Merka POS emiten boleta por la misma venta. Te orientamos para dejar una sola fuente de boleta para cada medio de pago.</p></details>
         <details><summary>¿Necesito instalar algo?</summary><p>No. Merka POS funciona directamente en el navegador. Solo abres app.merkapos.pro desde cualquier dispositivo. Si quieres, puedes agregarlo a tu pantalla de inicio como una app.</p></details>
         <details><summary>¿Funciona sin internet?</summary><p>El sistema necesita conexión a internet para registrar ventas y sincronizar los datos. Si la conexión se corta, la información ya cargada sigue visible mientras no recargues la página.</p></details>
         <details><summary>¿Cuántos dispositivos puedo usar?</summary><p>Los datos se sincronizan entre todos tus dispositivos. Puedes tener el sistema abierto a la vez en la caja, en una tablet y en el celular del dueño.</p></details>
@@ -1315,7 +1232,7 @@ footer.ft .wrap{position:relative;z-index:1}
       <div class="ft__brand">
         <a href="#" aria-label="Merka POS, inicio"><img src="media/logo-merka-pos.svg" width="181" height="56" alt="Merka POS"></a>
         <p>Punto de venta en la nube con boleta electrónica del SII para minimarkets, tiendas y distribuidoras de Chile.</p>
-        <p class="ft__note">Software disponible en todo Chile. Instalación en terreno según zona de cobertura.</p>
+        <p class="ft__note">Software disponible en todo Chile.</p>
         <div class="ft__social">
           <a href="https://instagram.com/merka.pos" rel="noopener" aria-label="Instagram de Merka POS: @merka.pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><img src="media/whatsapp.webp" width="26" height="26" alt=""></a>
@@ -1327,7 +1244,7 @@ footer.ft .wrap{position:relative;z-index:1}
       </nav>
       <nav class="ft__col" aria-label="Servicios">
         <h3>Servicios</h3>
-        <a href="#boleta-sii">Boleta electrónica SII</a><a href="#equipos">Equipos e instalación</a><a href="#a-medida">Sistemas a medida</a>
+        <a href="#boleta-sii">Boleta electrónica SII</a><a href="#a-medida">Sistemas a medida</a>
         <a href="https://app.merkapos.pro/">Iniciar sesión</a>
       </nav>
       <nav class="ft__col" aria-label="Legal y soporte">
