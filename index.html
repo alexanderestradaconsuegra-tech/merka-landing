@@ -18,7 +18,7 @@
 <meta property="og:title" content="Merka POS | Punto de venta con boleta del SII, desde $3.990 al mes">
 <meta property="og:description" content="Cobra en segundos, descuenta el stock solo y emite la boleta del SII al cobrar. Desde $3.990 al mes, 30 días gratis, sin tarjeta.">
 <meta property="og:url" content="https://merkapos.pro/">
-<meta property="og:image" content="https://merkapos.pro/og-image.png">
+<meta property="og:image" content="https://merkapos.pro/og-image.png?v=20261112">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -1049,7 +1049,7 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
         <div class="dchip dchip--b" aria-hidden="true"><div><small id="dcBs">Documento</small><b id="dcB">Boleta enviada al SII</b></div></div>
         <div class="demo__frame">
           <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>app.merkapos.pro</b></div>
-          <video id="demoVideo" muted playsinline preload="none" poster="media/venta-poster.webp" aria-label="Demostración del sistema Merka POS"></video>
+          <video id="demoVideo" muted playsinline preload="none" poster="media/venta-poster.webp?v=20261112" aria-label="Demostración del sistema Merka POS"></video>
         </div>
         </div>
         <div class="demo__tabs" role="tablist" aria-label="Flujos del sistema">
@@ -1303,7 +1303,7 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
 <!-- Diálogos -->
 <dialog id="dlg-video" class="dlg-video" aria-label="Una venta en Merka POS">
   <button type="button" class="dlg-video__x" aria-label="Cerrar" data-close>Cerrar</button>
-  <video id="heroVideo" muted playsinline controls preload="none" poster="media/venta-poster.webp"><source src="media/venta.mp4" type="video/mp4"></video>
+  <video id="heroVideo" muted playsinline controls preload="none" poster="media/venta-poster.webp?v=20261112"><source src="media/venta.mp4?v=20261112" type="video/mp4"></video>
   </dialog>
 
 <dialog id="dlg-terminos" aria-labelledby="t-terminos">
@@ -1418,7 +1418,7 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
   function select(i){
     idx=i; var t=tabs[i];
     tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false");x.style.removeProperty("--p")});
-    v.poster="media/"+t.dataset.v+"-poster.webp"; v.src="media/"+t.dataset.v+".mp4"; v.load(); play();
+    v.poster="media/"+t.dataset.v+"-poster.webp?v=20261112"; v.src="media/"+t.dataset.v+".mp4?v=20261112"; v.load(); play();
   }
   if(reduce) v.controls=true;
   tabs.forEach(function(t,i){t.addEventListener("click",function(){select(i)})});
