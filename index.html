@@ -1226,6 +1226,16 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
   .faq .wrap>.center{position:sticky;top:104px}
   .faq .faq__list{margin:0}
 }
+
+/* LO QUE RESUELVE: tarjetas apiladas */
+.ant__list{border-top:0;display:grid;gap:16px;margin-top:48px}
+.ant__list li.ant__c{position:sticky;top:calc(88px + var(--i)*14px);min-height:148px;padding:28px 32px;border:1px solid #0E0E0E;border-bottom:1px solid #0E0E0E;box-shadow:0 -10px 24px -18px rgba(14,14,14,.35);transform-origin:50% 0;transition:transform .2s linear,filter .2s linear}
+.ant__c0{background:#fff}.ant__c1{background:#F1F1EE}.ant__c2{background:#22D3AB}.ant__c3{background:#0E0E0E}
+.ant__c2 .ant__a{color:#0E2A22}.ant__c2 .ant__arrow{color:#0E0E0E}
+.ant__c3 .ant__a{color:#B8B8B2;text-decoration-color:#22D3AB}.ant__c3 .ant__arrow{color:#22D3AB}.ant__c3 .ant__b{color:#fff}
+.ant__c2 .ant__a{text-decoration-color:#0E0E0E}
+@media(max-width:760px){.ant__list li.ant__c{top:calc(76px + var(--i)*10px);padding:22px 20px;min-height:0}}
+@media(prefers-reduced-motion:reduce){.ant__list li.ant__c{position:relative;top:auto}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1385,7 +1395,7 @@ TOTAL                     $9.660
         <h2>Todo lo que hoy haces a mano, en un solo sistema.</h2>
         <p class="lead">Boletas, stock, caja, fiado, balanza, ganancia, equipo y proveedores. Merka POS se ocupa de todo eso, desde el celular o el computador.</p>
       </div>
-      <ul class="ant__list"><li class="rv"><span class="ant__a">Hacer la boleta a mano</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">La boleta del SII sale sola al cobrar, con nota de crédito</b></li><li class="rv"><span class="ant__a">Stock en un cuaderno o de memoria</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">El stock baja con cada venta y avisa cuando falta</b></li><li class="rv"><span class="ant__a">Una caja que no cuadra</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Cierre por turno con la diferencia a la vista</b></li><li class="rv"><span class="ant__a">Fiado sin límite ni registro</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Límite por cliente, historial y aviso de vencimiento</b></li><li class="rv"><span class="ant__a">Precio por kilo con calculadora</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Escaneas la balanza y el precio se calcula solo</b></li><li class="rv"><span class="ant__a">La ganancia a ojo</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Ventas menos costos menos gastos, día por día</b></li><li class="rv"><span class="ant__a">Empleados con acceso a todo</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Permisos por persona y registro de cada acción</b></li><li class="rv"><span class="ant__a">Facturas de proveedores sueltas</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Cuentas por pagar y stock que se actualiza al recibir</b></li></ul>
+      <ul class="ant__list"><li class="rv ant__c ant__c0" style="--i:0"><span class="ant__a">Hacer la boleta a mano</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">La boleta del SII sale sola al cobrar, con nota de crédito</b></li><li class="rv ant__c ant__c1" style="--i:1"><span class="ant__a">Stock en un cuaderno o de memoria</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">El stock baja con cada venta y avisa cuando falta</b></li><li class="rv ant__c ant__c2" style="--i:2"><span class="ant__a">Una caja que no cuadra</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Cierre por turno con la diferencia a la vista</b></li><li class="rv ant__c ant__c3" style="--i:3"><span class="ant__a">Fiado sin límite ni registro</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Límite por cliente, historial y aviso de vencimiento</b></li><li class="rv ant__c ant__c0" style="--i:4"><span class="ant__a">Precio por kilo con calculadora</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Escaneas la balanza y el precio se calcula solo</b></li><li class="rv ant__c ant__c1" style="--i:5"><span class="ant__a">La ganancia a ojo</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Ventas menos costos menos gastos, día por día</b></li><li class="rv ant__c ant__c2" style="--i:6"><span class="ant__a">Empleados con acceso a todo</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Permisos por persona y registro de cada acción</b></li><li class="rv ant__c ant__c3" style="--i:7"><span class="ant__a">Facturas de proveedores sueltas</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Cuentas por pagar y stock que se actualiza al recibir</b></li></ul>
     </div>
   </section>
 
@@ -1766,19 +1776,20 @@ TOTAL                     $9.660
     d.addEventListener('close', function(){ try{ v.pause(); }catch(e){} });
     var x=d.querySelector('[data-close]'); if(x) x.addEventListener('click', function(){ d.close(); });
   })();
-  (function(){ var v=document.getElementById('heroLoop'); if(v && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches){ v.removeAttribute('autoplay'); v.pause(); } })();
   (function(){
-    var cs=[].slice.call(document.querySelectorAll('.stk__c')); if(cs.length<2) return;
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    function upd(){
-      for(var i=0;i<cs.length-1;i++){
-        var n=cs[i+1].getBoundingClientRect(), c=cs[i].getBoundingClientRect();
-        var t=Math.max(0,Math.min(1,1-(n.top-c.top)/Math.max(1,c.height)));
-        cs[i].style.transform='scale('+(1-t*0.05).toFixed(3)+')';
-        cs[i].style.filter='brightness('+(1-t*0.12).toFixed(3)+')';
+    ['.stk__c','.ant__c'].forEach(function(sel){
+      var cs=[].slice.call(document.querySelectorAll(sel)); if(cs.length<2) return;
+      function upd(){
+        for(var i=0;i<cs.length-1;i++){
+          var n=cs[i+1].getBoundingClientRect(), c=cs[i].getBoundingClientRect();
+          var t=Math.max(0,Math.min(1,1-(n.top-c.top)/Math.max(1,c.height)));
+          cs[i].style.transform='scale('+(1-t*0.05).toFixed(3)+')';
+          cs[i].style.filter='brightness('+(1-t*0.12).toFixed(3)+')';
+        }
       }
-    }
-    addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+      addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+    });
   })();
   // menú móvil
   var tg=document.getElementById('navToggle');
