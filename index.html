@@ -910,24 +910,23 @@ header.nav .btn-primary:hover{background:#000}
 @media(max-width:1180px){.menu{background:var(--h-bg)!important;border-bottom-color:var(--h-line)!important;box-shadow:0 24px 40px -24px rgba(20,23,28,.25)!important}.menu a:not(.btn){border-bottom-color:var(--h-line)!important;color:var(--h-ink)!important}}
 
 /* ===== HERO C: suizo directo con boleta =====
-   Tokens: papel #F1F1EE, tinta #0E0E0E, senal #FF4F1F (solo palabra clave, boton y precio), lineas #0E0E0E / #DCDCD7.
+   Tokens: papel #F1F1EE, tinta #0E0E0E, marcador de marca #22D3AB (solo detras de la palabra clave y hover), lineas #0E0E0E. Sin cuadricula, sin naranja.
    Tipografia: Manrope 800 para titulares, JetBrains Mono para etiquetas y boleta. Espaciado en multiplos de 8. */
-.hero.hc{background:#F1F1EE;color:#0E0E0E;text-align:left;padding:0;overflow:hidden;border-bottom:1px solid #0E0E0E;position:relative;
- background-image:linear-gradient(#DCDCD7 1px,transparent 1px),linear-gradient(90deg,#DCDCD7 1px,transparent 1px);background-size:120px 120px;background-position:-1px -1px}
+.hero.hc{background:#F1F1EE;color:#0E0E0E;text-align:left;padding:0;overflow:hidden;border-bottom:1px solid #0E0E0E;position:relative}
 .hero.hc::before{display:none}
 .hc__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:40px;align-items:start;padding-top:calc(72px + 56px);padding-bottom:88px}
 .hc__tag{font:600 13px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em;margin-bottom:24px}
-.hc__tag span{color:#FF4F1F;margin-right:8px}
+.hc__tag span{color:#6B6B66;margin-right:8px}
 .hc h1{font-family:var(--font);font-weight:800;font-size:clamp(52px,7.2vw,108px);line-height:.92;letter-spacing:-.055em;color:#0E0E0E;margin:0}
 .hc h1 .ln{display:block}
-.hc h1 em{font-style:normal;color:#FF4F1F;-webkit-text-fill-color:#FF4F1F;background:none}
-.hc__lead{margin-top:32px;max-width:520px;font-size:19px;line-height:1.55;color:#2B2B2B}
+.hc h1 em,.hc h1 em.ln{font-style:normal;color:#0E0E0E;-webkit-text-fill-color:#0E0E0E;display:block;width:fit-content;padding:0 .08em;margin-left:-.04em;background:linear-gradient(transparent 56%,#22D3AB 56% 90%,transparent 90%)}
+.hc__lead{margin-top:32px;max-width:480px;font-size:19px;line-height:1.55;color:#2B2B2B}
 .hc__cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
 .hc__btn{text-decoration:none;display:inline-flex;align-items:center;padding:16px 24px;font:700 16px/1 var(--font);color:#0E0E0E;border:1px solid #0E0E0E;background:transparent;transition:background .15s,transform .15s}
 .hc__btn:hover{background:#fff}
-.hc__btn--main{background:#0E0E0E;color:#fff}.hc__btn--main:hover{background:#FF4F1F;color:#0E0E0E;border-color:#0E0E0E}
+.hc__btn--main{background:#0E0E0E;color:#fff}.hc__btn--main:hover{background:#22D3AB;color:#0E0E0E;border-color:#0E0E0E}
 .hc__facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:24px;padding:0;font:500 12.5px "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.04em;color:#3A3A3A}
-.hc__facts li::before{content:"+ ";color:#FF4F1F;font-weight:700}
+.hc__facts li::before{content:"+ ";color:#0E0E0E;font-weight:700}
 .hc__price{text-align:right;margin-bottom:32px}
 .hc__price b{display:block;font:800 clamp(56px,7.2vw,104px)/.95 var(--font);letter-spacing:-.06em}
 .hc__price span{font:500 12.5px "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em;color:#3A3A3A}
@@ -935,7 +934,7 @@ header.nav .btn-primary:hover{background:#000}
 .hc__frame{border:1px solid #0E0E0E;background:#fff;box-shadow:10px 10px 0 #0E0E0E}
 .hc__bar{background:#0E0E0E;color:#fff;font:500 11.5px "JetBrains Mono",ui-monospace,monospace;padding:7px 12px;letter-spacing:.03em}
 .hc__frame video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
-.hc__ticket{position:absolute;left:-132px;bottom:-72px;width:236px;background:#fff;color:#111;padding:16px 16px 28px;transform:rotate(-3deg);font:500 11.5px/1.7 "JetBrains Mono",ui-monospace,monospace;box-shadow:0 16px 36px -16px rgba(14,14,14,.5);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.hc__ticket{position:absolute;left:-104px;bottom:-72px;width:236px;background:#fff;color:#111;padding:16px 16px 28px;transform:rotate(-3deg);font:500 11.5px/1.7 "JetBrains Mono",ui-monospace,monospace;box-shadow:0 16px 36px -16px rgba(14,14,14,.5);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
 .hc__ticket h6{font:700 12.5px "JetBrains Mono",ui-monospace,monospace;text-align:center;margin:0 0 4px}
 .hc__ticket div{display:flex;justify-content:space-between;gap:8px}
 .hc__ticket hr{border:0;border-top:1px dashed #9a9a9a;margin:6px 0}
@@ -958,8 +957,8 @@ header.nav .btn-primary:hover{background:#000}
 /* menu en el mismo sistema */
 header.nav{border-bottom:1px solid #0E0E0E}
 header.nav.scrolled,body.nav-open header.nav{background:rgba(241,241,238,.94);border-bottom-color:#0E0E0E}
-header.nav .btn-primary{background:#FF4F1F;color:#0E0E0E;border:1px solid #0E0E0E;box-shadow:none;border-radius:0;font-weight:800}
-header.nav .btn-primary:hover{background:#0E0E0E;color:#fff}
+header.nav .btn-primary{background:#0E0E0E;color:#fff;border:1px solid #0E0E0E;box-shadow:none;border-radius:0;font-weight:800}
+header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
 .menu a:not(.btn){font-weight:600}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
