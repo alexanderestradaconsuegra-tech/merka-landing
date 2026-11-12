@@ -928,19 +928,17 @@ header.nav .btn-primary:hover{background:#000}
 .hc__facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:24px;padding:0;font:500 12.5px "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.04em;color:#3A3A3A}
 .hc__facts li::before{content:"+ ";color:#0E0E0E;font-weight:700}
 .hc__price{text-align:right;margin-bottom:32px}
-.hc__price b{display:block;font:800 clamp(56px,7.2vw,104px)/.95 var(--font);letter-spacing:-.06em}
+.hc__price b{color:#0B8F73;display:block;font:800 clamp(56px,7.2vw,104px)/.95 var(--font);letter-spacing:-.06em}
 .hc__price span{font:500 12.5px "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em;color:#3A3A3A}
 .hc__fig{margin:0;position:relative}
 .hc__frame{border:1px solid #0E0E0E;background:#fff;box-shadow:10px 10px 0 #0E0E0E}
 .hc__bar{background:#0E0E0E;color:#fff;font:500 11.5px "JetBrains Mono",ui-monospace,monospace;padding:7px 12px;letter-spacing:.03em}
 .hc__frame video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
-.hc__ticket{position:absolute;left:-104px;bottom:-72px;width:236px;background:#fff;color:#111;padding:16px 16px 28px;transform:rotate(-3deg);font:500 11.5px/1.7 "JetBrains Mono",ui-monospace,monospace;box-shadow:0 16px 36px -16px rgba(14,14,14,.5);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
-.hc__ticket h6{font:700 12.5px "JetBrains Mono",ui-monospace,monospace;text-align:center;margin:0 0 4px}
-.hc__ticket div{display:flex;justify-content:space-between;gap:8px}
-.hc__ticket hr{border:0;border-top:1px dashed #9a9a9a;margin:6px 0}
-.hc__ticket .tot{font-weight:700;font-size:13.5px}
-.hc__ticket p{margin:8px 0 0;text-align:center;font-size:10px;color:#666}
-@media(min-width:1001px) and (max-width:1320px){.hc__ticket{left:-64px;bottom:-96px}}
+.hc__ticket{position:absolute;left:-84px;bottom:-64px;width:252px;background:#fff;color:#111;padding:16px 14px 14px;transform:rotate(-2.5deg);box-shadow:0 16px 36px -16px rgba(14,14,14,.55);border:1px solid #d9d9d4}
+.hc__ticket pre{margin:0;font:500 9.2px/1.5 "JetBrains Mono","Courier New",monospace;white-space:pre;color:#111;overflow:hidden}
+.hc__ticket img{display:block;width:100%;height:64px;margin-top:8px}
+.hc__ticket p{margin:6px 0 0;text-align:center;font:500 8.5px "JetBrains Mono",monospace;color:#777}
+@media(min-width:1001px) and (max-width:1320px){.hc__ticket{left:-56px;bottom:-90px}}
 @media(max-width:1000px){
   .hc__grid{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:calc(72px + 32px);padding-bottom:96px}
   .hc h1{font-size:clamp(52px,15vw,96px)}
@@ -952,7 +950,8 @@ header.nav .btn-primary:hover{background:#000}
   .hc__lead{font-size:17px}
   .hc__btn{padding:15px 20px}
   .hc__frame{box-shadow:6px 6px 0 #0E0E0E}
-  .hc__ticket{width:208px;font-size:10.5px}
+  .hc__ticket{width:min(272px,100%)}
+  .hc__ticket pre{font-size:9px}
 }
 /* menu en el mismo sistema */
 header.nav{border-bottom:1px solid #0E0E0E}
@@ -1070,15 +1069,25 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
             <div class="hc__bar">app.merkapos.pro</div>
             <video id="heroLoop" autoplay muted loop playsinline preload="auto" poster="media/venta-poster.webp?v=20261112" aria-label="Una venta en Merka POS, grabada del sistema"><source src="media/venta.mp4?v=20261112" type="video/mp4"></video>
           </div>
-          <div class="hc__ticket" aria-label="Ejemplo de boleta">
-            <h6>MINIMARKET DEMO</h6>
-            <div><span>Boleta electrónica</span><span>N° 1042</span></div><hr>
-            <div><span>2 Leche Soprole 1L</span><span>2.580</span></div>
-            <div><span>1 Queso Gauda 250g</span><span>3.990</span></div>
-            <div><span>1 Coca-Cola 350ml</span><span>1.100</span></div>
-            <div><span>1 Néctar Watt's 1,5L</span><span>1.990</span></div><hr>
-            <div class="tot"><span>TOTAL</span><span>$9.660</span></div>
-            <p>Ejemplo de demostración</p>
+          <div class="hc__ticket" role="img" aria-label="Ejemplo de boleta electrónica con timbre">
+            <pre>RAZON SOCIAL PRUEBA
+RUT: 12.345.678-9
+
+BOLETA ELECTRONICA No.1042
+FECHA EMISION: 12/11/2026
+---------------------------------
+CANT  DESCRIPCION          VALOR
+---------------------------------
+ 2    Leche Soprole 1L     2.580
+ 1    Queso Gauda 250g     3.990
+ 1    Coca-Cola 350ml      1.100
+ 1    Nectar Watt's 1,5L   1.990
+---------------------------------
+TOTAL                     $9.660
+
+  El IVA de esta boleta es $1.542</pre>
+            <img src="media/timbre-pdf417.png" width="615" height="297" alt="" loading="lazy">
+            <p>Ejemplo de demostración, sin validez tributaria</p>
           </div>
         </figure>
       </div>
