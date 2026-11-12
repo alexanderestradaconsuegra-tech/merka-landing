@@ -1177,6 +1177,28 @@ main .center .lead,main .lead{margin-left:0;margin-right:0}
   .hc__ticket p{font-size:7px}
 }
 @media(min-width:1001px) and (max-width:1320px){.hc__ticket{left:-48px;bottom:-60px}}
+
+/* DOCUMENTO */
+.doc{background:#fff;border-top:1px solid #0E0E0E;border-bottom:1px solid #0E0E0E}
+.doc__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.doc h2{font-size:clamp(40px,5.6vw,80px);line-height:.96}
+.doc__list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:14px}
+.doc__list li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.4;color:#0E0E0E;font-weight:600}
+.doc__list svg{flex:none;width:20px;height:20px;margin-top:1px;color:#0B8F73}
+.doc__card{position:relative;background:#fff;border:1px solid #0E0E0E;box-shadow:10px 10px 0 #0E0E0E;padding:28px 28px 24px;max-width:480px;justify-self:center;width:100%;transform:rotate(1.2deg)}
+.doc__top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:16px;border-bottom:1px solid #D9D9D4}
+.doc__top b{font-weight:800;font-size:18px;letter-spacing:-.02em}
+.doc__top span{font:500 11px/1.4 "JetBrains Mono",monospace;text-align:right;color:#6B6B66;letter-spacing:.06em}
+.doc__num{margin:20px 0 4px;font-weight:800;font-size:44px;letter-spacing:-.04em;line-height:1}
+.doc__meta{margin:0 0 20px;font:500 11.5px "JetBrains Mono",monospace;color:#6B6B66}
+.doc__row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:14.5px;color:#2B2B2B}
+.doc__row b{font:600 14px "JetBrains Mono",monospace;color:#0E0E0E}
+.doc__row--iva{border-top:1px dashed #9a9a9a;margin-top:6px;padding-top:12px}
+.doc__tot{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid #0E0E0E;margin-top:8px;padding-top:14px;font-weight:700}
+.doc__tot b{font:800 34px/1 var(--font);letter-spacing:-.04em;color:#0B8F73}
+.doc__chip{display:inline-block;margin:18px 0 0;padding:6px 12px;background:#22D3AB;color:#0E0E0E;font:700 12px "JetBrains Mono",monospace;letter-spacing:.06em}
+.doc__fine{margin:14px 0 0;font:500 10.5px "JetBrains Mono",monospace;color:#8a8a85}
+@media(max-width:900px){.doc__grid{grid-template-columns:1fr;gap:48px}.doc__card{transform:none;box-shadow:6px 6px 0 #0E0E0E}.doc__num{font-size:36px}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1386,6 +1408,35 @@ TOTAL                     $9.660
   
 
   <!-- BOLETA ELECTRÓNICA SII -->
+  <section class="doc" aria-label="La boleta de cada venta">
+    <div class="wrap doc__grid">
+      <div class="doc__copy">
+        <span class="eyebrow">El documento</span>
+        <h2>Cobras y la boleta ya salió.</h2>
+        <p class="lead">Cada venta con efectivo o tarjeta genera su boleta electrónica con el detalle de lo que compró el cliente. Tú no la haces a mano.</p>
+        <ul class="doc__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Se emite al cobrar, a través de Tuu</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Neto e IVA calculados en cada boleta</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Se imprime en 80 mm o se guarda en PDF</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Si anulas la venta, sale la nota de crédito</li>
+        </ul>
+      </div>
+      <div class="doc__card" role="img" aria-label="Ejemplo de boleta electrónica emitida">
+        <div class="doc__top"><b>MINIMARKET DEMO</b><span>BOLETA<br>ELECTRÓNICA</span></div>
+        <p class="doc__num">N° 1042</p>
+        <p class="doc__meta">RUT 12.345.678-9 · 12/11/2026</p>
+        <div class="doc__row"><span>2 Leche Soprole 1L</span><b>$2.580</b></div>
+        <div class="doc__row"><span>1 Queso Gauda 250g</span><b>$3.990</b></div>
+        <div class="doc__row"><span>1 Coca-Cola 350ml</span><b>$1.100</b></div>
+        <div class="doc__row"><span>1 Néctar Watt's 1,5L</span><b>$1.990</b></div>
+        <div class="doc__row doc__row--iva"><span>IVA 19%</span><b>$1.542</b></div>
+        <div class="doc__tot"><span>Total</span><b>$9.660</b></div>
+        <p class="doc__chip">&#10003; EMITIDA</p>
+        <p class="doc__fine">Ejemplo de demostración, sin validez tributaria</p>
+      </div>
+    </div>
+  </section>
+
   <section class="how sii" id="boleta-sii">
     <div class="wrap">
       <div class="center">
