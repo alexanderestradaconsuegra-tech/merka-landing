@@ -645,6 +645,31 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .kit img{display:block;width:100%;height:auto}
 .kit figcaption{padding:12px 20px;font-size:13.5px;color:var(--muted);background:#fff;border-top:1px solid var(--line);text-align:center}
 .kit+.eqf{margin-top:22px}
+
+/* PARA QUIEN + CONFIANZA */
+.rubros{background:#fff}
+.rubros .card h3{font-size:19px}
+.rubros .card p{margin-top:8px;color:var(--muted);font-size:15.5px}
+.trust{background:#061324;color:#c3d1e0;position:relative;overflow:hidden}
+.trust::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 55% at 85% 0%,rgba(34,211,171,.16),transparent 70%),radial-gradient(45% 50% at 5% 100%,rgba(14,165,233,.14),transparent 70%);pointer-events:none}
+.trust .wrap{position:relative}
+.trust h2{color:#fff}
+.trust .eyebrow{color:#7cecd0}
+.origin{max-width:780px;margin:0 auto 64px;text-align:center}
+.origin p{margin-top:16px;font-size:17.5px;line-height:1.65;color:#c3d1e0}
+.trust__h{font-size:clamp(26px,3vw,38px)}
+.sg__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.sg{border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:26px;background:rgba(255,255,255,.04);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sg__ic{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:rgba(34,211,171,.14);color:#22D3AB;margin-bottom:16px}
+.sg__ic svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sg h3{color:#fff;font-size:18.5px}
+.sg p{margin-top:8px;font-size:15.5px;line-height:1.55;color:#aebfd2}
+.trust__cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 16px;margin-top:52px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1)}
+.trust__cta p{flex-basis:100%;text-align:center;color:#fff;font-size:20px;font-weight:600;margin-bottom:4px}
+.trust__cta .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.trust__cta .btn-ghost:hover{border-color:#fff}
+@media(max-width:1000px){.sg__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.sg__grid{grid-template-columns:1fr}.origin{margin-bottom:44px}.origin p{font-size:16.5px}.trust__cta .btn{width:100%}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -818,6 +843,24 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   </section>
 
   <!-- DEMO EN VIDEO -->
+  <section class="rubros" id="rubros">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Para quién</span>
+        <h2>Hecho para negocios que venden todos los días.</h2>
+        <p class="lead">Si tienes un mostrador, un inventario y clientes que esperan, Merka POS se adapta a tu rubro.</p>
+      </div>
+      <div class="grid3">
+        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></div><h3>Minimarket y almacén</h3><p>Ventas rápidas con lector de códigos, control de stock y cierre de caja diario.</p></article>
+        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M3 17l9-11 9 6v5H3z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="15" r="1"/></svg></div><h3>Quesería y lácteos</h3><p>Venta por peso con balanza, productos a granel y control de tu inventario.</p></article>
+        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l2 13H4L6 7z"/><circle cx="12" cy="4" r="1.6"/></svg></div><h3>Carnicería y fiambrería</h3><p>Cobro por kilo con balanza, productos a granel y control de stock.</p></article>
+        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-3 4v9h10v-9l-3-4V3"/></svg></div><h3>Botillería y licorería</h3><p>Inventario por marca y formato, ventas con tarjeta y boleta electrónica.</p></article>
+        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M4 14a8 6 0 0 1 16 0v3H4z"/><path d="M8 11v2M12 10v2M16 11v2"/></svg></div><h3>Panadería y pastelería</h3><p>Mostrador ágil, ventas por unidad y por kilo, y cuentas por cobrar.</p></article>
+        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M14 6l4 4-8 8-4-4zM14 6l2-2 4 4-2 2"/><path d="M6 14l-2 6 6-2"/></svg></div><h3>Ferretería y comercio</h3><p>Catálogo grande con búsqueda, proveedores y compras con factura.</p></article>
+        </div>
+    </div>
+  </section>
+
   <section class="demo" id="demo">
     <div class="demo__glow" aria-hidden="true"></div>
     <div class="wrap">
@@ -929,6 +972,32 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   </section>
 
   <!-- PRECIO -->
+  <section class="trust" id="seguridad">
+    <div class="wrap">
+      <div class="origin rv">
+        <span class="eyebrow">Por qué confiar</span>
+        <h2>Nació detrás de un mostrador, no en una oficina.</h2>
+        <p>Merka POS viene de la experiencia de operar negocios reales: Lácteos Campolac, Punto Queso y un minimarket. Cada función existe porque hizo falta para vender, cobrar y cerrar caja sin perder tiempo ni plata. Hoy Autix lo ofrece a otros negocios de Chile, con el apoyo de quien ya pasó por lo mismo.</p>
+      </div>
+      <div class="center">
+        <h2 class="trust__h">Tu información y tu negocio, protegidos.</h2>
+      </div>
+      <div class="sg__grid">
+        <article class="sg rv"><span class="sg__ic"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Conexión cifrada</h3><p>Toda la información viaja por una conexión segura (HTTPS) entre tu equipo y el sistema.</p></article>
+        <article class="sg rv"><span class="sg__ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5L20 3M16 7l3 3"/></svg></span><h3>Llave de boleta protegida</h3><p>La llave de tu cuenta de boleta electrónica se guarda cifrada. El panel nunca la muestra completa.</p></article>
+        <article class="sg rv"><span class="sg__ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11l2 2 3-4"/></svg></span><h3>Roles y permisos</h3><p>Tu equipo ve y hace solo lo que le corresponde: un cajero no cambia la configuración ni elimina ventas.</p></article>
+        <article class="sg rv"><span class="sg__ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><h3>Tus datos, separados</h3><p>Cada negocio trabaja en su propio espacio, con su propia clave de acceso. Nadie más ve tu información.</p></article>
+        <article class="sg rv"><span class="sg__ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7M9 8h3"/></svg></span><h3>Registro de acciones</h3><p>Queda anotado quién eliminó o modificó una venta, para que puedas revisar cualquier movimiento.</p></article>
+        <article class="sg rv"><span class="sg__ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M4 4l16 16"/></svg></span><h3>Sin datos de tarjetas</h3><p>Los pagos con tarjeta se procesan en tu terminal de pago. Merka POS no guarda números de tarjeta.</p></article>
+        </div>
+      <div class="trust__cta rv">
+        <p>¿Quieres verlo funcionando antes de decidir?</p>
+        <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%2015%20minutos%20de%20Merka%20POS." rel="noopener">Agendar demo de 15 minutos</a>
+        <a class="btn btn-ghost" href="https://app.merkapos.pro/">Probar 30 días gratis</a>
+      </div>
+    </div>
+  </section>
+
   <section class="pricing center" id="precio">
     <div class="wrap">
       <span class="eyebrow">Planes</span>
