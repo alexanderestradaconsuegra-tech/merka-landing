@@ -670,6 +670,60 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .trust__cta .btn-ghost:hover{border-color:#fff}
 @media(max-width:1000px){.sg__grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.sg__grid{grid-template-columns:1fr}.origin{margin-bottom:44px}.origin p{font-size:16.5px}.trust__cta .btn{width:100%}}
+
+/* DISENO: visuales de producto, ritmo de secciones, detalles */
+.features{position:relative;overflow:hidden}
+.features::before{content:"";position:absolute;inset:0;background:radial-gradient(40% 35% at 0% 0%,rgba(34,211,171,.10),transparent 70%),radial-gradient(35% 30% at 100% 100%,rgba(14,165,233,.09),transparent 70%);pointer-events:none}
+.features .wrap{position:relative}
+.card--viz{display:flex;flex-direction:column;padding:30px 28px 28px}
+.card--viz p{flex:1}
+.viz{margin-top:22px;padding:16px;border-radius:14px;background:linear-gradient(160deg,#f4f8fc,#eaf1f8);border:1px solid var(--line);font-size:13px;color:var(--ink)}
+.viz small{display:block;color:var(--muted);font-size:11.5px;font-weight:600}
+.viz__pills{display:flex;gap:5px;flex-wrap:wrap}
+.viz__pills span{padding:6px 8px;border-radius:9px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:11.5px}
+.viz__pills .on{background:#22D3AB;border-color:#22D3AB;color:#06231d}
+.viz__total{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding:10px 14px;border-radius:10px;background:#d9f7ef}
+.viz__total small{color:#0a7a62;font-weight:800;letter-spacing:.08em}
+.viz__total b{font-size:24px;color:#0a7a62;letter-spacing:-.02em}
+.viz__btn{margin-top:10px;text-align:center;padding:10px;border-radius:10px;background:#22D3AB;color:#06231d;font-weight:800}
+.viz--peso{display:grid;gap:10px}
+.viz__scale{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;background:#061324;color:#fff}
+.viz__scale small{color:#7cecd0;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.viz__scale b{font-size:24px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.viz__line{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.viz__line span{font-weight:700;line-height:1.25}
+.viz__line b{font-size:17px;color:#0a7a62}
+.viz--stock{display:grid;gap:10px}
+.viz__row{display:grid;grid-template-columns:1fr 74px 26px;align-items:center;gap:10px}
+.viz__row span{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.viz__row i{height:8px;border-radius:99px;background:#dbe5ef;position:relative;overflow:hidden}
+.viz__row i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:99px;background:#22D3AB}
+.viz__row.low i::after{background:#ef4444}
+.viz__row.low b{color:#dc2626}
+.viz__row b{text-align:right;font-variant-numeric:tabular-nums}
+.card{position:relative}
+.card::after{content:"";position:absolute;left:28px;right:28px;top:-1px;height:2px;border-radius:2px;background:linear-gradient(90deg,#22D3AB,#0ea5e9);opacity:0;transition:opacity .2s}
+.card:hover::after{opacity:1}
+.rubros{background:var(--paper);background-image:radial-gradient(rgba(12,26,46,.07) 1px,transparent 1.2px);background-size:22px 22px}
+.svc__card{background:linear-gradient(180deg,#fff,#f8fbfe)}
+.steps{position:relative}
+@media(min-width:1001px){.step:not(:last-child)::after{content:"";position:absolute;top:48px;left:calc(100% - 4px);width:28px;height:2px;background:repeating-linear-gradient(90deg,#22D3AB 0 6px,transparent 6px 10px);z-index:1}}
+/* confianza en version clara para no chocar con los planes oscuros */
+.trust{background:linear-gradient(180deg,#f4f8fc,#ffffff);color:var(--body)}
+.trust::before{background:radial-gradient(45% 40% at 90% 0%,rgba(34,211,171,.12),transparent 70%)}
+.trust h2{color:var(--ink)}
+.trust .eyebrow{color:var(--sky-ink)}
+.origin p{color:var(--body)}
+.sg{background:#fff;border:1px solid var(--line);backdrop-filter:none;-webkit-backdrop-filter:none;transition:transform .2s ease,box-shadow .2s ease}
+.sg:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.sg__ic{background:var(--lime-soft);color:#0a7a62}
+.sg h3{color:var(--ink)}
+.sg p{color:var(--muted)}
+.trust__cta{border-top:1px solid var(--line)}
+.trust__cta p{color:var(--ink)}
+.trust__cta .btn-ghost{color:var(--ink);border-color:#c5d3e2}
+.trust__cta .btn-ghost:hover{border-color:var(--ink)}
+@media(max-width:640px){.viz__row{grid-template-columns:1fr 64px 24px}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -829,9 +883,9 @@ footer.ft :focus-visible{outline-color:#22D3AB}
         <p class="lead">Diseñado para minimarkets, tiendas de barrio y negocios de retail en Latinoamérica.</p>
       </div>
       <div class="grid3">
-        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6"/></svg></div><h3>Terminal de ventas</h3><p>Busca productos, elige cantidades y cobra con un clic. Efectivo, transferencia, tarjeta o pago mixto.</p></article>
-        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l2 13H4L6 7z"/><circle cx="12" cy="4" r="1.6"/></svg></div><h3>Venta por peso</h3><p>Ideal para quesos, carnes y productos a granel. Con balanzas electrónicas, escaneas el código y el peso se calcula solo.</p></article>
-        <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 7.5L12 12.5l8.7-5M12 22V12.5"/></svg></div><h3>Inventario en tiempo real</h3><p>Alertas de reposición, precios por volumen, categorías y recepción de mercadería con factura.</p></article>
+        <article class="card card--viz rv"><div class="card__ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6"/></svg></div><h3>Terminal de ventas</h3><p>Busca productos, elige cantidades y cobra con un clic. Efectivo, transferencia, tarjeta o pago mixto.</p><div class="viz viz--pay"><div class="viz__pills"><span>Efectivo</span><span>Transferencia</span><span class="on">Tarjeta</span><span>Mixto</span></div><div class="viz__total"><small>TOTAL</small><b>$9.827</b></div><div class="viz__btn">Cobrar venta</div></div></article>
+        <article class="card card--viz rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l2 13H4L6 7z"/><circle cx="12" cy="4" r="1.6"/></svg></div><h3>Venta por peso</h3><p>Ideal para quesos, carnes y productos a granel. Con balanzas electrónicas, escaneas el código y el peso se calcula solo.</p><div class="viz viz--peso"><div class="viz__scale"><small>Peso</small><b>0,350 kg</b></div><div class="viz__line"><span>Queso Mantecoso<small>0,350 kg x $7.990/kg</small></span><b>$2.797</b></div></div></article>
+        <article class="card card--viz rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 7.5L12 12.5l8.7-5M12 22V12.5"/></svg></div><h3>Inventario en tiempo real</h3><p>Alertas de reposición, precios por volumen, categorías y recepción de mercadería con factura.</p><div class="viz viz--stock"><div class="viz__row"><span>Leche Entera 1L</span><i style="--w:82%"></i><b>48</b></div><div class="viz__row"><span>Pan de Molde 500g</span><i style="--w:46%"></i><b>22</b></div><div class="viz__row low"><span>Agua Cachantun</span><i style="--w:8%"></i><b>2</b></div></div></article>
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>Reportes y ganancias</h3><p>Conoce tu ganancia neta real: ventas menos costos menos gastos. Gráficos por día, semana, mes o año.</p></article>
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div><h3>Crédito a clientes</h3><p>Líneas de crédito por cliente, límites personalizados, historial de pagos y alertas de vencimiento.</p></article>
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>Permisos por usuario</h3><p>Tú decides qué puede hacer cada cajero: bloquea el acceso a costos, reportes o inventario. Con registro de auditoría.</p></article>
@@ -976,8 +1030,8 @@ footer.ft :focus-visible{outline-color:#22D3AB}
     <div class="wrap">
       <div class="origin rv">
         <span class="eyebrow">Por qué confiar</span>
-        <h2>Nació detrás de un mostrador, no en una oficina.</h2>
-        <p>Merka POS viene de la experiencia de operar negocios reales: Lácteos Campolac, Punto Queso y un minimarket. Cada función existe porque hizo falta para vender, cobrar y cerrar caja sin perder tiempo ni plata. Hoy Autix lo ofrece a otros negocios de Chile, con el apoyo de quien ya pasó por lo mismo.</p>
+        <h2>Pensado para el mostrador chileno.</h2>
+        <p>Boleta electrónica del SII, venta por peso con balanza, pago en efectivo, tarjeta y transferencia, y cierre de caja diario. Merka POS resuelve lo que un negocio de barrio necesita cada día, y te acompañamos desde la habilitación hasta la primera venta.</p>
       </div>
       <div class="center">
         <h2 class="trust__h">Tu información y tu negocio, protegidos.</h2>
