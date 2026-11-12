@@ -838,6 +838,14 @@ dialog.dlg-video{margin:auto;width:min(960px,100% - 24px);background:#06121f;bor
 dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px)}
 .dlg-video video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
 .dlg-video__x{display:block;margin:10px 10px 10px auto;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 16px;font-weight:700;font-size:13.5px;cursor:pointer}
+
+/* MANIFIESTO */
+.manif{background:linear-gradient(180deg,#ffffff,#f4f8fc);text-align:center;padding:104px 0}
+.manif .wrap{max-width:860px}
+.manif__big{margin-top:18px;font-size:clamp(28px,4vw,46px);line-height:1.15;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.manif__txt{margin:26px auto 0;max-width:640px;font-size:clamp(17px,1.5vw,19.5px);line-height:1.65;color:var(--body)}
+.manif__end{margin-top:30px;font-size:clamp(20px,2.2vw,26px);font-weight:800;color:#0a7a62;letter-spacing:-.01em}
+@media(max-width:700px){.manif{padding:72px 0}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1127,6 +1135,15 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
         <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%2015%20minutos%20de%20Merka%20POS." rel="noopener">Agendar demo de 15 minutos</a>
         <a class="btn btn-ghost" href="https://app.merkapos.pro/">Probar 30 días gratis</a>
       </div>
+    </div>
+  </section>
+
+  <section class="manif" aria-label="Manifiesto">
+    <div class="wrap">
+      <span class="eyebrow">Para quien abre el negocio</span>
+      <p class="manif__big rv">Conoces a tus clientes por su nombre y sabes qué producto se acaba primero.</p>
+      <p class="manif__txt rv">La parte que te quita las noches es otra: las boletas, el stock, la caja. Merka POS se ocupa de esa parte. La boleta sale al cobrar, el stock baja con cada venta y las ventas del día quedan ordenadas.</p>
+      <p class="manif__end rv">Tú atiendes. Cobras. Lo demás sale solo.</p>
     </div>
   </section>
 
