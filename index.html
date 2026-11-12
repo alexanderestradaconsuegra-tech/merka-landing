@@ -15,8 +15,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CL">
 <meta property="og:site_name" content="Merka POS">
-<meta property="og:title" content="Merka POS | Punto de venta con boleta del SII, desde $3.990 al mes">
-<meta property="og:description" content="Cobra en segundos, descuenta el stock solo y emite la boleta del SII al cobrar. Desde $3.990 al mes, 30 días gratis, sin tarjeta.">
+<meta property="og:title" content="Merka POS | Punto de venta con boleta del SII, desde $8.990 al mes">
+<meta property="og:description" content="Cobra en segundos, descuenta el stock solo y emite la boleta del SII al cobrar. Oferta de lanzamiento: $8.990 al mes (normal $15.000). 30 días gratis, sin tarjeta.">
 <meta property="og:url" content="https://merkapos.pro/">
 <meta property="og:image" content="https://merkapos.pro/og-image.png?v=20261112">
 <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
   "description": "Punto de venta en la nube con boleta electrónica del SII para minimarkets, almacenes y tiendas en Chile.",
   "areaServed": { "@type": "Country", "name": "Chile" },
   "url": "https://merkapos.pro/",
-  "offers": { "@type": "Offer", "price": "3990", "priceCurrency": "CLP", "description": "Plan anual ($47.880 al año), por mes. 30 días de prueba gratis." },
+  "offers": { "@type": "Offer", "price": "8990", "priceCurrency": "CLP", "priceValidUntil": "2026-11-30", "description": "Oferta de lanzamiento por mes (precio normal $15.000). 30 días de prueba gratis." },
   "publisher": { "@type": "Organization", "name": "Autix", "url": "https://autix.pro", "telephone": "+56992025527" }
 }
 </script>
@@ -960,6 +960,11 @@ header.nav.scrolled,body.nav-open header.nav{background:rgba(241,241,238,.94);bo
 header.nav .btn-primary{background:#0E0E0E;color:#fff;border:1px solid #0E0E0E;box-shadow:none;border-radius:0;font-weight:800}
 header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
 .menu a:not(.btn){font-weight:600}
+
+.plans.plans--1{display:grid;grid-template-columns:minmax(0,520px);justify-content:center;margin-top:40px}
+.hc__was{display:block;font:600 clamp(20px,2.2vw,28px)/1 var(--font);color:#6B6B66;letter-spacing:-.02em;margin-bottom:4px}
+.hc__price span{display:block;max-width:300px;margin-left:auto;line-height:1.5}
+@media(max-width:1000px){.hc__price span{margin-left:0}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1059,7 +1064,7 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
         <ul class="hc__facts"><li>Sin tarjeta</li><li>30 días gratis</li><li>Soporte por WhatsApp</li></ul>
       </div>
       <div class="hc__right">
-        <div class="hc__price"><b>$3.990</b><span>al mes · pago anual</span></div>
+        <div class="hc__price"><s class="hc__was">$15.000</s><b>$8.990</b><span>al mes · oferta de lanzamiento hasta el 30 de noviembre</span></div>
         <figure class="hc__fig" aria-label="Una venta en Merka POS">
           <div class="hc__frame">
             <div class="hc__bar">app.merkapos.pro</div>
@@ -1272,41 +1277,23 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
 
   <section class="pricing center" id="precio">
     <div class="wrap">
-      <span class="eyebrow">Planes</span>
-      <h2>Parte desde $3.990 al mes.</h2>
-      <p class="lead">30 días gratis, sin tarjeta y sin contrato. Suma la boleta electrónica cuando estés listo.</p>
-
-      </div>
-      <div class="toggle toggle--sm toggle--c" role="group" aria-label="Ciclo de pago">
-        <button type="button" id="bAnual" aria-pressed="true">Anual <span class="save">Ahorra 20%</span></button>
-        <button type="button" id="bMensual" aria-pressed="false">Mensual</button>
-      </div>
-      <div class="plans plans--2">
-        <div class="plan">
-          <span class="plan__tag">Solo software</span>
+      <span class="eyebrow">Plan</span>
+      <h2>Un plan. Todo incluido.</h2>
+      <p class="lead">30 días gratis, sin tarjeta y sin contrato.</p>
+      <div class="plans plans--1">
+        <div class="plan plan--feat">
+          <span class="plan__tag">Oferta de lanzamiento</span>
           <div class="plan__name">Merka POS</div>
-          <div class="price-old"><span class="sr">Precio anterior: </span><s id="priceOld">$9.990</s><span class="price-off" id="priceOff">60% de descuento</span></div>
-          <div class="price" aria-live="polite"><strong id="price">$3.990</strong><span>/mes</span></div>
-          <div class="plan__launch">Precio de lanzamiento</div>
-          <div class="plan__sub" id="priceNote">Con pago anual ($47.880 al año). Si prefieres pagar mes a mes: $4.990/mes.</div>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de ventas con lector de códigos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inventario con fotos y venta por peso</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Usuarios ilimitados con permisos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cierre de caja, reportes y ganancia neta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proveedores, créditos y panel en tiempo real</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Celular, tablet y computador</li></ul>
+          <div class="price-old"><span class="sr">Precio normal: </span><s>$15.000</s><span class="price-off">Ahorras $6.010 al mes</span></div>
+          <div class="price" aria-live="polite"><strong>$8.990</strong><span>/mes</span></div>
+          <div class="plan__sub">Contrata y paga este mes, hasta el 30 de noviembre de 2026, y mantienes $8.990 mientras sigas pagando. Después, el precio es $15.000 al mes.</div>
+          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de ventas con lector de códigos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inventario con fotos y venta por peso</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Usuarios ilimitados con permisos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cierre de caja, reportes y ganancia neta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proveedores, créditos y panel en tiempo real</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Celular, tablet y computador</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boleta electrónica del SII al cobrar, con impresión en 80 mm</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anulación de ventas con nota de crédito</li></ul>
+          <p class="plan__aclara">Para emitir boleta necesitas firma electrónica y habilitar los documentos en Tuu, que entrega la llave. Te orientamos por WhatsApp.</p>
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Empezar 30 días gratis</a>
           <p class="plan__fine">Sin tarjeta · Sin contrato · Cancela cuando quieras</p>
         </div>
-
-        <div class="plan plan--feat">
-          <span class="plan__tag">Con boleta electrónica</span>
-          <div class="plan__name">Merka POS + Boleta SII</div>
-          <div class="price" aria-live="polite"><strong id="priceSii">$7.990</strong><span>/mes</span></div>
-          <div class="plan__launch">Se cobra desde tu primera boleta</div>
-          <div class="plan__sub" id="priceSiiNote">Con pago anual ($95.880 al año). Si prefieres pagar mes a mes: $9.990/mes.</div>
-          <p class="plan__aclara">La llave y los documentos los entrega Tuu. Este precio es por la integración dentro de Merka POS.</p>
-          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo lo de Merka POS</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boleta electrónica del SII al cobrar con efectivo o tarjeta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impresión de la boleta en 80 mm</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anulación de ventas con nota de crédito</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tus boletas quedan registradas en el SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Necesitas firma electrónica y habilitación en Tuu (te orientamos)</li></ul>
-          <a class="btn btn-primary" href="https://app.merkapos.pro/">Empezar 30 días gratis</a>
-          <p class="plan__fine">Sin tarjeta · Activas el módulo cuando estés listo</p>
-        </div>
       </div>
-      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. El módulo de boleta SII se cobra desde que emites tu primera boleta, no antes. Los costos del proveedor de documentos (Tuu) son aparte y dependen de tu caso: te lo explicamos antes de contratar. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">Escríbenos por WhatsApp</a>.</p>
+      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. Los costos del proveedor de documentos (Tuu) son aparte y dependen de tu caso: te lo explicamos antes de contratar. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">Escríbenos por WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -1435,7 +1422,7 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
     <h3>1. Aceptación</h3><p>Al acceder y usar Merka POS (app.merkapos.pro), aceptas estos Términos de Servicio. El servicio es operado por Autix, empresa constituida en Chile.</p>
     <h3>2. Descripción del servicio</h3><p>Merka POS es un sistema de punto de venta en la nube que incluye terminal de ventas, gestión de inventario, cierres de caja, administración de créditos y reportes. Se ofrece mediante suscripción mensual o anual.</p>
     <h3>3. Período de prueba</h3><p>Los nuevos usuarios tienen acceso gratuito durante 30 días calendario desde el registro, sin necesidad de tarjeta de crédito.</p>
-    <h3>4. Planes y facturación</h3><p>Los precios están expresados en pesos chilenos (CLP). El pago de la suscripción se coordina directamente con Autix antes de que termine el período de prueba. Puedes cambiar de plan en cualquier momento.</p>
+    <h3>4. Planes y facturación</h3><p>Los precios están expresados en pesos chilenos (CLP). El pago de la suscripción se coordina directamente con Autix antes de que termine el período de prueba. Puedes cancelar en cualquier momento.</p>
     <h3>5. Cancelación</h3><p>Puedes cancelar tu suscripción en cualquier momento. No existen penalidades ni cargos por cancelación.</p>
     <h3>6. Datos y propiedad</h3><p>Los datos que ingresas en Merka POS son de tu exclusiva propiedad. Autix no vende ni cede tu información a terceros.</p>
     <h3>7. Ley aplicable</h3><p>Estos términos se rigen por las leyes de la República de Chile.</p>
@@ -1501,20 +1488,6 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
   document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', function(){ setNav(false); }); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') setNav(false); });
 
-  // precio anual / mensual
-  var bA=document.getElementById('bAnual'), bM=document.getElementById('bMensual');
-  var price=document.getElementById('price'), note=document.getElementById('priceNote'), noteSii=document.getElementById('priceSiiNote');
-  function setBilling(anual){
-    bA.setAttribute('aria-pressed',anual); bM.setAttribute('aria-pressed',!anual);
-    price.textContent = anual ? '$3.990' : '$4.990';
-    document.getElementById('priceSii').textContent = anual ? '$7.990' : '$9.990';
-    document.getElementById('priceOld').textContent = anual ? '$9.990' : '$11.990';
-    document.getElementById('priceOff').textContent = anual ? '60% de descuento' : '58% de descuento';
-    note.textContent = anual ? 'Con pago anual ($47.880 al año). Si prefieres pagar mes a mes: $4.990/mes.' : 'Pago mes a mes. Con pago anual pagas $3.990/mes ($47.880 al año).';
-    noteSii.textContent = anual ? 'Con pago anual ($95.880 al año). Si prefieres pagar mes a mes: $9.990/mes.' : 'Pago mes a mes. Con pago anual pagas $7.990/mes ($95.880 al año).';
-  }
-  bA.addEventListener('click', function(){ setBilling(true); });
-  bM.addEventListener('click', function(){ setBilling(false); });
 
   // diálogos
   document.querySelectorAll('[data-open]').forEach(function(b){
