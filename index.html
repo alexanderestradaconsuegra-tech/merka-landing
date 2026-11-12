@@ -807,6 +807,21 @@ footer.ft .wrap{position:relative;z-index:1}
 .plan__sii b{font-size:18px;color:#0a7a62;letter-spacing:-.01em}
 .plan__sii b small{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:2px}
 .plan__siin{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:2px}
+
+/* PLANES EN DOS PASOS */
+.pstep{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left;max-width:640px;margin:46px auto 0}
+.pstep--2{margin-top:64px}
+.pstep__n{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#22D3AB;color:#06231d;font-weight:800;font-size:20px}
+.pstep h3{color:#fff;font-size:clamp(21px,2.4vw,27px)}
+.pstep p{margin-top:4px;color:#a9bbce;font-size:15.5px}
+.toggle--c{margin:22px auto 0;display:inline-grid}
+.plans.plans--2{grid-template-columns:repeat(2,1fr);max-width:900px;margin-inline:auto;margin-top:28px}
+.plans.plans--2 .plan ul{flex:0 0 auto;margin-bottom:22px}
+.plans.plans--2 .plan .plan__how{margin-top:auto}
+.plans.plans--2 .plan .btn{margin-top:auto}
+.plans.plans--2 .plan .plan__how+.btn{margin-top:0}
+@media(max-width:860px){.plans.plans--2{grid-template-columns:1fr;max-width:560px}}
+@media(max-width:560px){.pstep{flex-direction:column;text-align:center;gap:10px}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1168,69 +1183,61 @@ footer.ft .wrap{position:relative;z-index:1}
       <h2>Elige hasta dónde llegamos contigo.</h2>
       <p class="lead">Parte solo con el software o déjanos poner todo en marcha. 30 días gratis para probar Merka POS, sin tarjeta.</p>
 
-      <div class="plans">
+      <div class="pstep rv"><span class="pstep__n">1</span><div><h3>Elige tu suscripción</h3><p>Se paga todos los meses. Los primeros 30 días son gratis.</p></div></div>
+      <div class="toggle toggle--sm toggle--c" role="group" aria-label="Ciclo de pago">
+        <button type="button" id="bAnual" aria-pressed="true">Anual <span class="save">Ahorra 20%</span></button>
+        <button type="button" id="bMensual" aria-pressed="false">Mensual</button>
+      </div>
+      <div class="plans plans--2">
         <div class="plan">
           <span class="plan__tag">Solo software</span>
           <div class="plan__name">Merka POS</div>
-          <div class="toggle toggle--sm" role="group" aria-label="Ciclo de pago">
-            <button type="button" id="bAnual" aria-pressed="true">Anual <span class="save">Ahorra 20%</span></button>
-            <button type="button" id="bMensual" aria-pressed="false">Mensual</button>
-          </div>
           <div class="price-old"><span class="sr">Precio anterior: </span><s id="priceOld">$9.990</s><span class="price-off" id="priceOff">60% de descuento</span></div>
           <div class="price" aria-live="polite"><strong id="price">$3.990</strong><span>/mes</span></div>
           <div class="plan__launch">Precio de lanzamiento</div>
-          <div class="plan__sub" id="priceNote">Con pago anual ($47.880 al año; con boleta SII, $95.880). Si prefieres pagar mes a mes: $4.990/mes ($9.990 con boleta SII).</div>
-          <div class="plan__sii"><span>Con módulo de boleta SII<small class="plan__siin">Se cobra desde tu primera boleta</small></span><b><span id="priceSii">$7.990</span><small>/mes</small></b></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de ventas con lector de códigos</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inventario con fotos y venta por peso</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Usuarios ilimitados con permisos</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cierre de caja, reportes y ganancia neta</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proveedores, créditos y panel en tiempo real</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Celular, tablet y computador</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boleta electrónica del SII (módulo opcional)</li>
-          </ul>
+          <div class="plan__sub" id="priceNote">Con pago anual ($47.880 al año). Si prefieres pagar mes a mes: $4.990/mes.</div>
+          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de ventas con lector de códigos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inventario con fotos y venta por peso</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Usuarios ilimitados con permisos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cierre de caja, reportes y ganancia neta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Proveedores, créditos y panel en tiempo real</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Celular, tablet y computador</li></ul>
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Empezar 30 días gratis</a>
           <p class="plan__fine">Sin tarjeta · Sin contrato · Cancela cuando quieras</p>
         </div>
 
         <div class="plan plan--feat">
-          <span class="plan__tag">Recomendado</span>
-          <div class="plan__name">En regla con el SII</div>
-          <div class="price price--q"><strong>Cotiza</strong><span class="price__once">pago único</span></div>
-          <div class="plan__sub">Merka POS más la puesta en marcha de tu boleta electrónica. Pago único del servicio.</div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo Merka POS</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Guía de firma electrónica y habilitación con Tuu</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Conexión y pruebas de boleta electrónica</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Primera boleta real contigo</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Capacitación de tu equipo, en línea</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte el primer mes</li>
-          </ul>
+          <span class="plan__tag">Con boleta electrónica</span>
+          <div class="plan__name">Merka POS + Boleta SII</div>
+          <div class="price" aria-live="polite"><strong id="priceSii">$7.990</strong><span>/mes</span></div>
+          <div class="plan__launch">Se cobra desde tu primera boleta</div>
+          <div class="plan__sub" id="priceSiiNote">Con pago anual ($95.880 al año). Si prefieres pagar mes a mes: $9.990/mes.</div>
+          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo lo de Merka POS</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boleta electrónica del SII al cobrar con efectivo o tarjeta</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Impresión de la boleta en 80 mm</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Anulación de ventas con nota de crédito</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tus boletas quedan registradas en el SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Necesitas firma electrónica y habilitación (te ayudamos abajo)</li></ul>
+          <a class="btn btn-primary" href="https://app.merkapos.pro/">Empezar 30 días gratis</a>
+          <p class="plan__fine">Sin tarjeta · Activas el módulo cuando estés listo</p>
+        </div>
+      </div>
+
+      <div class="pstep pstep--2 rv"><span class="pstep__n">2</span><div><h3>¿Quieres que lo dejemos funcionando?</h3><p>Opcional. Es un pago único que se cotiza según tu negocio.</p></div></div>
+      <div class="plans plans--2">
+        <div class="plan">
+          <span class="plan__tag">Pago único</span>
+          <div class="plan__name">Puesta en marcha SII</div>
+          <div class="price price--q"><strong>Cotiza</strong></div>
+          <div class="plan__sub">Dejamos tu boleta electrónica lista para emitir.</div>
+          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Guía de firma electrónica y habilitación con Tuu</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Conexión y pruebas de boleta electrónica</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Primera boleta real contigo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Capacitación de tu equipo, en línea</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte el primer mes</li></ul>
           <div class="plan__how"><div class="plan__howt">Así lo hacemos</div><ol><li><b>1</b><span>Nos cuentas cómo vendes hoy</span></li><li><b>2</b><span>Te enviamos la cotización por WhatsApp</span></li><li><b>3</b><span>Habilitamos y emitimos tu primera boleta</span></li></ol></div>
-          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20plan%20En%20regla%20con%20el%20SII%20de%20Merka%20POS." rel="noopener">Cotizar</a>
+          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20la%20Puesta%20en%20marcha%20SII%20de%20Merka%20POS." rel="noopener">Cotizar</a>
           <p class="plan__fine">Te respondemos por WhatsApp</p>
         </div>
 
         <div class="plan">
           <span class="plan__tag">Todo resuelto</span>
           <div class="plan__name">Llave en mano</div>
-          <div class="price price--q"><strong>Cotiza</strong><span class="price__once">pago único</span></div>
-          <div class="plan__sub">Software, boleta electrónica, equipos e instalación en tu local.</div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo el plan En regla con el SII</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de pago, impresora y lector</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Computador o tablet, si lo necesitas</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Instalación y capacitación en terreno</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Equipos configurados y probados</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte prioritario el primer mes</li>
-          </ul>
+          <div class="price price--q"><strong>Cotiza</strong></div>
+          <div class="plan__sub">Puesta en marcha SII, equipos e instalación en tu local.</div>
+          <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Todo lo de la Puesta en marcha SII</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Terminal de pago, impresora y lector</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Computador o tablet, si lo necesitas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Instalación y capacitación en terreno</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Equipos configurados y probados</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte prioritario el primer mes</li></ul>
           <div class="plan__how"><div class="plan__howt">Así lo hacemos</div><ol><li><b>1</b><span>Conocemos tu local y lo que necesitas</span></li><li><b>2</b><span>Cotizamos software, equipos e instalación</span></li><li><b>3</b><span>Dejamos todo funcionando en tu mostrador</span></li></ol></div>
           <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20plan%20Llave%20en%20mano%20de%20Merka%20POS." rel="noopener">Cotizar</a>
           <p class="plan__fine">Zona de cobertura según tu ubicación</p>
         </div>
       </div>
-      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. El módulo de boleta SII se suma a la suscripción ($7.990 al mes con pago anual, $9.990 mes a mes) y se cobra desde que emites tu primera boleta, no antes. La puesta en marcha y los equipos se cotizan según tu negocio y se pagan una sola vez. Los costos del proveedor de documentos (Tuu) son aparte y dependen de tu caso: te lo explicamos antes de contratar. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">Escríbenos por WhatsApp</a>.</p>
+      <p class="how-pay"><b>¿Cómo se paga?</b> Durante la prueba no pagas nada. Antes de que termine te escribimos para coordinar tu suscripción contigo. El módulo de boleta SII se cobra desde que emites tu primera boleta, no antes. La puesta en marcha y los equipos se cotizan según tu negocio y se pagan una sola vez. Los costos del proveedor de documentos (Tuu) son aparte y dependen de tu caso: te lo explicamos antes de contratar. ¿Dudas? <a href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener">Escríbenos por WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -1413,14 +1420,15 @@ footer.ft .wrap{position:relative;z-index:1}
 
   // precio anual / mensual
   var bA=document.getElementById('bAnual'), bM=document.getElementById('bMensual');
-  var price=document.getElementById('price'), note=document.getElementById('priceNote');
+  var price=document.getElementById('price'), note=document.getElementById('priceNote'), noteSii=document.getElementById('priceSiiNote');
   function setBilling(anual){
     bA.setAttribute('aria-pressed',anual); bM.setAttribute('aria-pressed',!anual);
     price.textContent = anual ? '$3.990' : '$4.990';
     document.getElementById('priceSii').textContent = anual ? '$7.990' : '$9.990';
     document.getElementById('priceOld').textContent = anual ? '$9.990' : '$11.990';
     document.getElementById('priceOff').textContent = anual ? '60% de descuento' : '58% de descuento';
-    note.textContent = anual ? 'Con pago anual ($47.880 al año; con boleta SII, $95.880). Si prefieres pagar mes a mes: $4.990/mes ($9.990 con boleta SII).' : 'Pago mes a mes. Con pago anual pagas $3.990/mes ($47.880 al año), o $7.990/mes con boleta SII.';
+    note.textContent = anual ? 'Con pago anual ($47.880 al año). Si prefieres pagar mes a mes: $4.990/mes.' : 'Pago mes a mes. Con pago anual pagas $3.990/mes ($47.880 al año).';
+    noteSii.textContent = anual ? 'Con pago anual ($95.880 al año). Si prefieres pagar mes a mes: $9.990/mes.' : 'Pago mes a mes. Con pago anual pagas $7.990/mes ($95.880 al año).';
   }
   bA.addEventListener('click', function(){ setBilling(true); });
   bM.addEventListener('click', function(){ setBilling(false); });
