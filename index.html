@@ -650,11 +650,11 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .rubros{background:#fff}
 .rubros .card h3{font-size:19px}
 .rubros .card p{margin-top:8px;color:var(--muted);font-size:15.5px}
-.trust{background:#061324;color:#c3d1e0;position:relative;overflow:hidden}
-.trust::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 55% at 85% 0%,rgba(34,211,171,.16),transparent 70%),radial-gradient(45% 50% at 5% 100%,rgba(14,165,233,.14),transparent 70%);pointer-events:none}
-.trust .wrap{position:relative}
-.trust h2{color:#fff}
-.trust .eyebrow{color:#7cecd0}
+.confia{background:#061324;color:#c3d1e0;position:relative;overflow:hidden}
+.confia::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 55% at 85% 0%,rgba(34,211,171,.16),transparent 70%),radial-gradient(45% 50% at 5% 100%,rgba(14,165,233,.14),transparent 70%);pointer-events:none}
+.confia .wrap{position:relative}
+.confia h2{color:#fff}
+.confia .eyebrow{color:#7cecd0}
 .origin{max-width:780px;margin:0 auto 64px;text-align:center}
 .origin p{margin-top:16px;font-size:17.5px;line-height:1.65;color:#c3d1e0}
 .trust__h{font-size:clamp(26px,3vw,38px)}
@@ -709,10 +709,10 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .steps{position:relative}
 @media(min-width:1001px){.step:not(:last-child)::after{content:"";position:absolute;top:48px;left:calc(100% - 4px);width:28px;height:2px;background:repeating-linear-gradient(90deg,#22D3AB 0 6px,transparent 6px 10px);z-index:1}}
 /* confianza en version clara para no chocar con los planes oscuros */
-.trust{background:linear-gradient(180deg,#f4f8fc,#ffffff);color:var(--body)}
-.trust::before{background:radial-gradient(45% 40% at 90% 0%,rgba(34,211,171,.12),transparent 70%)}
-.trust h2{color:var(--ink)}
-.trust .eyebrow{color:var(--sky-ink)}
+.confia{background:linear-gradient(180deg,#f4f8fc,#ffffff);color:var(--body)}
+.confia::before{background:radial-gradient(45% 40% at 90% 0%,rgba(34,211,171,.12),transparent 70%)}
+.confia h2{color:var(--ink)}
+.confia .eyebrow{color:var(--sky-ink)}
 .origin p{color:var(--body)}
 .sg{background:#fff;border:1px solid var(--line);backdrop-filter:none;-webkit-backdrop-filter:none;transition:transform .2s ease,box-shadow .2s ease}
 .sg:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
@@ -724,6 +724,35 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .trust__cta .btn-ghost{color:var(--ink);border-color:#c5d3e2}
 .trust__cta .btn-ghost:hover{border-color:var(--ink)}
 @media(max-width:640px){.viz__row{grid-template-columns:1fr 64px 24px}}
+
+/* MENU TRANSPARENTE SOBRE EL HERO */
+header.nav{position:fixed;left:0;right:0;top:0;background:transparent;border-bottom-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;transition:background-color .25s ease,border-color .25s ease,backdrop-filter .25s ease}
+header.nav.scrolled,body.nav-open header.nav{background:rgba(6,19,36,.9);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom-color:rgba(255,255,255,.12)}
+.hv2__grid{padding-top:calc(clamp(56px,6vw,88px) + 72px)}
+@media(max-width:1000px){.hv2__bg{height:calc(min(62vw,420px) + 72px)}.hv2__grid{padding-top:0}}
+@media(max-width:700px){.hv2__bg{height:calc(min(78vw,400px) + 72px)}}
+
+/* DEMO: dispositivo con perspectiva, tarjetas flotantes y pestañas tipo tarjeta */
+.demo__stage{position:relative}
+.demo__stage::before{content:"";position:absolute;left:50%;top:6%;width:min(1180px,96%);height:88%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(34,211,171,.18),transparent 72%);pointer-events:none}
+.demo__device{position:relative;max-width:1040px;margin:0 auto}
+.demo__device::after{content:"";position:absolute;left:8%;right:8%;bottom:-34px;height:46px;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);filter:blur(8px);z-index:-1}
+@media(min-width:1001px){.demo__device .demo__frame{transform:perspective(2200px) rotateX(2.5deg);transform-origin:50% 100%;transition:transform .5s ease}.demo__device:hover .demo__frame{transform:perspective(2200px) rotateX(0)}}
+.dchip{position:absolute;z-index:3;display:flex;align-items:center;gap:12px;padding:11px 16px;border-radius:14px;background:rgba(10,24,42,.72);border:1px solid rgba(255,255,255,.18);color:#fff;box-shadow:0 24px 44px -16px rgba(0,0,0,.65);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);animation:fl 7s ease-in-out infinite}
+.dchip b{display:block;font-size:15px;line-height:1.2;font-variant-numeric:tabular-nums}
+.dchip small{display:block;color:#a9bbcf;font-size:12px;font-weight:600}
+.dchip__ic{width:30px;height:30px;border-radius:50%;background:#22D3AB;color:#06231d;display:grid;place-items:center;flex:none}
+.dchip__ic svg{width:16px;height:16px}
+.dchip--a{left:-4%;bottom:14%}
+.dchip--b{right:-4%;top:12%;animation-delay:-3s}
+.dchip--b b{color:#7cecd0}
+@media(max-width:1180px){.dchip--a{left:2%}.dchip--b{right:2%}}
+@media(max-width:700px){.dchip{padding:8px 11px;gap:9px}.dchip b{font-size:12.5px}.dchip small{font-size:10.5px}.dchip--a{bottom:-14px;left:12px}.dchip--b{display:none}.dchip__ic{width:24px;height:24px}}
+.demo__tabs{gap:14px}
+.demo__tab{padding:18px 18px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);transition:opacity .2s,background .2s,border-color .2s,transform .2s}
+.demo__tab[aria-selected=true]{background:rgba(34,211,171,.1);border-color:rgba(34,211,171,.5);transform:translateY(-2px)}
+.demo__prog{margin-bottom:12px}
+@media(prefers-reduced-motion:reduce){.dchip{animation:none}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -924,15 +953,19 @@ footer.ft :focus-visible{outline-color:#22D3AB}
         <p class="lead">Grabaciones reales del sistema, sin edición. Elige un flujo.</p>
       </div>
       <div class="demo__stage">
+        <div class="demo__device">
+        <div class="dchip dchip--a" aria-hidden="true"><span class="dchip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b id="dcA">Venta cobrada</b><small id="dcAs">Total $9.827</small></div></div>
+        <div class="dchip dchip--b" aria-hidden="true"><div><small id="dcBs">Documento</small><b id="dcB">Boleta enviada al SII</b></div></div>
         <div class="demo__frame">
           <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>app.merkapos.pro</b></div>
           <video id="demoVideo" muted playsinline preload="none" poster="media/venta-poster.webp" aria-label="Demostración del sistema Merka POS"></video>
         </div>
+        </div>
         <div class="demo__tabs" role="tablist" aria-label="Flujos del sistema">
-          <button class="demo__tab" role="tab" aria-selected="true" data-v="venta"><i class="demo__prog"><b></b></i><strong>Vender en segundos</strong><span>Productos al carrito, método de pago y cobro.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="peso"><i class="demo__prog"><b></b></i><strong>Venta por peso</strong><span>Eliges los gramos y el sistema calcula.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="inventario"><i class="demo__prog"><b></b></i><strong>Agregar un producto</strong><span>Nombre, precios y stock en un formulario.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="tour"><i class="demo__prog"><b></b></i><strong>Control del negocio</strong><span>Ventas, clientes, cierre de caja y reportes.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="true" data-v="venta" data-ca="Venta cobrada" data-cas="Total $9.827" data-cb="Boleta enviada al SII" data-cbs="Documento"><i class="demo__prog"><b></b></i><strong>Vender en segundos</strong><span>Productos al carrito, método de pago y cobro.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="peso" data-ca="0,350 kg" data-cas="Queso Mantecoso" data-cb="$2.797" data-cbs="Total calculado"><i class="demo__prog"><b></b></i><strong>Venta por peso</strong><span>Eliges los gramos y el sistema calcula.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="inventario" data-ca="Producto agregado" data-cas="Con precio y stock" data-cb="Stock actualizado" data-cbs="Inventario"><i class="demo__prog"><b></b></i><strong>Agregar un producto</strong><span>Nombre, precios y stock en un formulario.</span></button>
+          <button class="demo__tab" role="tab" aria-selected="false" data-v="tour" data-ca="Cierre de caja listo" data-cas="Sin diferencias" data-cb="$11.170" data-cbs="Ganancia de hoy"><i class="demo__prog"><b></b></i><strong>Control del negocio</strong><span>Ventas, clientes, cierre de caja y reportes.</span></button>
         </div>
       </div>
     </div>
@@ -1026,7 +1059,7 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   </section>
 
   <!-- PRECIO -->
-  <section class="trust" id="seguridad">
+  <section class="confia" id="seguridad">
     <div class="wrap">
       <div class="origin rv">
         <span class="eyebrow">Por qué confiar</span>
@@ -1270,6 +1303,19 @@ footer.ft :focus-visible{outline-color:#22D3AB}
   var nav=document.getElementById('nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>8); }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // demo: las tarjetas flotantes siguen al flujo elegido
+  (function(){
+    var tabs=document.querySelectorAll('.demo__tab'); if(!tabs.length) return;
+    var el=function(i){return document.getElementById(i)};
+    function sync(){
+      for(var i=0;i<tabs.length;i++){ if(tabs[i].getAttribute('aria-selected')==='true'){
+        var t=tabs[i]; el('dcA').textContent=t.dataset.ca; el('dcAs').textContent=t.dataset.cas; el('dcB').textContent=t.dataset.cb; el('dcBs').textContent=t.dataset.cbs; break; } }
+    }
+    var mo=new MutationObserver(sync);
+    for(var i=0;i<tabs.length;i++) mo.observe(tabs[i],{attributes:true,attributeFilter:['aria-selected']});
+    sync();
+  })();
 
   // menú móvil
   var tg=document.getElementById('navToggle');
