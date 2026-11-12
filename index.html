@@ -871,6 +871,43 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
   .hero--v2 h1{font-size:clamp(30px,8.6vw,38px)}
 }
 @media(prefers-reduced-motion:reduce){.hv2__vid .demo__frame{transform:none}}
+
+/* ===== HERO CLARO: sistema de diseno =====
+   Fondo #F5F3EE (papel calido), superficies #FFFFFF, texto #14171C / #565B63, lineas #E3E0D8.
+   Un solo acento: teal de marca #0B7F66 (texto) y #22D3AB (detalles). Sin degradados de brillo, sin vidrio, sin neon. */
+:root{--h-bg:#F5F3EE;--h-ink:#14171C;--h-body:#565B63;--h-line:#E3E0D8;--h-accent:#0B7F66}
+.hero.hero--v2{background:var(--h-bg);color:var(--h-ink);border-bottom:1px solid var(--h-line)}
+.hero--v2 .hv2__bg{display:none}
+.hero--v2 h1{color:var(--h-ink);text-shadow:none;font-weight:800;letter-spacing:-.035em}
+.hero--v2 h1 em,.hero--v2 h1 em.ln{color:var(--h-accent);-webkit-text-fill-color:var(--h-accent);background:none;animation:rise .7s .29s cubic-bezier(.2,.7,.2,1) both}
+.hero--v2 .lead{color:var(--h-body)}
+.hero--v2 .hpill{background:#fff;border:1px solid var(--h-line);color:var(--h-ink);text-transform:none;letter-spacing:0;font-weight:700;font-size:13.5px;border-radius:999px;padding:7px 14px;backdrop-filter:none;-webkit-backdrop-filter:none}
+.hero--v2 .hpill--mute{background:transparent;color:var(--h-body)}
+.hpill__dot{width:8px;height:8px;border-radius:50%;background:#22D3AB;flex:none;display:inline-block}
+.hero--v2 .btn-primary{background:var(--h-ink);color:#fff;box-shadow:none;border:1px solid var(--h-ink)}
+.hero--v2 .btn-primary::after{display:none}
+.hero--v2 .btn-primary:hover{background:#000;transform:translateY(-1px)}
+.hero--v2 .btn-ghost{background:transparent;color:var(--h-ink);border:1px solid #C9C5BA}
+.hero--v2 .btn-ghost:hover{border-color:var(--h-ink);background:#fff}
+.hero--v2 .trust{color:var(--h-body)}
+.hero--v2 .trust svg{color:var(--h-accent)}
+.hv2__vid .demo__frame{transform:none;padding:0;background:#fff;border:1px solid var(--h-line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(20,23,28,.05),0 28px 64px -28px rgba(20,23,28,.28)}
+.hv2__vid .demo__frame:hover{transform:none}
+.hv2__vid .demo__bar{background:#ECE9E1;border-radius:0;padding:11px 14px;border-bottom:1px solid var(--h-line)}
+.hv2__vid .demo__bar i,.hv2__vid .demo__bar i:nth-child(1),.hv2__vid .demo__bar i:nth-child(2),.hv2__vid .demo__bar i:nth-child(3){background:#CFCABC}
+.hv2__vid .demo__bar b{background:#fff;color:var(--h-body);border:1px solid var(--h-line);font-weight:600}
+.hv2__vid .demo__bar svg{color:var(--h-accent)}
+.hv2__vid video{border-radius:0}
+@media(min-width:1001px){.hero--v2 .hv2__grid{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)}.hero--v2 h1{font-size:clamp(34px,3.7vw,54px);line-height:1.04}}
+.hero--v2 .trust{flex-wrap:wrap}
+/* menu claro */
+header.nav{background:transparent;border-bottom-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+header.nav.scrolled,body.nav-open header.nav{background:rgba(245,243,238,.92);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);border-bottom-color:var(--h-line)}
+.menu a:not(.btn){color:#3A3F47}.menu a:not(.btn):hover{color:var(--h-ink)}
+.nav__toggle{color:var(--h-ink);border-color:#C9C5BA}
+header.nav .btn-primary{background:var(--h-ink);color:#fff;box-shadow:none;border:1px solid var(--h-ink)}
+header.nav .btn-primary:hover{background:#000}
+@media(max-width:1180px){.menu{background:var(--h-bg)!important;border-bottom-color:var(--h-line)!important;box-shadow:0 24px 40px -24px rgba(20,23,28,.25)!important}.menu a:not(.btn){border-bottom-color:var(--h-line)!important;color:var(--h-ink)!important}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -938,7 +975,7 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
 
 <header class="nav" id="nav">
   <div class="wrap nav__bar">
-    <a class="brand brand--logo" href="#" aria-label="Merka POS, inicio"><img src="media/logo-merka-pos.svg" width="155" height="48" alt="Merka POS"></a>
+    <a class="brand brand--logo" href="#" aria-label="Merka POS, inicio"><img src="media/logo-merka-pos-dark.svg" width="155" height="48" alt="Merka POS"></a>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -961,7 +998,7 @@ dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px
     <div class="hv2__bg" aria-hidden="true"></div>
     <div class="wrap hv2__grid">
       <div class="hero__copy">
-        <div class="hpills"><span class="hpill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="dx">Para minimarkets, queserías y botillerías de Chile</span><span class="mx">Para minimarkets y almacenes</span></span><span class="hpill hpill--mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>Chile</span></div>
+        <div class="hpills"><span class="hpill"><i class="hpill__dot"></i><span class="dx">Para minimarkets, queserías y botillerías de Chile</span><span class="mx">Para minimarkets y almacenes</span></span><span class="hpill hpill--mute"><i class="hpill__dot"></i>Chile</span></div>
         <h1><span class="ln">Punto de venta con boleta del SII.</span> <em class="ln">Cobras. Lo demás sale solo.</em></h1>
         <p class="lead"><span class="dx">La boleta del SII, el stock y las ventas del día se hacen solos. Para minimarkets, queserías y botillerías. Desde el celular o el computador, sin instalar nada, desde $3.990 al mes.</span><span class="mx">La boleta del SII, el stock y las ventas del día se hacen solos. Desde $3.990 al mes.</span></p>
         <div class="cta-row">
