@@ -830,6 +830,14 @@ footer.ft .wrap{position:relative;z-index:1}
 .pstep{margin-top:34px}
 .plan__aclara{margin:-10px 0 18px;padding:10px 12px;border-radius:10px;background:#f4f8fc;border:1px solid var(--line);font-size:13.5px;line-height:1.45;color:var(--muted)}
 .hero--v2 h1{font-size:clamp(34px,3.9vw,56px);line-height:1.05}
+
+/* VIDEO DEL HERO */
+.hero--v2 .btn-ghost .play{width:15px;height:15px;flex:none}
+.hero--v2 .btn-ghost{display:inline-flex;align-items:center;gap:9px}
+dialog.dlg-video{margin:auto;width:min(960px,100% - 24px);background:#06121f;border-radius:18px;overflow:hidden;max-height:none;padding:0 0 0}
+dialog.dlg-video::backdrop{background:rgba(3,10,18,.82);backdrop-filter:blur(4px)}
+.dlg-video video{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
+.dlg-video__x{display:block;margin:10px 10px 10px auto;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 16px;font-weight:700;font-size:13.5px;cursor:pointer}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -930,7 +938,7 @@ footer.ft .wrap{position:relative;z-index:1}
         <div class="cta-row">
           <a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-ghost" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20Merka%20POS%20con%20boleta%20electr%C3%B3nica." rel="noopener"><span class="dx">Hablar por WhatsApp</span><span class="mx">WhatsApp</span></a>
+          <button type="button" class="btn btn-ghost" data-open="dlg-video"><svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg><span class="dx">Ver una venta en 15 segundos</span><span class="mx">Ver demo</span></button>
         </div>
         <ul class="trust">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="dx">Sin tarjeta de crédito</span><span class="mx">Sin tarjeta</span></li>
@@ -1276,6 +1284,11 @@ footer.ft .wrap{position:relative;z-index:1}
 <a class="wa-float" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><img src="media/whatsapp.webp" width="60" height="60" alt=""></a>
 
 <!-- Diálogos -->
+<dialog id="dlg-video" class="dlg-video" aria-label="Una venta en Merka POS">
+  <button type="button" class="dlg-video__x" aria-label="Cerrar" data-close>Cerrar</button>
+  <video id="heroVideo" muted playsinline controls preload="none" poster="media/venta-poster.webp"><source src="media/venta.mp4" type="video/mp4"></video>
+  </dialog>
+
 <dialog id="dlg-terminos" aria-labelledby="t-terminos">
   <div class="dlg__head"><h2 id="t-terminos">Términos de Servicio</h2><button class="dlg__x" type="button" data-close aria-label="Cerrar">×</button></div>
   <div class="dlg__body">
@@ -1332,6 +1345,14 @@ footer.ft .wrap{position:relative;z-index:1}
     sync();
   })();
 
+
+  // video del hero: se reproduce al abrir y se detiene al cerrar
+  (function(){
+    var d=document.getElementById('dlg-video'); if(!d) return; var v=document.getElementById('heroVideo');
+    document.querySelectorAll('[data-open="dlg-video"]').forEach(function(b){ b.addEventListener('click', function(){ try{ v.currentTime=0; var p=v.play(); if(p&&p.catch) p.catch(function(){}); }catch(e){} }); });
+    d.addEventListener('close', function(){ try{ v.pause(); }catch(e){} });
+    var x=d.querySelector('[data-close]'); if(x) x.addEventListener('click', function(){ d.close(); });
+  })();
   // menú móvil
   var tg=document.getElementById('navToggle');
   function setNav(open){ document.body.classList.toggle('nav-open',open); tg.setAttribute('aria-expanded',open?'true':'false'); tg.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); }
