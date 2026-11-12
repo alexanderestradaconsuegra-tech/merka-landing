@@ -1019,6 +1019,151 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
   .fx__list li:first-child{border-top:0}
 }
 @media(prefers-reduced-motion:reduce){.fxc:hover{transform:none}}
+
+/* =====================================================================
+   SISTEMA GLOBAL: papel #F1F1EE, tinta #0E0E0E, verde de marca #22D3AB (fondos) / #0B8F73 (texto)
+   Esquinas rectas, lineas de tinta de 1px, sombra dura, etiquetas JetBrains Mono numeradas.
+   ===================================================================== */
+body{background:#F1F1EE;color:#2B2B2B;counter-reset:sec 1}
+main section{padding:96px 0}
+main section.hc{padding:0}
+main h2{font-family:var(--font);font-weight:800;font-size:clamp(34px,4.8vw,62px);line-height:1;letter-spacing:-.045em;color:#0E0E0E;margin-top:18px}
+main .lead{font-size:19px;line-height:1.55;color:#2B2B2B;max-width:560px;margin-left:0;margin-right:0}
+.eyebrow{font:600 13px/1 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.05em;color:#0E0E0E;display:inline-flex;align-items:center}
+.eyebrow::before{counter-increment:sec;content:"(" counter(sec,decimal-leading-zero) ")";width:auto;height:auto;border-radius:0;background:none;box-shadow:none;margin-right:8px;color:#6B6B66}
+.fx__lab span{display:none}
+.fx__lab::before{counter-increment:sec;content:"(" counter(sec,decimal-leading-zero) ") ";color:#6B6B66}
+main section:not(.pricing):not(.hc) .center{text-align:left;max-width:860px;margin-left:0}
+.btn{border-radius:0}
+.btn-primary{background:#0E0E0E;color:#fff;border:1px solid #0E0E0E;box-shadow:none}
+.btn-primary:hover{background:#22D3AB;color:#0E0E0E;transform:none;box-shadow:none}
+.btn-ghost{background:transparent;color:#0E0E0E;border:1px solid #0E0E0E}
+.btn-ghost:hover{background:#fff}
+/* datos */
+.facts{padding:32px 0 0;background:#F1F1EE}
+.facts__row{border:1px solid #0E0E0E;border-radius:0;background:#fff;gap:0;padding:0;box-shadow:none}
+.fact{padding:24px 28px;border-left:1px solid #0E0E0E}
+.fact:first-child{border-left:0}
+.fact b{font-weight:800;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;color:#0E0E0E}
+.fact span{color:#3A3A3A}
+@media(max-width:900px){.fact:nth-child(odd){border-left:0}.fact:nth-child(n+3){border-top:1px solid #0E0E0E}}
+.integ{padding:32px 0 0}
+.integ__t{text-align:left;font:600 12px "JetBrains Mono",monospace;color:#0E0E0E;margin:0 0 12px}
+.integ__row{justify-content:flex-start;gap:0}
+.integ__i{border:1px solid #0E0E0E;border-radius:0;background:#fff;margin-right:-1px}
+.integ__f{text-align:left;color:#5A5A55}
+/* antes / con Merka POS */
+.ant{background:#F1F1EE}
+.ant__list{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid #0E0E0E}
+.ant__list li{display:grid;grid-template-columns:minmax(0,.9fr) 56px minmax(0,1.4fr);align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid #0E0E0E}
+.ant__a{font:500 14px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.03em;color:#6B6B66;text-decoration:line-through;text-decoration-color:#0E0E0E;text-decoration-thickness:2px}
+.ant__arrow{font-style:normal;font-size:28px;font-weight:800;color:#0B8F73;text-align:center}
+.ant__b{font-weight:800;font-size:clamp(20px,2.3vw,30px);line-height:1.1;letter-spacing:-.035em;color:#0E0E0E}
+@media(max-width:760px){.ant__list li{grid-template-columns:1fr;gap:6px;padding:20px 0}.ant__arrow{text-align:left;font-size:22px;line-height:1}}
+/* rubros */
+.rubros{background:#fff;border-top:1px solid #0E0E0E;border-bottom:1px solid #0E0E0E;background-image:none}
+.rubros .grid3{gap:1px;background:#0E0E0E;border:1px solid #0E0E0E;margin-top:48px;counter-reset:r}
+.rubros .card{border:0;border-radius:0;background:#fff;padding:32px;box-shadow:none;transform:none;transition:background .15s}
+.rubros .card::after{display:none}
+.rubros .card:hover{background:#22D3AB;transform:none;box-shadow:none}
+.rubros .card__ic{display:none}
+.rubros .card::before{counter-increment:r;content:"0" counter(r);display:block;font:700 13px/1 "JetBrains Mono",monospace;color:#6B6B66;margin-bottom:24px}
+.rubros .card:hover::before{color:#0E0E0E}
+.rubros .card h3{font-weight:800;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.035em;color:#0E0E0E}
+.rubros .card p{color:#3A3A3A;margin-top:10px}
+.rubros .card:hover p{color:#0E0E0E}
+/* boleta SII */
+.how.sii{background:#F1F1EE}
+.steps{gap:1px;background:#0E0E0E;border:1px solid #0E0E0E;margin-top:48px;counter-reset:s}
+.step{border:0;border-radius:0;background:#fff;padding:28px}
+.step::before{content:counter(s,decimal-leading-zero);display:block;width:auto;height:auto;border-radius:0;background:none;color:#0B8F73;font:700 14px/1 "JetBrains Mono",monospace;margin:0 0 20px}
+.step h3{font-weight:800;letter-spacing:-.03em;color:#0E0E0E}
+.step:not(:last-child)::after{display:none}
+.sii__col{border:1px solid #0E0E0E;border-radius:0;background:#fff;box-shadow:none}
+.sii__col--b{background:#F1F1EE;border-style:dashed}
+.sii__col h3{font-weight:800;letter-spacing:-.03em}
+.sii__note{color:#3A3A3A}
+/* celular */
+.mobile{background:#fff;border-top:1px solid #0E0E0E;border-bottom:1px solid #0E0E0E}
+.mobile h2{margin-top:18px}
+.phones__blob{display:none}
+.mobile .ticks .tk{border-radius:0;background:#22D3AB;color:#0E0E0E}
+.mobile .ticks b{color:#0E0E0E}
+.chip{border-radius:0;border:1px solid #0E0E0E;box-shadow:4px 4px 0 #0E0E0E;background:#fff}
+/* confianza */
+.confia{background:#F1F1EE}
+.origin{margin:0 0 56px;text-align:left;max-width:860px}
+.origin p{color:#2B2B2B}
+.trust__h{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.035em;text-align:left}
+.sg__grid{gap:1px;background:#0E0E0E;border:1px solid #0E0E0E}
+.sg{border:0;border-radius:0;background:#fff;box-shadow:none}
+.sg:hover{transform:none;box-shadow:none;background:#F1F1EE}
+.sg__ic{background:#22D3AB;color:#0E0E0E;border-radius:0}
+.sg h3{font-weight:800;letter-spacing:-.03em;color:#0E0E0E}
+.trust__cta{justify-content:flex-start;border-top:1px solid #0E0E0E}
+.trust__cta p{text-align:left;color:#0E0E0E}
+/* manifiesto en banda de tinta */
+.manif{background:#0E0E0E;color:#fff;text-align:left;padding:120px 0}
+.manif .wrap{max-width:1040px}
+.manif .eyebrow{color:#fff}.manif .eyebrow::before{color:#22D3AB}
+.manif__big{color:#fff;font-size:clamp(34px,5.4vw,72px);line-height:1;letter-spacing:-.045em;font-weight:800;margin-top:24px}
+.manif__txt{color:#C9C9C4;margin:32px 0 0;max-width:640px}
+.manif__end{display:inline-block;margin-top:36px;padding:8px 16px;background:#22D3AB;color:#0E0E0E;font-weight:800;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em}
+/* plan sobre verde */
+.pricing{background:#22D3AB;color:#0E2A22;border-top:1px solid #0E0E0E;border-bottom:1px solid #0E0E0E}
+.pricing h2{color:#0E0E0E}
+.pricing .lead{color:#0E2A22;margin-left:auto;margin-right:auto}
+.pricing .eyebrow{color:#0E0E0E}.pricing .eyebrow::before{color:#0E0E0E;content:"(" counter(sec,decimal-leading-zero) ")"}
+.plan{border-radius:0;border:1px solid #0E0E0E;box-shadow:8px 8px 0 #0E0E0E;background:#fff}
+.plan--feat{outline:none;box-shadow:8px 8px 0 #0E0E0E}
+.plan__tag{background:#0E0E0E;color:#22D3AB;border-radius:0}
+.price-off{background:#22D3AB;color:#0E0E0E;border-radius:0}
+.price strong{color:#0B8F73}
+.plan__aclara{border-radius:0;background:#F1F1EE;border:1px solid #0E0E0E;color:#3A3A3A}
+.how-pay{color:#0E2A22}.how-pay b{color:#0E0E0E}.how-pay a{color:#0E0E0E}
+/* preguntas */
+.faq{background:#fff;border-top:1px solid #0E0E0E}
+.faq__list{border-top:1px solid #0E0E0E}
+.faq__list details{border:0;border-bottom:1px solid #0E0E0E;border-radius:0;background:none;box-shadow:none}
+.faq__list summary{font-weight:800;letter-spacing:-.02em;color:#0E0E0E}
+.faq__list p{color:#3A3A3A}
+/* a medida */
+.custom{background:#F1F1EE;border-top:1px solid #0E0E0E}
+.custom .tk{border-radius:0;background:#22D3AB;color:#0E0E0E}
+.custom ul b{color:#0E0E0E}
+.ccard{border:1px solid #0E0E0E;border-radius:0;background:#fff;box-shadow:8px 8px 0 #0E0E0E}
+.ccard__tag{background:#0E0E0E;color:#fff;border-radius:0}
+/* cierre */
+.final{padding:0;background:#22D3AB;border-top:1px solid #0E0E0E}
+main section.final{padding:0}
+.final__box{display:block;min-height:0;background:#22D3AB;border-radius:0;border:0;padding:0;box-shadow:none}
+.final__bg{display:none}
+.final__copy{max-width:none;padding:104px 0}
+.final h2{color:#0E0E0E;font-size:clamp(44px,8vw,120px);line-height:.92;letter-spacing:-.055em;margin:0}
+.final p{color:#0E2A22;font-size:20px;max-width:620px;margin-top:24px}
+.final__row{justify-content:flex-start;margin-top:32px}
+.final .btn-light{background:#0E0E0E;color:#fff;border:1px solid #0E0E0E;border-radius:0}
+.final .btn-light:hover{background:#fff;color:#0E0E0E}
+.final .btn-wa-ghost{background:transparent;color:#0E0E0E;border:1px solid #0E0E0E;border-radius:0}
+/* pie */
+footer.ft{background:#0E0E0E}
+footer.ft::after{display:none}
+footer.ft::before{background:#22D3AB;height:4px}
+.ft__cta{border-radius:0}
+@media(max-width:700px){main section{padding:64px 0}.manif{padding:80px 0}.final__copy{padding:72px 0}}
+
+/* ajustes finos */
+main .center .lead,main .lead{margin-left:0;margin-right:0}
+.pricing .center .lead,.pricing .lead{margin-left:auto;margin-right:auto}
+.ant__a{font-size:15px;text-decoration-thickness:1px;color:#5A5A55}
+.sii__roles .sii__col{border-radius:0;box-shadow:none}
+.confia .eyebrow{color:#0E0E0E}.confia::before{display:none}
+.manif .wrap{max-width:none}
+.faq__list{max-width:none;margin:48px 0 0}
+.faq__list summary svg,.faq__list summary::after{color:#0E0E0E}
+.custom ul .tk{border-radius:0;background:#22D3AB;color:#0E0E0E}
+.custom ul .tk svg{stroke:#0E0E0E}
+.ft__cta,.ft__cta:hover{background:#22D3AB!important;color:#0E0E0E!important;border:1px solid #22D3AB;box-shadow:none}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -1091,7 +1236,6 @@ header.nav .btn-primary:hover{background:#22D3AB;color:#0E0E0E}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="menu" id="menu" aria-label="Principal">
-      <a href="#demo">Demo</a>
       <a href="#funciones">Funciones</a>
       <a href="#boleta-sii">Boleta SII</a>
       <a href="#precio">Planes</a>
@@ -1172,17 +1316,14 @@ TOTAL                     $9.660
   </div>
 
   <!-- TODO PARA EMPEZAR -->
-  <section class="svc" id="servicios">
+  <section class="ant" id="servicios">
     <div class="wrap">
       <div class="center">
-        <span class="eyebrow">Dos módulos</span>
-        <h2>Vende ordenado y está en regla con el SII.</h2>
-        <p class="lead">Parte con el punto de venta. Suma la boleta electrónica cuando estés listo.</p>
+        <span class="eyebrow">Lo que resuelve</span>
+        <h2>Todo lo que hoy haces a mano, en un solo sistema.</h2>
+        <p class="lead">Boletas, stock, caja, fiado, balanza, ganancia, equipo y proveedores. Merka POS se ocupa de todo eso, desde el celular o el computador.</p>
       </div>
-      <div class="grid3">
-        <article class="card svc__card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Punto de venta</h3><p>Cobras, el stock baja solo y cierras la caja del día. Todo desde el celular, la tablet o el computador.</p><a class="svc__link" href="#demo">Ver el sistema</a></article>
-        <article class="card svc__card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg></div><h3>Boleta electrónica del SII</h3><p>La boleta sale sola al cobrar y la imprimes en 80 mm. Si anulas la venta, se emite la nota de crédito.</p><a class="svc__link" href="#boleta-sii">Cómo es el proceso</a></article>
-        </div>
+      <ul class="ant__list"><li class="rv"><span class="ant__a">Hacer la boleta a mano</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">La boleta del SII sale sola al cobrar, con nota de crédito</b></li><li class="rv"><span class="ant__a">Stock en un cuaderno o de memoria</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">El stock baja con cada venta y avisa cuando falta</b></li><li class="rv"><span class="ant__a">Una caja que no cuadra</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Cierre por turno con la diferencia a la vista</b></li><li class="rv"><span class="ant__a">Fiado sin límite ni registro</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Límite por cliente, historial y aviso de vencimiento</b></li><li class="rv"><span class="ant__a">Precio por kilo con calculadora</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Escaneas la balanza y el precio se calcula solo</b></li><li class="rv"><span class="ant__a">La ganancia a ojo</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Ventas menos costos menos gastos, día por día</b></li><li class="rv"><span class="ant__a">Empleados con acceso a todo</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Permisos por persona y registro de cada acción</b></li><li class="rv"><span class="ant__a">Facturas de proveedores sueltas</span><i class="ant__arrow" aria-hidden="true">&rarr;</i><b class="ant__b">Cuentas por pagar y stock que se actualiza al recibir</b></li></ul>
     </div>
   </section>
 
@@ -1215,8 +1356,8 @@ TOTAL                     $9.660
     <div class="wrap">
       <div class="center">
         <span class="eyebrow">Para quién</span>
-        <h2>Para el negocio que vende todos los días.</h2>
-        <p class="lead">Si tienes mostrador, stock y clientes esperando, esto es para ti.</p>
+        <h2>Si vendes todos los días, es para ti.</h2>
+        <p class="lead">Mostrador, stock y clientes esperando: Merka POS se adapta a tu rubro y resuelve lo que hoy te quita tiempo.</p>
       </div>
       <div class="grid3">
         <article class="card rv"><div class="card__ic"><svg viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></div><h3>Minimarket y almacén</h3><p>Ventas rápidas con lector de códigos, control de stock y cierre de caja diario.</p></article>
@@ -1229,32 +1370,7 @@ TOTAL                     $9.660
     </div>
   </section>
 
-  <section class="demo" id="demo">
-    <div class="demo__glow" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="center">
-        <span class="eyebrow">Míralo en acción</span>
-        <h2>Así se usa Merka POS en tu mostrador.</h2>
-        <p class="lead">Grabaciones reales del sistema, sin edición. Elige un flujo.</p>
-      </div>
-      <div class="demo__stage">
-        <div class="demo__device">
-        <div class="dchip dchip--a" aria-hidden="true"><span class="dchip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b id="dcA">Venta cobrada</b><small id="dcAs">Total $9.827</small></div></div>
-        <div class="dchip dchip--b" aria-hidden="true"><div><small id="dcBs">Documento</small><b id="dcB">Boleta enviada al SII</b></div></div>
-        <div class="demo__frame">
-          <div class="demo__bar" aria-hidden="true"><i></i><i></i><i></i><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>app.merkapos.pro</b></div>
-          <video id="demoVideo" muted playsinline preload="none" poster="media/venta-poster.webp?v=20261112" aria-label="Demostración del sistema Merka POS"></video>
-        </div>
-        </div>
-        <div class="demo__tabs" role="tablist" aria-label="Flujos del sistema">
-          <button class="demo__tab" role="tab" aria-selected="true" data-v="venta" data-ca="Venta cobrada" data-cas="Total $9.660" data-cb="Boleta enviada al SII" data-cbs="Documento"><i class="demo__prog"><b></b></i><strong>Vender en segundos</strong><span>Productos al carrito, método de pago y cobro.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="peso" data-ca="0,500 kg" data-cas="Queso Gauda en barra" data-cb="$4.995" data-cbs="Total calculado"><i class="demo__prog"><b></b></i><strong>Venta por peso</strong><span>Eliges los gramos y el sistema calcula.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="inventario" data-ca="Producto agregado" data-cas="Con precio y stock" data-cb="Stock actualizado" data-cbs="Inventario"><i class="demo__prog"><b></b></i><strong>Agregar un producto</strong><span>Nombre, precios y stock en un formulario.</span></button>
-          <button class="demo__tab" role="tab" aria-selected="false" data-v="tour" data-ca="Cierre de caja listo" data-cas="Sin diferencias" data-cb="$11.170" data-cbs="Ganancia de hoy"><i class="demo__prog"><b></b></i><strong>Control del negocio</strong><span>Ventas, clientes, cierre de caja y reportes.</span></button>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- BOLETA ELECTRÓNICA SII -->
   <section class="how sii" id="boleta-sii">
@@ -1416,10 +1532,9 @@ TOTAL                     $9.660
   <section class="final">
     <div class="wrap">
       <div class="final__box">
-        <img class="final__bg" src="media/final.webp" width="1920" height="1080" loading="lazy" alt="Mostrador con pantalla de Merka POS, lector de códigos, cajón de dinero e impresora">
         <div class="final__copy">
-        <h2>Prueba Merka POS 30 días en tu negocio.</h2>
-        <p>Cárgale tus productos, cobra unas ventas y mira cómo cierra la caja. Sin tarjeta y sin contrato.</p>
+        <h2>Deja de hacerlo a mano.</h2>
+        <p>Prueba Merka POS 30 días en tu negocio: cárgale tus productos, cobra unas ventas y mira cómo cierra la caja. Sin tarjeta y sin contrato.</p>
         <div class="final__row">
           <a class="btn btn-light" href="https://app.merkapos.pro/">Crear mi cuenta gratis
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1445,7 +1560,7 @@ TOTAL                     $9.660
       </div>
       <nav class="ft__col" aria-label="Producto">
         <h3>Producto</h3>
-        <a href="#demo">Demo</a><a href="#funciones">Funciones</a><a href="#rubros">Para quién</a><a href="#seguridad">Seguridad</a><a href="#precio">Planes</a><a href="#preguntas">Preguntas</a>
+        <a href="#funciones">Funciones</a><a href="#rubros">Para quién</a><a href="#seguridad">Seguridad</a><a href="#precio">Planes</a><a href="#preguntas">Preguntas</a>
       </nav>
       <nav class="ft__col" aria-label="Servicios">
         <h3>Servicios</h3>
@@ -1477,10 +1592,7 @@ TOTAL                     $9.660
 <a class="wa-float" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Merka%20POS." rel="noopener" aria-label="Escribir por WhatsApp"><img src="media/whatsapp.webp" width="60" height="60" alt=""></a>
 
 <!-- Diálogos -->
-<dialog id="dlg-video" class="dlg-video" aria-label="Una venta en Merka POS">
-  <button type="button" class="dlg-video__x" aria-label="Cerrar" data-close>Cerrar</button>
-  <video id="heroVideo" muted playsinline controls preload="none" poster="media/venta-poster.webp?v=20261112"><source src="media/venta.mp4?v=20261112" type="video/mp4"></video>
-  </dialog>
+
 
 <dialog id="dlg-terminos" aria-labelledby="t-terminos">
   <div class="dlg__head"><h2 id="t-terminos">Términos de Servicio</h2><button class="dlg__x" type="button" data-close aria-label="Cerrar">×</button></div>
