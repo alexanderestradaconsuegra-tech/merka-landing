@@ -621,6 +621,25 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 @media(max-width:380px){.hero--v2 .cta-row .btn{padding:13px 14px;font-size:14.5px}.hero--v2 .cta-row .arrow{display:none}.hero--v2 .trust{font-size:12px;gap:6px 10px}}
 @media(max-width:340px){.hero--v2 .trust li:last-child{display:none}.hero--v2 .trust{justify-content:flex-start;gap:14px}}
 @media(prefers-reduced-motion:reduce){.hv2__bg .hchip{animation:none}}
+
+/* INTEGRACIONES + EQUIPO DESTACADO */
+.integ{padding:8px 0 0}
+.integ__t{text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:26px 0 14px}
+.integ__row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.integ__i{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:var(--r);background:#fff;padding:14px 22px;min-width:min(100%,330px)}
+.integ__i img{height:44px;width:auto;flex:none}
+.integ__i span{font-size:14.5px;color:var(--body);line-height:1.35}
+.integ__f{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
+.eqf{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(20px,4vw,56px);margin-top:48px;padding:clamp(20px,3vw,40px);border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#f4f8fc,#fff)}
+.eqf__img{display:grid;place-items:center;border-radius:16px;background:#fff;padding:18px}
+.eqf__img img{width:100%;height:auto;max-height:340px;object-fit:contain;mix-blend-mode:multiply}
+.eqf__logo{height:30px;width:auto;margin:6px 0 10px;display:block}
+.eqf h3{font-size:clamp(22px,2.4vw,30px);line-height:1.15}
+.eqf ul{list-style:none;padding:0;margin:16px 0 22px;display:grid;gap:10px}
+.eqf li{position:relative;padding-left:26px;color:var(--body);font-size:15.5px}
+.eqf li::before{content:"";position:absolute;left:0;top:.35em;width:15px;height:15px;border-radius:50%;background:#22D3AB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306231d' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/10px no-repeat}
+@media(max-width:1000px){.eqf{grid-template-columns:1fr}.equip__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.equip__grid{grid-template-columns:1fr}.integ__i{padding:12px 16px}}
 .menu a{white-space:nowrap}
 @media(min-width:1001px) and (max-width:1250px){.hero--img .hero__copy{max-width:420px}.hero--img h1{font-size:44px}.menu{gap:20px}.hero--img .cta-row .btn{padding:14px 20px}}
 
@@ -651,7 +670,7 @@ footer.ft :focus-visible{outline-color:#22D3AB}
 .sii__col li svg{width:20px;height:20px;flex:none;margin-top:3px;color:var(--lime)}
 .sii__note{max-width:680px;margin:0 auto 30px;text-align:center;color:var(--muted);font-size:15px}
 .equip{background:#fff}
-.equip__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.equip__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
 .eq{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;background:var(--paper)}
 .eq h3{font-size:19px}
 .eq p{margin-top:8px;color:var(--muted);font-size:15.5px}
@@ -742,6 +761,16 @@ footer.ft :focus-visible{outline-color:#22D3AB}
         <div class="fact rv"><b>En terreno</b><span>instalación y capacitación en tu local</span></div>
         <div class="fact rv"><b>Con balanza</b><span>venta por peso para quesos y granel</span></div>
       </div>
+    </div>
+  </div>
+  <div class="integ">
+    <div class="wrap">
+      <p class="integ__t">Funciona con</p>
+      <div class="integ__row">
+        <div class="integ__i"><img src="media/logo-sii.webp" width="400" height="340" loading="lazy" alt="Servicio de Impuestos Internos, SII"><span>Boleta y nota de crédito electrónicas</span></div>
+        <div class="integ__i"><img src="media/logo-tuu.webp" width="440" height="182" loading="lazy" alt="Tuu"><span>Emisión de documentos y terminales de pago</span></div>
+      </div>
+      <p class="integ__f">Las marcas pertenecen a sus titulares. Merka POS es un software independiente de Autix.</p>
     </div>
   </div>
 
@@ -838,8 +867,21 @@ footer.ft :focus-visible{outline-color:#22D3AB}
         <h2>Todo lo que necesitas en el mostrador.</h2>
         <p class="lead">Te ayudamos a elegir, comprar e instalar. Trabajamos con Tuu para los terminales de pago.</p>
       </div>
+      <div class="eqf rv">
+        <div class="eqf__img"><img src="media/tuu-terminal.webp" width="1100" height="531" loading="lazy" alt="Terminal de pago Tuu con pantalla táctil, lector de tarjetas e impresora de boletas"></div>
+        <div class="eqf__txt">
+          <span class="eq__tag">Terminal de pago</span>
+          <img class="eqf__logo" src="media/logo-tuu.webp" width="440" height="182" loading="lazy" alt="Tuu">
+          <h3>Cobra con tarjeta y emite la boleta en el mismo flujo</h3>
+          <ul>
+            <li>Pantalla táctil, lector de tarjetas con y sin contacto e impresora integrada</li>
+            <li>Se conecta con Merka POS para que cada venta quede registrada una sola vez</li>
+            <li>Te ayudamos a pedirlo, configurarlo e instalarlo en tu local</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/56992025527?text=Hola%2C%20quiero%20cotizar%20el%20terminal%20de%20pago%20Tuu%20para%20mi%20negocio." rel="noopener">Cotizar terminal Tuu</a>
+        </div>
+      </div>
       <div class="equip__grid">
-        <article class="eq rv"><span class="eq__tag">Con Tuu</span><h3>Terminal de pago</h3><p>Recibe tarjetas y emite boletas desde la misma máquina. Hay modelos con impresora y lector de códigos integrados.</p></article>
         <article class="eq rv"><h3>Impresora térmica</h3><p>Para boletas y comprobantes de 58 u 80 mm.</p></article>
         <article class="eq rv"><h3>Lector de códigos de barras</h3><p>Escanea productos y códigos de balanza con peso.</p></article>
         <article class="eq rv"><h3>Computador o tablet</h3><p>Equipos listos para usar Merka POS en la caja.</p></article>
