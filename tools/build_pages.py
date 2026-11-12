@@ -15,7 +15,7 @@ PAGES=[
         ('¿Necesito comprar equipos especiales?','No. Funciona en el navegador. Si usas lector de códigos de barras o balanza con código EAN-13, el sistema los reconoce.'),
         ('¿Cuánto cuesta?','Oferta de lanzamiento: $8.990 al mes, con todo incluido. El precio normal es $15.000 al mes. Tienes 30 días gratis, sin tarjeta.')]},
 {'slug':'software-punto-de-venta-chile','title':'Software punto de venta en Chile con boleta electrónica | Merka POS',
- 'desc':'Software de punto de venta en la nube para comercios de Chile: ventas, inventario, caja, fiado, reportes y boleta electrónica SII. 30 días gratis.',
+ 'desc':'Software de punto de venta en la nube para comercios de Chile: ventas, inventario, caja, código de barras, reportes y boleta electrónica SII. 30 días gratis.',
  'h1':'Software de punto de venta en Chile, simple, claro y accesible.',
  'lead':'Un software de punto de venta para vender, controlar el inventario y estar al día con la boleta electrónica, sin instalar nada y sin pagar de más.',
  'sections':[

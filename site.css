@@ -1314,3 +1314,10 @@ main section.pg__s{padding:0;margin-top:48px}
 body.pg .pg__w{padding-top:56px;padding-bottom:72px}
 body.pg h1{margin-top:0}
 body.pg .pg__bc{margin-top:40px}
+
+.viz--scan{display:grid;gap:10px;padding:16px}
+.viz__bars{height:44px;background:repeating-linear-gradient(90deg,#0E0E0E 0 2px,#fff 2px 5px,#0E0E0E 5px 6px,#fff 6px 10px,#0E0E0E 10px 13px,#fff 13px 15px);border:1px solid #0E0E0E;position:relative}
+.viz__bars::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#0B8F73;box-shadow:0 0 8px #22D3AB}
+.viz--scan small{font:500 11.5px "JetBrains Mono",monospace;color:#6B6B66}
+@media(min-width:1001px){.hc h1{font-size:clamp(36px,4vw,58px);line-height:1.02}}
+@media(max-width:1000px){.hc h1{font-size:clamp(40px,11vw,72px)}}
