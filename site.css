@@ -1332,3 +1332,16 @@ body.pg .pg__bc{margin-top:40px}
   .hc__cta{margin-top:24px}
 }
 @media(min-width:1001px) and (max-width:1320px){.hc__printer{left:12px;bottom:-58px}}
+
+/* COMO TRABAJAMOS */
+.how3{background:#F1F1EE;border-top:1px solid #0E0E0E}
+.how3__list{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid #0E0E0E}
+.how3__c{position:relative;padding:32px;background:#fff;border-left:1px solid #0E0E0E;display:flex;flex-direction:column}
+.how3__c:first-child{border-left:0;background:#22D3AB}
+.how3__c:not(:last-child)::after{content:"+";position:absolute;right:-14px;top:50%;transform:translateY(-50%);width:28px;height:28px;display:grid;place-items:center;background:#0E0E0E;color:#fff;font:800 18px/1 var(--font);z-index:2}
+.how3__n{font:800 56px/1 var(--font);letter-spacing:-.05em;color:#0E0E0E;margin-bottom:20px}
+.how3__c h3{font-weight:800;font-size:clamp(22px,2.2vw,28px);line-height:1.05;letter-spacing:-.035em;color:#0E0E0E}
+.how3__c p{margin:12px 0 22px;font-size:16.5px;line-height:1.5;color:#2B2B2B;flex:1}
+.how3__tag{align-self:flex-start;font:700 12px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.05em;padding:6px 10px;border:1px solid #0E0E0E;background:#F1F1EE}
+.how3__tag--on{background:#0E0E0E;color:#22D3AB}
+@media(max-width:900px){.how3__list{grid-template-columns:1fr}.how3__c{border-left:0;border-top:1px solid #0E0E0E}.how3__c:first-child{border-top:0}.how3__c:not(:last-child)::after{right:auto;left:32px;top:auto;bottom:-14px;transform:none}}
