@@ -62,12 +62,12 @@ def page(pg):
 <link rel="stylesheet" href="/site.css?v={V}">
 <script type="application/ld+json">{json.dumps(graph,ensure_ascii=False)}</script>
 </head><body class="pg">
-<header class="nav pg__nav"><div class="wrap nav__bar"><a class="brand brand--logo" href="/" aria-label="Merka POS, inicio"><img src="/media/logo-merka-pos-dark.svg" width="155" height="48" alt="Merka POS"></a><a class="btn btn-primary btn-sm" href="https://app.merkapos.pro/">Probar 30 días gratis</a></div></header>
+<header class="nav pg__nav"><div class="wrap nav__bar"><a class="brand brand--logo" href="/" aria-label="Merka POS, inicio"><img src="/media/logo-merka-pos-dark.svg" width="155" height="48" alt="Merka POS"></a><a class="btn btn-primary btn-sm" href="https://app.merkapos.pro/?registro=1">Probar 30 días gratis</a></div></header>
 <main><div class="wrap pg__w">
 <nav class="pg__bc" aria-label="Migas de pan"><a href="/">Merka POS</a> / <span>{esc(pg['h1'].rstrip('.'))}</span></nav>
 <h1>{esc(pg['h1'])}</h1>
 <p class="pg__lead">{esc(pg['lead'])}</p>
-<div class="pg__cta"><a class="btn btn-primary" href="https://app.merkapos.pro/">Probar 30 días gratis</a><a class="btn btn-ghost" href="{WA}" rel="noopener">Hablar por WhatsApp</a></div>
+<div class="pg__cta"><a class="btn btn-primary" href="https://app.merkapos.pro/?registro=1">Probar 30 días gratis</a><a class="btn btn-ghost" href="{WA}" rel="noopener">Hablar por WhatsApp</a></div>
 <p class="pg__price">Oferta de lanzamiento: <b>$8.990 al mes</b> (precio normal $15.000), con todo incluido. Sin tarjeta y sin contrato.</p>
 {secs}
 <section class="pg__s"><h2>Preguntas frecuentes</h2><div class="pg__faq">{faq}</div></section>
