@@ -1321,3 +1321,14 @@ body.pg .pg__bc{margin-top:40px}
 .viz--scan small{font:500 11.5px "JetBrains Mono",monospace;color:#6B6B66}
 @media(min-width:1001px){.hc h1{font-size:clamp(36px,4vw,58px);line-height:1.02}}
 @media(max-width:1000px){.hc h1{font-size:clamp(40px,11vw,72px)}}
+/* hero a una sola pantalla: sin bloque de precio, contenido centrado */
+.hc__price{display:none}
+@media(min-width:1001px){
+  .hero.hc{min-height:100svh;display:flex;align-items:center}
+  .hero.hc .hc__grid{align-items:center;padding-top:calc(72px + 24px);padding-bottom:96px}
+  .hc__printer{right:auto;left:18px;bottom:-58px}
+  .hc h1{font-size:clamp(36px,min(4vw,6.4svh),58px)}
+  .hc__lead{margin-top:24px}
+  .hc__cta{margin-top:24px}
+}
+@media(min-width:1001px) and (max-width:1320px){.hc__printer{left:12px;bottom:-58px}}
